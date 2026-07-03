@@ -182,7 +182,7 @@ nav .links a:not(.btn):hover::after{width:100%}
 @keyframes float{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(30px,-30px) scale(1.08)}}
 #fx{position:absolute;inset:0;z-index:-1;pointer-events:none}
 .hero .wrap{position:relative;z-index:2;width:100%;max-width:1180px;margin:0 auto;padding:0 24px}
-.hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:42% center;z-index:0;opacity:0;transition:opacity 1.1s ease .15s}
+.hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:62% center;z-index:0;opacity:0;transition:opacity 1.1s ease .15s}
 .hero.ready .hero-bg{opacity:1}
 .hero-scrim{position:absolute;inset:0;z-index:1;background:linear-gradient(95deg,rgba(255,245,232,.97) 0%,rgba(255,245,232,.85) 28%,rgba(255,245,232,.4) 47%,rgba(255,245,232,0) 64%)}
 .hero-copy{max-width:430px}
@@ -210,7 +210,7 @@ nav .links a:not(.btn):hover::after{width:100%}
 .floaty.f1{top:16%;right:16%;z-index:2}
 .floaty.f2{bottom:22%;right:9%;z-index:2;animation-delay:-3s}
 .floaty .em{width:30px;height:30px;border-radius:9px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:15px}
-@media(max-width:860px){.hero{align-items:flex-end;padding-bottom:9vh}.hero-bg{object-position:58% center}.hero-scrim{background:linear-gradient(180deg,rgba(255,245,232,.32) 0%,rgba(255,245,232,.8) 55%,rgba(255,245,232,.97) 100%)}.hero-copy{max-width:100%}.floaty{display:none}}
+@media(max-width:860px){.hero{align-items:flex-end;padding-bottom:9vh}.hero-bg{object-position:64% center}.hero-scrim{background:linear-gradient(180deg,rgba(255,245,232,.32) 0%,rgba(255,245,232,.8) 55%,rgba(255,245,232,.97) 100%)}.hero-copy{max-width:100%}.floaty{display:none}}
 
 /* marquee */
 .marquee{background:var(--ink);color:#fff;padding:16px 0;overflow:hidden;white-space:nowrap}
@@ -286,7 +286,10 @@ h2.title{font-weight:700;font-size:clamp(30px,3.8vw,50px);line-height:1.06;lette
 .cta>*{position:relative;z-index:2}
 .cta h2{font-weight:700;font-size:clamp(32px,4.4vw,58px);letter-spacing:-.02em}
 .cta p{font-size:19px;opacity:.96;margin:16px auto 6px;max-width:520px}
-.cta .price{font-weight:700;font-size:30px;margin:14px 0 8px}
+.cta-badge{display:inline-block;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.55);color:#fff;font-weight:700;font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;padding:7px 16px;border-radius:999px;margin-bottom:20px}
+.cta .price{font-weight:800;font-size:40px;margin:18px 0 26px;line-height:1}
+.cta .price s{opacity:.6;font-weight:600;font-size:27px;margin-right:10px}
+.cta .reserve{font-size:13.5px;opacity:.85;margin:14px auto 0}
 .cta .price s{opacity:.7;font-size:20px;font-weight:500;margin-right:10px}
 .cta .btn{background:#fff;color:#B8470F;box-shadow:0 12px 30px rgba(0,0,0,.18)}
 .cta .btn::after{background:#fff}
@@ -324,9 +327,9 @@ footer .soc{display:flex;gap:18px;justify-content:center;margin-top:10px}
 .db-txt .db-time{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--grey);margin-bottom:10px;opacity:.8}
 .db-txt .title{font-size:clamp(30px,3.9vw,54px)}
 .db-txt .lead{font-size:clamp(16px,1.25vw,19px);max-width:460px}
-.db-vis{position:relative;border-radius:26px;overflow:hidden;box-shadow:0 36px 80px rgba(0,0,0,.26);transform:rotate(-1.6deg)}
+.db-vis{position:relative;border-radius:26px;overflow:hidden;box-shadow:0 36px 80px rgba(0,0,0,.26);transform:rotate(-1.6deg);max-width:540px;justify-self:end}
 .db-vis::after{content:"";position:absolute;inset:0;box-shadow:inset 0 0 0 1px rgba(255,255,255,.35);border-radius:26px;pointer-events:none}
-.db-vis img{width:100%;display:block;aspect-ratio:4/3;object-fit:cover}
+.db-vis img{width:100%;height:auto;display:block}
 .db-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
 .db-chips .chip{padding:7px 14px;font-size:13px}
 .day-beat.night .title,.day-beat.night .db-time,.day-beat.night .lead{color:#fff}
@@ -371,7 +374,7 @@ footer .soc{display:flex;gap:18px;justify-content:center;margin-top:10px}
     <div class="links">
       <a href="#how">How it works</a><a href="#languages">Languages</a>
       <a href="#safe">Safe AI</a><a href="#parents">For parents</a>
-      <a class="btn nav-cta buy-link" href="#buy"><span>Get Cheeko</span></a>
+      <a class="btn nav-cta buy-link" href="#buy"><span>Preorder</span></a>
     </div>
   </div>
 </nav>
@@ -380,7 +383,7 @@ footer .soc{display:flex;gap:18px;justify-content:center;margin-top:10px}
 <section class="hero-stage">
   <div class="hero-pin">
 <header class="hero" id="hero" data-wash="#FBF6EE">
-  <img class="hero-bg" src="assets/img/hero.jpg" alt="A child listening to a Cheeko story" />
+  <img class="hero-bg" src="assets/img/hero_v2.jpg" alt="A child listening to a Cheeko story" />
   <div class="hero-scrim"></div>
   <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
   <canvas id="fx"></canvas>
@@ -391,7 +394,7 @@ footer .soc{display:flex;gap:18px;justify-content:center;margin-top:10px}
           <span class="word"><i class="o">more</i></span> <span class="word"><i class="o">childhood.</i></span></h1>
       <p class="sub">Everything your child reaches a phone for — stories, games and endless questions answered out loud — in one smart gadget you can finally hand over guilt-free. No screen at all.</p>
       <div class="hero-actions">
-        <a class="btn buy-link" href="#buy"><span>Get Cheeko</span></a>
+        <a class="btn buy-link" href="#buy"><span>Preorder now</span></a>
         <a class="btn btn-ghost" href="#how" id="seeMagic"><span>See the magic</span></a>
       </div>
       <div class="trust">
@@ -405,7 +408,7 @@ footer .soc{display:flex;gap:18px;justify-content:center;margin-top:10px}
   <div class="floaty f2"><span class="em" style="background:var(--green)">✓</span> Screen-free</div>
 </header>
   <div class="pl pl1" id="pl1">
-    <img src="assets/img/phone_problem.jpg" alt="A child alone with a phone" />
+    <img src="assets/img/problem1_v2.jpg" alt="A child alone with a phone" />
     <div class="prob-scrim"></div>
     <div class="prob-copy"><div class="wrap">
       <div class="prob-kicker">The real problem</div>
@@ -414,7 +417,7 @@ footer .soc{display:flex;gap:18px;justify-content:center;margin-top:10px}
     </div></div>
   </div>
   <div class="pl pl2" id="pl2">
-    <img src="assets/img/problem_learning.jpg" alt="A child passively watching a screen" />
+    <img src="assets/img/problem2_v2.jpg" alt="A child passively watching a screen" />
     <div class="prob-scrim"></div>
     <div class="prob-copy"><div class="wrap">
       <div class="prob-kicker">And it costs them twice</div>
@@ -494,7 +497,7 @@ footer .soc{display:flex;gap:18px;justify-content:center;margin-top:10px}
     <div class="gpanel"><img src="assets/img/card_habits.jpg" alt="Good habits" /><div class="brand"><img src="assets/img/logo.png" alt="Cheeko" /></div><div class="label">Good habits</div></div>
     <div class="gpanel"><img src="assets/img/card_folk.jpg" alt="Folk tales" /><div class="brand"><img src="assets/img/logo.png" alt="Cheeko" /></div><div class="label">Folk tales</div></div>
     <div class="gpanel"><img src="assets/img/card_adventure.jpg" alt="Adventure" /><div class="brand"><img src="assets/img/logo.png" alt="Cheeko" /></div><div class="label">Adventure</div></div>
-    <a class="gpanel gpanel-cta buy-link" href="#buy"><div class="ci"><span class="big">+100</span><span class="sm">more cards to collect</span><span class="go">Get Cheeko</span></div></a>
+    <a class="gpanel gpanel-cta buy-link" href="#buy"><div class="ci"><span class="big">+100</span><span class="sm">more cards to collect</span><span class="go">Preorder</span></div></a>
     </div>
   </div>
 </section>
@@ -536,7 +539,7 @@ footer .soc{display:flex;gap:18px;justify-content:center;margin-top:10px}
           <h2 class="title">Mornings that move them.</h2>
           <p class="lead">Quizzes, animal sounds, shapes and movement games — short, joyful bursts that get little bodies up and going. All energy, no screen.</p>
         </div>
-        <div class="db-vis"><img src="assets/img/games.jpg" alt="A child playing a Cheeko game" /></div>
+        <div class="db-vis"><img src="assets/img/day_play.jpg" alt="A child playing with Cheeko" /></div>
       </div>
     </div>
 
@@ -551,7 +554,7 @@ footer .soc{display:flex;gap:18px;justify-content:center;margin-top:10px}
             <span class="chip on">हिंदी</span><span class="chip">தமிழ்</span><span class="chip">తెలుగు</span><span class="chip">বাংলা</span><span class="chip">ಕನ್ನಡ</span><span class="chip">मराठी</span><span class="chip">മലയാളം</span>
           </div>
         </div>
-        <div class="db-vis"><img src="assets/img/askcheeko.jpg" alt="A child asking Cheeko a question" /></div>
+        <div class="db-vis"><img src="assets/img/day_ask.jpg" alt="A child asking Cheeko a question" /></div>
       </div>
     </div>
 
@@ -563,7 +566,7 @@ footer .soc{display:flex;gap:18px;justify-content:center;margin-top:10px}
           <h2 class="title">While you cook, you’re still in control.</h2>
           <p class="lead">See what they played, set quiet hours and time limits, and manage content — all from one calm app. Present without hovering.</p>
         </div>
-        <div class="db-vis"><img src="assets/img/parent_app.jpg" alt="The Cheeko parent app" /></div>
+        <div class="db-vis"><img src="assets/img/day_parents.jpg" alt="A parent and child with Cheeko" /></div>
       </div>
     </div>
 
@@ -575,7 +578,7 @@ footer .soc{display:flex;gap:18px;justify-content:center;margin-top:10px}
           <h2 class="title">Grandma’s story, every night.</h2>
           <p class="lead">Lullabies and calm tales in the voices your family loves, with a soft glow that fades as they drift off. Never a screen at bedtime.</p>
         </div>
-        <div class="db-vis"><img src="assets/img/bedtime.jpg" alt="A grandmother at bedtime with Cheeko" /></div>
+        <div class="db-vis"><img src="assets/img/day_bedtime.jpg" alt="A child at bedtime with Cheeko" /></div>
       </div>
     </div>
   </div>
@@ -594,17 +597,18 @@ footer .soc{display:flex;gap:18px;justify-content:center;margin-top:10px}
         <span class="sw" style="background:#FFD6E5" data-n="pink"></span>
       </div>
     </div>
-    <div class="vis reveal tilt"><img id="cwImg" src="assets/img/colour_yellow.jpg" alt="Cheeko colour options" /></div>
+    <div class="vis reveal tilt"><img id="cwImg" src="assets/img/colourway_v2.jpg" alt="Cheeko in yellow, white and pink" /></div>
   </div>
 </section>
 
 <!-- CTA -->
 <section class="cta-sec" id="buy" data-wash="#FBF6EE"><div class="cta reveal">
+  <span class="cta-badge">Preorder · first 500 only</span>
   <h2>Give them childhood back.</h2>
-  <p>Includes starter cards, the parent app, and stories that grow with your child.</p>
-  <div class="price"><s>₹7,999</s>₹5,999</div>
-  <a class="btn buy-link" href="#"><span>Get Cheeko</span></a>
-  <img src="assets/img/cta.jpg" alt="Cheeko device and cards" />
+  <div class="price"><s>₹8,999</s> <b>₹5,999</b></div>
+  <a class="btn buy-link" href="#"><span>Preorder for ₹499</span></a>
+  <p class="reserve">₹499 today — fully adjusted when Cheeko ships.</p>
+  <img src="assets/img/cta_v2.jpg" alt="Cheeko devices and story cards" />
 </div></section>
 
 <footer>
@@ -679,10 +683,10 @@ document.querySelectorAll('.num').forEach(function(el){sio.observe(el)});
     ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,7);ctx.fillStyle='rgba(243,150,60,'+p.o+')';ctx.fill()});requestAnimationFrame(d)})();
 })();
 
-/* colourway */
+/* colourway — group shot shows all colours; swatches just highlight + name */
 document.querySelectorAll('.sw').forEach(function(s){s.addEventListener('click',function(){
   document.querySelectorAll('.sw').forEach(function(x){x.classList.remove('on')});s.classList.add('on');
-  document.getElementById('cwImg').src='assets/img/colour_'+s.dataset.n+'.jpg';
+  var n=document.getElementById('cwName');if(n)n.textContent='Cheeko';
 })});
 
 /* chips */
@@ -816,7 +820,7 @@ function party(e){e.preventDefault();if(window.confetti){var x=e.clientX/innerWi
 
 /* chapter dots */
 (function(){
-  var map=[['hero','Home'],['how','How it works'],['gallery','Stories'],['languages','Languages'],['safe','Safe AI'],['parents','Parents'],['buy','Get Cheeko']];
+  var map=[['hero','Home'],['how','How it works'],['gallery','Stories'],['languages','Languages'],['safe','Safe AI'],['parents','Parents'],['buy','Preorder']];
   var nav=document.createElement('div');nav.className='dots';
   map.forEach(function(m){var a=document.createElement('a');a.href='#'+m[0];a.title=m[1];a.dataset.t=m[0];nav.appendChild(a)});
   document.body.appendChild(nav);
