@@ -210,7 +210,7 @@ nav .links a:not(.btn):hover::after{width:100%}
 .floaty.f1{top:16%;right:16%;z-index:2}
 .floaty.f2{bottom:22%;right:9%;z-index:2;animation-delay:-3s}
 .floaty .em{width:30px;height:30px;border-radius:9px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:15px}
-@media(max-width:860px){.hero{align-items:flex-end;padding-bottom:9vh}.hero-bg{object-position:64% center}.hero-scrim{background:linear-gradient(180deg,rgba(255,245,232,.32) 0%,rgba(255,245,232,.8) 55%,rgba(255,245,232,.97) 100%)}.hero-copy{max-width:100%}.floaty{display:none}}
+@media(max-width:860px){.hero{align-items:flex-end;padding-bottom:9vh}.hero-bg{object-position:68% center}.hero-scrim{background:linear-gradient(180deg,rgba(255,245,232,0) 0%,rgba(255,245,232,.12) 42%,rgba(255,245,232,.62) 72%,rgba(255,245,232,.93) 100%)}.hero-copy{max-width:100%}.floaty{display:none}}
 
 /* marquee */
 .marquee{background:var(--ink);color:#fff;padding:16px 0;overflow:hidden;white-space:nowrap}
@@ -305,6 +305,7 @@ footer .soc{display:flex;gap:18px;justify-content:center;margin-top:10px}
   .hero-pin,.feed-pin,.day-pin,.gallery-pin{height:100dvh}  /* stable pin vs URL-bar */
   .gpanel{width:200px;height:300px}                    /* gallery cards fit short screens */
   .gallery-track{gap:16px}
+  .pl img{object-position:74% center}                  /* keep the child (right side) in frame */
 }
 
 /* ===== A DAY WITH CHEEKO (unified day→night section) ===== */
@@ -421,7 +422,7 @@ footer .soc{display:flex;gap:18px;justify-content:center;margin-top:10px}
     <div class="prob-scrim"></div>
     <div class="prob-copy"><div class="wrap">
       <div class="prob-kicker">And it costs them twice</div>
-      <h2 class="prob-title">Busy isn’t the same<br class="mbr">as learning.</h2>
+      <h2 class="prob-title">Busy isn’t the<br class="mbr">same&nbsp;as learning.</h2>
       <p class="prob-sub">A screen pours in and asks for nothing back — the watching crowds out the asking, talking and imagining that actually grow a young mind.</p>
     </div></div>
   </div>
