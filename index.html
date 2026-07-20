@@ -33,10 +33,16 @@ section.block:not(.problem),.bloom-stage,.languages,.colourway,.cta-sec{backgrou
 .feed-dev-wrap .anno b{display:block;font-weight:600;font-size:20px;color:var(--ink);line-height:1.2}
 .feed-dev-wrap .anno span{font-size:14px;color:var(--grey)}
 .feed-dev-wrap .anno .arr{position:absolute;width:74px;height:48px;pointer-events:none;overflow:visible}
+.feed-dev-wrap .anno.mini{width:132px}
+.feed-dev-wrap .anno.mini b{font-size:16px}
+.feed-dev-wrap .anno.mini .arr{width:52px;height:34px}
 .anno.a1{right:104%;top:22%;text-align:right}.anno.a1 .arr{right:-70px;top:36%}
 .anno.a2{left:104%;top:-2%;text-align:left}.anno.a2 .arr{left:-70px;top:74%;transform:scaleX(-1)}
 .anno.a3{right:104%;top:55%;text-align:right}.anno.a3 .arr{right:-70px;top:-6%}
-.anno.a4{left:104%;top:78%;text-align:left}.anno.a4 .arr{left:-70px;top:-6%;transform:scaleX(-1)}
+.anno.a4{left:104%;top:80%;text-align:left}.anno.a4 .arr{left:-70px;top:-6%;transform:scaleX(-1)}
+.anno.a5{left:104%;top:26%;text-align:left}.anno.a5 .arr{left:-50px;top:6%;transform:scaleX(-1)}
+.anno.a6{left:104%;top:38%;text-align:left}.anno.a6 .arr{left:-50px;top:6%;transform:scaleX(-1)}
+.anno.a7{left:104%;top:46%;text-align:left}.anno.a7 .arr{left:-50px;top:6%;transform:scaleX(-1)}
 @media(max-width:820px){.feed-dev-wrap .anno{display:none}}
 .gallery-stage{height:300vh;position:relative}
 .gallery-pin{position:sticky;top:0;height:100vh;overflow:hidden;display:flex;flex-direction:column;justify-content:center}
@@ -113,6 +119,10 @@ section.block:not(.problem),.bloom-stage,.languages,.colourway,.cta-sec{backgrou
 @media(max-width:820px){
   .feed-pin.light .feat-mobile{display:grid;position:absolute;bottom:5vh;left:0;right:0;grid-template-columns:1fr 1fr;gap:12px 14px;padding:0 22px;z-index:7}
   .feat-mobile div{text-align:center}
+  .feat-mobile div:last-child{grid-column:1/-1}
+  /* the feature beat needs headroom for 5 labels — lift & shrink the device */
+  .feed-pin.light .feed-canvas{transform:scale(.74) translateY(-9vh);transform-origin:50% 0}
+  .feed-pin.light .feed-hint{opacity:0}
   .feat-mobile b{display:block;font-weight:600;font-size:14px;color:var(--ink)}
   .feat-mobile span{font-size:11px;color:var(--grey)}
 }
@@ -471,17 +481,21 @@ footer .soc a:hover{text-decoration:underline}
           <div class="sc sc-chat" data-b="2"></div>
           <div class="sc sc-games" data-b="3"></div>
         </div>
-        <div class="anno a1"><b>Fox screen</b><span>a friendly face</span><svg class="arr" viewBox="0 0 90 60" fill="none"><path d="M6,28 C30,16 56,18 80,40" stroke="#F36E24" stroke-width="3.5" stroke-dasharray="1 8" stroke-linecap="round"/><path d="M80,40 l-14,-1 M80,40 l-2,-14" stroke="#F36E24" stroke-width="3.5" stroke-linecap="round"/></svg></div>
+        <div class="anno a1"><b>TFT display</b><span>a friendly fox face</span><svg class="arr" viewBox="0 0 90 60" fill="none"><path d="M6,28 C30,16 56,18 80,40" stroke="#F36E24" stroke-width="3.5" stroke-dasharray="1 8" stroke-linecap="round"/><path d="M80,40 l-14,-1 M80,40 l-2,-14" stroke="#F36E24" stroke-width="3.5" stroke-linecap="round"/></svg></div>
         <div class="anno a2"><b>Top card slot</b><span>where stories go in</span><svg class="arr" viewBox="0 0 90 60" fill="none"><path d="M6,28 C30,16 56,18 80,40" stroke="#F36E24" stroke-width="3.5" stroke-dasharray="1 8" stroke-linecap="round"/><path d="M80,40 l-14,-1 M80,40 l-2,-14" stroke="#F36E24" stroke-width="3.5" stroke-linecap="round"/></svg></div>
         <div class="anno a3"><b>Rotary dial</b><span>turn &amp; press</span><svg class="arr" viewBox="0 0 90 60" fill="none"><path d="M6,28 C30,16 56,18 80,40" stroke="#F36E24" stroke-width="3.5" stroke-dasharray="1 8" stroke-linecap="round"/><path d="M80,40 l-14,-1 M80,40 l-2,-14" stroke="#F36E24" stroke-width="3.5" stroke-linecap="round"/></svg></div>
         <div class="anno a4"><b>Front speaker</b><span>big, clear sound</span><svg class="arr" viewBox="0 0 90 60" fill="none"><path d="M6,28 C30,16 56,18 80,40" stroke="#F36E24" stroke-width="3.5" stroke-dasharray="1 8" stroke-linecap="round"/><path d="M80,40 l-14,-1 M80,40 l-2,-14" stroke="#F36E24" stroke-width="3.5" stroke-linecap="round"/></svg></div>
+        <div class="anno a5 mini"><b>Volume up</b><svg class="arr" viewBox="0 0 90 60" fill="none"><path d="M6,28 C30,20 56,22 80,36" stroke="#F36E24" stroke-width="4" stroke-dasharray="1 8" stroke-linecap="round"/><path d="M80,36 l-13,-2 M80,36 l-3,-13" stroke="#F36E24" stroke-width="4" stroke-linecap="round"/></svg></div>
+        <div class="anno a6 mini"><b>Volume down</b><svg class="arr" viewBox="0 0 90 60" fill="none"><path d="M6,28 C30,20 56,22 80,36" stroke="#F36E24" stroke-width="4" stroke-dasharray="1 8" stroke-linecap="round"/><path d="M80,36 l-13,-2 M80,36 l-3,-13" stroke="#F36E24" stroke-width="4" stroke-linecap="round"/></svg></div>
+        <div class="anno a7 mini"><b>Power</b><svg class="arr" viewBox="0 0 90 60" fill="none"><path d="M6,28 C30,20 56,22 80,36" stroke="#F36E24" stroke-width="4" stroke-dasharray="1 8" stroke-linecap="round"/><path d="M80,36 l-13,-2 M80,36 l-3,-13" stroke="#F36E24" stroke-width="4" stroke-linecap="round"/></svg></div>
       </div>
     </div>
     <div class="feat-mobile">
-      <div><b>Fox screen</b><span>a friendly face</span></div>
+      <div><b>TFT display</b><span>a friendly fox face</span></div>
       <div><b>Top card slot</b><span>where stories go in</span></div>
       <div><b>Rotary dial</b><span>turn &amp; press</span></div>
       <div><b>Front speaker</b><span>big, clear sound</span></div>
+      <div><b>Side buttons</b><span>volume up, down &amp; power</span></div>
     </div>
     <div class="feed-hint"><div class="mouse"></div> scroll to play</div>
     </div>
@@ -759,7 +773,7 @@ function party(e){e.preventDefault();if(window.confetti){var x=e.clientX/innerWi
              {cap:'Games that move them.',card:'assets/img/card_games.jpg',dev:'assets/img/device_bare_4.png'},
              {cap:'Made for little hands.',features:true,dev:'assets/img/device_bare.png'}];
   var BAREDEV='assets/img/device_bare.png';
-  var N=beats.length, athresh=[0.10,0.24,0.40,0.56];
+  var N=beats.length, athresh=[0.10,0.20,0.30,0.40,0.48,0.55,0.62];
   var INTRO=1.6/(N+1.6);             /* opening: circle reveal + device slides in (same section) */
   function clamp(v){return v<0?0:v>1?1:v;}
   function lerp(a,b,t){return a+(b-a)*t;}
