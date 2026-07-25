@@ -259,12 +259,14 @@ section.block{padding:104px 0}
 .backed{padding:60px 0 64px;text-align:center;background:var(--bg)}
 .backed .kicker{color:var(--grey);opacity:.8}
 .backed-row{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:clamp(36px,6vw,80px);margin-top:26px}
+/* heights tuned so the WORDMARKS match optically, not the bounding boxes:
+   swissnex/anvesana carry an icon (+tagline) so they need more height than the pure sarvam wordmark */
 .backed-logo{display:inline-flex;align-items:center;justify-content:center;height:44px;transition:transform .3s ease,opacity .3s ease}
-.backed-logo img{height:38px;width:auto;opacity:.72;filter:grayscale(1);transition:opacity .3s ease,filter .3s ease}
-.backed-logo img.l-swissnex{height:26px}
-.backed-logo img.l-anvesana{height:52px}
+.backed-logo img{height:24px;width:auto;opacity:.72;filter:grayscale(1);transition:opacity .3s ease,filter .3s ease}
+.backed-logo img.l-swissnex{height:40px}
+.backed-logo img.l-anvesana{height:44px}
 .backed-logo:hover img{opacity:1;filter:grayscale(0)}
-@media(max-width:820px){.backed{padding:44px 0 48px}.backed-row{gap:30px 40px}.backed-logo img{height:32px}.backed-logo img.l-swissnex{height:22px}.backed-logo img.l-anvesana{height:44px}}
+@media(max-width:820px){.backed{padding:44px 0 48px}.backed-row{gap:26px 36px}.backed-logo{height:36px}.backed-logo img{height:20px}.backed-logo img.l-swissnex{height:33px}.backed-logo img.l-anvesana{height:36px}}
 h2.title{font-weight:700;font-size:clamp(30px,3.8vw,50px);line-height:1.06;letter-spacing:-.02em;margin:12px 0 16px}
 .lead{font-size:18px;color:var(--grey);max-width:560px}
 .split{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
