@@ -217,15 +217,15 @@ a.bt:hover{transform:translateY(-3px)}
 .cardfan img:nth-child(2){left:28%;transform:rotate(-1deg);bottom:9%;z-index:2}
 .cardfan img:nth-child(3){left:52%;transform:rotate(9deg);bottom:0}
 .bt.big p{max-width:17ch}
-.btchars{position:absolute;right:1%;bottom:-3%;height:82%;display:flex;align-items:flex-end;pointer-events:none;z-index:1}
-.btchars img{height:94%;width:auto;filter:drop-shadow(0 10px 18px rgba(35,26,16,.25))}
-.btchars img+img{margin-left:-10%}
-.bt.has-chars{padding-right:42%}
+.btchars{position:absolute;right:3%;bottom:0;height:84%;display:flex;align-items:flex-end;pointer-events:none;z-index:1}
+.btchars img{height:88%;width:auto;filter:drop-shadow(0 8px 14px rgba(35,26,16,.22))}
+.btchars img+img{height:100%;margin-left:-4%}
+.bt.has-chars{padding-right:45%}
 @media (max-width:600px){
   .cardfan{width:58%;height:52%;right:-4%}
   .bt.big p{max-width:14ch;font-size:13px}
-  .btchars{height:72%}
-  .bt.has-chars{padding-right:46%}
+  .btchars{height:70%;right:2%}
+  .bt.has-chars{padding-right:49%}
   .bt.has-chars h3{font-size:19px}
 }
 .bt.c-brand{background:var(--brand);color:#FFFFFF}
