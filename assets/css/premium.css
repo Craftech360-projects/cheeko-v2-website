@@ -270,6 +270,17 @@ a.schip:hover{transform:translateY(-2px);border-color:var(--brand)}
 @keyframes gsroll{0%{opacity:0;transform:translateY(13px)}4%{opacity:1;transform:none}15%{opacity:1;transform:none}19%{opacity:0;transform:translateY(-13px)}100%{opacity:0}}
 @media (prefers-reduced-motion:reduce){.gs{animation:none}.gs:first-child{opacity:1}}
 
+
+/* ---------- imagine marquee + language glass chips ---------- */
+.imarq{position:relative;overflow:hidden;margin-top:auto;border-radius:14px;mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.imarq-track{display:flex;gap:12px;width:max-content;animation:imslide 36s linear infinite}
+.imarq img{height:132px;width:132px;object-fit:cover;border-radius:12px;border:3px solid rgba(255,255,255,.22)}
+@keyframes imslide{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.imarq-track{animation:none}}
+.glassgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:10px 0}
+.glass{aspect-ratio:1;border-radius:12px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.38);backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;font-family:var(--disp);font-weight:800;font-size:20px;color:#FFFFFF;text-shadow:0 2px 6px rgba(35,26,16,.25)}
+@media (max-width:600px){.imarq img{height:108px;width:108px}}
+
 /* ---------- device anatomy ---------- */
 .anat{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
 .anat .a{background:#FFFFFF;border:1px solid var(--line);border-radius:20px;overflow:hidden;box-shadow:var(--shadow-sm)}
