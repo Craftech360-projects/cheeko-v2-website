@@ -43,9 +43,15 @@ section{padding:76px 0}
 .row{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
 .sec-head{display:flex;flex-direction:column;gap:6px;margin-bottom:34px;max-width:720px}
 
-/* ---------- announcement (calm, premium) ---------- */
-.ticker{background:var(--tint);color:#8A5A1E;padding:10px 0;text-align:center;border-bottom:1px solid var(--line)}
+/* ---------- announcement (rotating, one message at a time) ---------- */
+.ticker{background:var(--tint);color:#8A5A1E;border-bottom:1px solid var(--line);position:relative;height:40px;overflow:hidden}
 .ticker-track{display:inline-block;font-family:var(--body);font-weight:700;font-size:13px;letter-spacing:.02em;animation:none;white-space:normal;padding:0 16px}
+.tick-msg{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:0 16px;font-family:var(--body);font-weight:700;font-size:13px;letter-spacing:.02em;opacity:0;animation:tickrot 16s infinite}
+.tick-msg:nth-child(2){animation-delay:4s}
+.tick-msg:nth-child(3){animation-delay:8s}
+.tick-msg:nth-child(4){animation-delay:12s}
+@keyframes tickrot{0%{opacity:0;transform:translateY(8px)}3%{opacity:1;transform:none}23%{opacity:1;transform:none}26%{opacity:0;transform:translateY(-8px)}100%{opacity:0}}
+@media (prefers-reduced-motion:reduce){.tick-msg{animation:none}.tick-msg:first-child{opacity:1}}
 
 /* ---------- nav ---------- */
 .nav{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
