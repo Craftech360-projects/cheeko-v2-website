@@ -379,6 +379,28 @@ a.schip:hover{transform:translateY(-2px);border-color:var(--brand)}
 .stickysteps .ss-left{position:sticky;top:96px;display:flex;flex-direction:column;gap:14px}
 @media (max-width:920px){.stickysteps{grid-template-columns:1fr}.stickysteps .ss-left{position:static}}
 
+
+/* ---------- annotated device map ---------- */
+.devmap{position:relative;max-width:880px;margin:0 auto;aspect-ratio:9/8}
+.devmap::before{content:"";position:absolute;inset:6% 18%;background:radial-gradient(closest-side,#FBE9C8,rgba(251,233,200,0) 72%);z-index:0}
+.devmap .dev{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);height:94%;width:auto;z-index:1;filter:drop-shadow(0 22px 34px rgba(35,26,16,.18))}
+.dlabel{position:absolute;z-index:2;max-width:200px}
+.dlabel b{font-family:var(--disp);font-weight:800;font-size:clamp(15px,1.6vw,20px);display:block;line-height:1.2}
+.dlabel span{font-size:clamp(11.5px,1.1vw,14px);color:#8A7A5E;font-weight:600}
+.dlabel.dr{text-align:left}
+.dlabel.dl{text-align:right}
+.darrow{position:absolute;z-index:2;pointer-events:none}
+.devlist{display:none}
+@media (max-width:680px){
+  .devmap{aspect-ratio:auto}
+  .devmap::before{display:none}
+  .devmap .dev{position:static;transform:none;height:auto;max-height:380px;margin:0 auto;display:block}
+  .dlabel,.darrow{display:none}
+  .devlist{display:grid;grid-template-columns:1fr 1fr;gap:10px 18px;margin-top:22px}
+  .devlist div{font-size:13px;color:#6B5F4E;font-weight:600}
+  .devlist b{font-family:var(--disp);font-weight:800;font-size:14.5px;color:var(--ink);display:block}
+}
+
 /* ---------- device anatomy ---------- */
 .anat{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
 .anat .a{background:#FFFFFF;border:1px solid var(--line);border-radius:20px;overflow:hidden;box-shadow:var(--shadow-sm)}
