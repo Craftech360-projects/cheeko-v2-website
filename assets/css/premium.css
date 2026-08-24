@@ -190,6 +190,17 @@ footer{background:#FFFFFF;border-top:1px solid var(--line);padding:52px 0 36px}
 .xtile .xlabel b{font-family:var(--disp);font-weight:800;font-size:16px}
 .xtile .xlabel span{color:var(--brand);font-weight:800;font-size:14px}
 
+/* ---------- feature inventory (everything it comes with) ---------- */
+.fgrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+.fcard{display:flex;flex-direction:column;gap:10px;background:#FFFFFF;border:1px solid var(--line);border-radius:18px;padding:22px;box-shadow:var(--shadow-sm);transition:transform .16s ease,box-shadow .16s ease;color:var(--ink)}
+a.fcard:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+.fic{width:52px;height:52px;border-radius:16px;background:var(--tint);display:flex;align-items:center;justify-content:center;color:var(--brand)}
+.fcard b{font-family:var(--disp);font-weight:800;font-size:16.5px}
+.fcard p{font-size:13.5px;color:#6B5F4E;font-weight:500;line-height:1.5;margin:0}
+.fcard .fgo{margin-top:auto;color:var(--brand);font-weight:800;font-size:13px}
+@media (max-width:920px){.fgrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:600px){.fgrid{gap:12px}.fcard{padding:16px}.fic{width:44px;height:44px}}
+
 /* ---------- device anatomy ---------- */
 .anat{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
 .anat .a{background:#FFFFFF;border:1px solid var(--line);border-radius:20px;overflow:hidden;box-shadow:var(--shadow-sm)}
