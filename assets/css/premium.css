@@ -364,6 +364,21 @@ a.schip:hover{transform:translateY(-2px);border-color:var(--brand)}
 .upc img{width:100%;height:100%;object-fit:cover}
 @media (max-width:920px){.charstage{grid-template-columns:1fr}.charcard .sprite{height:180px}}
 
+
+/* ---------- card deck tabs / sticky steps ---------- */
+.deck-tabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:22px}
+.deck-tab{font-family:var(--disp);font-weight:800;font-size:15px;background:#FFFFFF;border:1.5px solid var(--line);border-radius:99px;padding:11px 20px;cursor:pointer;color:#6B5F4E;transition:all .15s}
+.deck-tab.on{background:var(--brand);border-color:var(--brand);color:#FFFFFF;box-shadow:0 8px 20px rgba(240,82,29,.3)}
+.deck-panel{display:none;grid-template-columns:1fr 1.2fr;gap:32px;align-items:center;background:var(--tint);border-radius:24px;padding:32px}
+.deck-panel.on{display:grid}
+.deck-panel .photo-card{aspect-ratio:3/4;max-width:300px}
+.deck-panel h3{font-family:var(--disp);font-weight:800;font-size:clamp(22px,2.6vw,30px);margin:0 0 8px}
+.deck-panel p{font-size:15px;color:#6B5F4E;font-weight:500;margin:0;line-height:1.6}
+@media (max-width:920px){.deck-panel{grid-template-columns:1fr}}
+.stickysteps{display:grid;grid-template-columns:1fr 1.2fr;gap:44px;align-items:start}
+.stickysteps .ss-left{position:sticky;top:96px;display:flex;flex-direction:column;gap:14px}
+@media (max-width:920px){.stickysteps{grid-template-columns:1fr}.stickysteps .ss-left{position:static}}
+
 /* ---------- device anatomy ---------- */
 .anat{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
 .anat .a{background:#FFFFFF;border:1px solid var(--line);border-radius:20px;overflow:hidden;box-shadow:var(--shadow-sm)}

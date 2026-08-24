@@ -69,6 +69,18 @@
     });
   });
 
+  /* Card deck tabs */
+  document.querySelectorAll("[data-deck]").forEach(function (deck) {
+    var btns = deck.querySelectorAll("[data-card]");
+    var panels = deck.querySelectorAll("[data-panel]");
+    btns.forEach(function (b) {
+      b.addEventListener("click", function () {
+        btns.forEach(function (x) { x.classList.toggle("on", x === b); });
+        panels.forEach(function (p) { p.classList.toggle("on", p.getAttribute("data-panel") === b.getAttribute("data-card")); });
+      });
+    });
+  });
+
   /* Footer year */
   var yr = document.getElementById("yr");
   if (yr) yr.textContent = new Date().getFullYear();
