@@ -201,6 +201,42 @@ a.fcard:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
 @media (max-width:920px){.fgrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:600px){.fgrid{gap:12px}.fcard{padding:16px}.fic{width:44px;height:44px}}
 
+/* ---------- feature templates (bento / manifest / spread) ---------- */
+.bento{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-rows:150px;gap:16px}
+.bt{border-radius:24px;padding:26px;display:flex;flex-direction:column;overflow:hidden;position:relative;color:var(--ink);transition:transform .16s ease}
+a.bt:hover{transform:translateY(-3px)}
+.bt h3{font-family:var(--disp);font-weight:800;line-height:1.02;margin:0;font-size:clamp(20px,2vw,28px);letter-spacing:-.01em}
+.bt.big h3{font-size:clamp(30px,3.2vw,44px)}
+.bt p{font-size:14px;font-weight:600;line-height:1.45;margin:8px 0 0;opacity:.85}
+.bt .btkick{font-family:var(--mono);font-size:10.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;opacity:.7;margin-bottom:8px}
+.bt .btimg{position:absolute;right:-6%;bottom:-8%;width:58%;border-radius:18px;overflow:hidden;box-shadow:var(--shadow);transform:rotate(3deg)}
+.bt.c-brand{background:var(--brand);color:#FFFFFF}
+.bt.c-sun{background:var(--sun)}
+.bt.c-ink{background:var(--ink);color:#FFF6E8}
+.bt.c-cream{background:var(--tint)}
+.bt.c-line{background:#FFFFFF;border:1px solid var(--line)}
+.bt .btnum{font-family:var(--disp);font-weight:800;font-size:64px;line-height:1;opacity:.92}
+@media (max-width:920px){.bento{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:140px}}
+
+.manifest{max-width:900px;margin:0 auto}
+.mrow{display:grid;grid-template-columns:86px 1fr 120px;gap:22px;align-items:center;padding:26px 4px;border-top:1px solid var(--line)}
+.mrow:last-child{border-bottom:1px solid var(--line)}
+.mrow .mnum{font-family:var(--disp);font-weight:800;font-size:52px;color:var(--brand);line-height:1}
+.mrow h3{font-family:var(--disp);font-weight:800;font-size:clamp(20px,2.4vw,28px);margin:0 0 4px}
+.mrow p{font-size:14.5px;color:#6B5F4E;font-weight:500;margin:0;line-height:1.5}
+.mrow .mthumb{width:120px;height:88px;border-radius:14px;overflow:hidden;box-shadow:var(--shadow-sm)}
+.mrow .mthumb img{width:100%;height:100%;object-fit:cover}
+@media (max-width:600px){.mrow{grid-template-columns:52px 1fr;gap:14px}.mrow .mnum{font-size:32px}.mrow .mthumb{display:none}}
+
+.spread{display:flex;flex-direction:column;align-items:center;gap:26px}
+.spread .sphoto{max-width:760px;width:100%;border-radius:26px;overflow:hidden;box-shadow:var(--shadow)}
+.spread .schips{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;max-width:980px}
+.schip{background:#FFFFFF;border:1.5px solid var(--line);border-radius:99px;padding:12px 22px;display:flex;align-items:baseline;gap:9px;box-shadow:var(--shadow-sm);color:var(--ink);transition:transform .15s}
+a.schip:hover{transform:translateY(-2px);border-color:var(--brand)}
+.schip b{font-family:var(--disp);font-weight:800;font-size:16px}
+.schip span{font-size:12.5px;color:#6B5F4E;font-weight:600}
+@media (max-width:600px){.schip{padding:10px 16px}.schip b{font-size:14px}}
+
 /* ---------- device anatomy ---------- */
 .anat{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
 .anat .a{background:#FFFFFF;border:1px solid var(--line);border-radius:20px;overflow:hidden;box-shadow:var(--shadow-sm)}
