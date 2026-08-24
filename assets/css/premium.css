@@ -255,6 +255,20 @@ a.schip:hover{transform:translateY(-2px);border-color:var(--brand)}
 .schip span{font-size:12.5px;color:#6B5F4E;font-weight:600}
 @media (max-width:600px){.schip{padding:10px 16px}.schip b{font-size:14px}}
 
+
+/* ---------- games smart stack (auto-rolling) ---------- */
+.gstack{position:relative;flex-grow:1;min-height:46px;margin-top:8px}
+.gs{position:absolute;inset:0;display:flex;align-items:center;gap:11px;opacity:0;animation:gsroll 15s infinite}
+.gs:nth-child(2){animation-delay:2.5s}
+.gs:nth-child(3){animation-delay:5s}
+.gs:nth-child(4){animation-delay:7.5s}
+.gs:nth-child(5){animation-delay:10s}
+.gs:nth-child(6){animation-delay:12.5s}
+.gs b{font-family:var(--disp);font-weight:800;font-size:clamp(17px,1.7vw,21px);letter-spacing:-.01em}
+.gs svg{flex-shrink:0;color:var(--brand)}
+@keyframes gsroll{0%{opacity:0;transform:translateY(13px)}4%{opacity:1;transform:none}15%{opacity:1;transform:none}19%{opacity:0;transform:translateY(-13px)}100%{opacity:0}}
+@media (prefers-reduced-motion:reduce){.gs{animation:none}.gs:first-child{opacity:1}}
+
 /* ---------- device anatomy ---------- */
 .anat{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
 .anat .a{background:#FFFFFF;border:1px solid var(--line);border-radius:20px;overflow:hidden;box-shadow:var(--shadow-sm)}
