@@ -264,8 +264,8 @@ a.schip:hover{transform:translateY(-2px);border-color:var(--brand)}
 .gs:nth-child(4){animation-delay:7.5s}
 .gs:nth-child(5){animation-delay:10s}
 .gs:nth-child(6){animation-delay:12.5s}
-.gs b{font-family:var(--disp);font-weight:800;font-size:clamp(17px,1.7vw,21px);letter-spacing:-.01em}
-.gs svg{flex-shrink:0;color:var(--brand)}
+.gs b{font-family:var(--disp);font-weight:800;font-size:clamp(16px,1.7vw,20px);letter-spacing:-.01em;white-space:nowrap}
+.gs .gic{width:42px;height:42px;border-radius:13px;background:var(--tint);display:flex;align-items:center;justify-content:center;color:var(--brand);flex-shrink:0}
 @keyframes gsroll{0%{opacity:0;transform:translateY(13px)}4%{opacity:1;transform:none}15%{opacity:1;transform:none}19%{opacity:0;transform:translateY(-13px)}100%{opacity:0}}
 @media (prefers-reduced-motion:reduce){.gs{animation:none}.gs:first-child{opacity:1}}
 
