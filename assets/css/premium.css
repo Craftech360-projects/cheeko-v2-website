@@ -281,6 +281,30 @@ a.schip:hover{transform:translateY(-2px);border-color:var(--brand)}
 .glass{aspect-ratio:1;border-radius:12px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.38);backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;font-family:var(--disp);font-weight:800;font-size:20px;color:#FFFFFF;text-shadow:0 2px 6px rgba(35,26,16,.25)}
 @media (max-width:600px){.imarq img{height:108px;width:108px}}
 
+
+/* ---------- radio equalizer / funny wobble / app peek ---------- */
+.eqrow{display:flex;align-items:center;gap:12px;margin-top:auto}
+.eq{display:flex;gap:5px;align-items:flex-end;height:30px}
+.eq i{width:7px;border-radius:4px;background:var(--brand);height:100%;transform-origin:bottom;animation:eqb 1.15s ease-in-out infinite}
+.eq i:nth-child(1){animation-delay:0s;height:55%}
+.eq i:nth-child(2){animation-delay:.18s;height:90%}
+.eq i:nth-child(3){animation-delay:.36s;height:70%}
+.eq i:nth-child(4){animation-delay:.54s;height:40%}
+@keyframes eqb{0%,100%{transform:scaleY(.45)}50%{transform:scaleY(1)}}
+.onair{font-family:var(--mono);font-size:9.5px;font-weight:700;letter-spacing:.14em;color:var(--mut);border:1.5px solid var(--line);border-radius:99px;padding:4px 10px}
+.wobble{display:inline-flex;font-family:var(--disp);font-weight:800;font-size:clamp(22px,2.2vw,28px);color:var(--ink);margin-top:auto}
+.wobble i{font-style:normal;display:inline-block;animation:wob 1.7s ease-in-out infinite}
+.wobble i:nth-child(2){animation-delay:.09s}.wobble i:nth-child(3){animation-delay:.18s}
+.wobble i:nth-child(4){animation-delay:.27s}.wobble i:nth-child(5){animation-delay:.36s}
+.wobble i:nth-child(6){animation-delay:.45s}.wobble i:nth-child(7){animation-delay:.54s}
+.wobble i:nth-child(8){animation-delay:.63s}
+@keyframes wob{0%,100%{transform:translateY(0) rotate(0)}30%{transform:translateY(-6px) rotate(-5deg)}65%{transform:translateY(2px) rotate(3deg)}}
+.appeek{position:absolute;right:3%;bottom:-14%;width:32%;aspect-ratio:9/13;border-radius:16px 16px 0 0;overflow:hidden;box-shadow:0 -8px 26px rgba(0,0,0,.35);transform:rotate(-5deg);z-index:1}
+.appeek img{width:100%;height:100%;object-fit:cover;object-position:top}
+.bt.has-peek{padding-right:40%}
+@media (prefers-reduced-motion:reduce){.eq i,.wobble i{animation:none}}
+@media (max-width:600px){.appeek{width:36%}.bt.has-peek{padding-right:42%}}
+
 /* ---------- device anatomy ---------- */
 .anat{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
 .anat .a{background:#FFFFFF;border:1px solid var(--line);border-radius:20px;overflow:hidden;box-shadow:var(--shadow-sm)}
