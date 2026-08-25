@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Hero Research | Option C: Cinema</title>
+<meta name="robots" content="noindex" />
+<link rel="icon" type="image/png" href="assets/img/logo.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gabarito:wght@600;700;800;900&family=Hanken+Grotesk:wght@400;600;800&family=Spline+Sans+Mono:wght@500;700&display=swap" />
+<link rel="stylesheet" href="assets/css/premium.css?v=25" />
+<style>
+.badge{position:fixed;top:14px;left:14px;z-index:60;background:var(--brand);color:#fff;font:700 12px/1 "Spline Sans Mono",monospace;letter-spacing:.14em;padding:9px 14px;border-radius:99px;box-shadow:0 6px 18px rgba(240,82,29,.4)}
+.backlink{position:fixed;top:14px;right:14px;z-index:60;background:#fff;color:var(--ink);font:600 13px/1 "Hanken Grotesk",sans-serif;padding:9px 14px;border-radius:99px;text-decoration:none;box-shadow:0 4px 14px rgba(35,26,16,.15)}
+.cine{position:relative;min-height:94svh;display:flex;align-items:center;overflow:hidden;background:#241407}
+.cine .slide{position:absolute;inset:0;opacity:0;transition:opacity 1.2s ease}
+.cine .slide img{width:100%;height:100%;object-fit:cover;object-position:center 28%;transform:scale(1.04);transition:transform 5.2s linear}
+.cine .slide.on{opacity:1}
+.cine .slide.on img{transform:scale(1.0)}
+.cine::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,rgba(24,12,4,.8) 0%,rgba(24,12,4,.52) 34%,rgba(24,12,4,.06) 62%);z-index:1}
+.cn-in{position:relative;z-index:2;width:100%;max-width:1160px;margin:0 auto;padding:80px 28px}
+.cn-copy{max-width:520px;color:#FFF4E3}
+.cn-copy .eyebrow{background:rgba(255,244,227,.14);color:var(--sun);border:1px solid rgba(255,200,26,.35)}
+.cn-copy h1{font-family:var(--disp);font-weight:900;font-size:clamp(40px,5.6vw,68px);line-height:1.02;margin:18px 0 14px;color:#FFF4E3}
+.cn-copy h1 span{color:var(--sun)}
+.cn-copy p{font-size:clamp(15.5px,1.6vw,18px);line-height:1.55;color:rgba(255,244,227,.88);max-width:42ch;margin:0 0 20px}
+.cn-price{display:flex;align-items:center;gap:12px;margin-bottom:22px}
+.cn-price .price{color:#FFF4E3;font-size:30px}
+.cn-price .strike{color:rgba(255,244,227,.55)}
+.cn-dots{position:absolute;left:50%;transform:translateX(-50%);bottom:22px;z-index:3;display:flex;gap:8px}
+.cn-dots i{width:8px;height:8px;border-radius:50%;background:rgba(255,244,227,.35);transition:.3s}
+.cn-dots i.on{background:var(--sun);width:22px;border-radius:99px}
+.prodchip{position:absolute;right:28px;bottom:26px;z-index:3;display:flex;align-items:center;gap:12px;background:rgba(255,255,255,.94);backdrop-filter:blur(6px);border-radius:20px;padding:10px 18px 10px 10px;box-shadow:0 16px 36px rgba(0,0,0,.35)}
+.prodchip img{width:58px;height:58px;object-fit:cover;border-radius:14px}
+.prodchip b{font-family:var(--disp);font-weight:800;font-size:14.5px;color:var(--ink);display:block;line-height:1.15}
+.prodchip small{font-family:var(--mono);font-weight:700;font-size:10px;letter-spacing:.1em;color:var(--brand);text-transform:uppercase}
+@media (max-width:760px){
+  .cine{min-height:96svh;align-items:flex-end}
+  .cine .slide img{object-position:center 16%}
+  .cine::after{background:linear-gradient(180deg,rgba(24,12,4,.16) 30%,rgba(24,12,4,.84) 78%)}
+  .cn-in{padding:0 20px 104px}
+  .cn-copy h1{font-size:clamp(34px,10vw,44px)}
+  .prodchip{right:14px;bottom:64px;padding:8px 14px 8px 8px}
+  .prodchip img{width:46px;height:46px}
+}
+@media (prefers-reduced-motion:reduce){.cine .slide{transition:none}.cine .slide img{transition:none;transform:none}}
+</style>
+</head>
+<body>
+<span class="badge">OPTION C · CINEMA</span>
+<a class="backlink" href="index.html">Back to site</a>
+<header class="cine" id="cine">
+  <div class="slide on"><img src="assets/img/live/hero-moment-joy.jpg" alt="A young girl smiling with her yellow Cheeko held to her cheek" fetchpriority="high" /></div>
+  <div class="slide"><img src="assets/img/live/hero-moment-mom.jpg" alt="A mother and daughter laughing over their Cheeko" loading="lazy" /></div>
+  <div class="slide"><img src="assets/img/live/hero-moment-slot.jpg" alt="A boy sliding a story card into his Cheeko" loading="lazy" /></div>
+  <div class="cn-in">
+    <div class="cn-copy">
+      <span class="eyebrow">India's AI learning device for ages 3–10</span>
+      <h1>Less screen, more <span>childhood.</span></h1>
+      <p>Tap a card and stories play. Press the button and Cheeko talks back, in your family's language.</p>
+      <div class="cn-price"><span class="price">₹5,999</span><span class="strike">₹8,999</span><span class="tagpill">Pay once</span></div>
+      <a class="btn buy-link" href="https://shop.cheekoai.in/products/cheeko-pro-preorder-sale" style="padding:16px 40px;font-size:17px;">Get Cheeko</a>
+    </div>
+  </div>
+  <div class="cn-dots"><i class="on"></i><i></i><i></i></div>
+  <div class="prodchip">
+    <img src="assets/img/live/hero-talk.jpg" alt="The Cheeko device" />
+    <span><small>The device</small><b>Cheeko · ₹5,999</b></span>
+  </div>
+</header>
+<script>
+(function(){
+  if(window.matchMedia("(prefers-reduced-motion: reduce)").matches)return;
+  var slides=document.querySelectorAll(".cine .slide");
+  var dots=document.querySelectorAll(".cn-dots i");
+  var i=0;
+  setInterval(function(){
+    if(document.hidden)return;
+    i=(i+1)%slides.length;
+    slides.forEach(function(s,j){s.classList.toggle("on",j===i);});
+    dots.forEach(function(d,j){d.classList.toggle("on",j===i);});
+  },4200);
+})();
+</script>
+</body>
+</html>
