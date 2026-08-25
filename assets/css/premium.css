@@ -468,7 +468,7 @@ a.schip:hover{transform:translateY(-2px);border-color:var(--brand)}
 .hb-drop{position:absolute;bottom:252px;left:50%;transform:translateX(-50%) rotate(4deg);width:92px;aspect-ratio:3/4.2;object-fit:cover;border-radius:10px;border:3px solid #FFFFFF;box-shadow:var(--shadow);z-index:1;animation:hbdrop 2.8s ease-in-out infinite}
 @keyframes hbdrop{0%,15%{transform:translateX(-50%) rotate(4deg) translateY(0)}55%,100%{transform:translateX(-50%) rotate(1deg) translateY(34px)}}
 .hb-arrow{position:absolute;bottom:214px;left:50%;transform:translateX(64px);color:var(--brand);z-index:3;filter:drop-shadow(0 2px 4px rgba(255,255,255,.9))}
-.hb-behind{position:absolute;bottom:176px;left:50%;transform:translateX(-50%) rotate(-3deg);width:86px;aspect-ratio:3/4.2;object-fit:cover;border-radius:10px;border:3px solid #FFFFFF;box-shadow:var(--shadow-sm);z-index:1}
+.hb-behind{position:absolute;bottom:176px;left:50%;transform:translateX(-50%);width:86px;aspect-ratio:3/4.2;object-fit:cover;border-radius:10px;border:3px solid #FFFFFF;box-shadow:var(--shadow-sm);z-index:1}
 .hb-chip{position:absolute;bottom:300px;left:50%;transform:translateX(-50%);background:var(--ink);color:#FFF6E8;font-family:var(--disp);font-weight:800;font-size:14.5px;padding:9px 18px;border-radius:99px;box-shadow:var(--shadow-sm);white-space:nowrap;z-index:3;animation:hbchip 2.6s ease-in-out infinite}
 .hb-chip i{font-style:normal;color:var(--sun)}
 @keyframes hbchip{0%,100%{transform:translateX(-50%) scale(1)}50%{transform:translateX(-50%) scale(1.05)}}
