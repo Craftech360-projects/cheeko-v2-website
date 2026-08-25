@@ -14,34 +14,61 @@
 .badge{position:fixed;top:14px;left:14px;z-index:60;background:var(--brand);color:#fff;font:700 12px/1 "Spline Sans Mono",monospace;letter-spacing:.14em;padding:9px 14px;border-radius:99px;box-shadow:0 6px 18px rgba(240,82,29,.4)}
 .backlink{position:fixed;top:14px;right:14px;z-index:60;background:#fff;color:var(--ink);font:600 13px/1 "Hanken Grotesk",sans-serif;padding:9px 14px;border-radius:99px;text-decoration:none;box-shadow:0 4px 14px rgba(35,26,16,.15)}
 body{background:var(--tint)}
+body.locked{overflow:hidden}
 .shelfwrap{max-width:900px;margin:0 auto;padding:96px 20px 60px}
 .shelfhead{text-align:center;margin-bottom:34px}
 .shelfhead .kick{font:700 12px/1 "Spline Sans Mono",monospace;letter-spacing:.22em;color:var(--brand);text-transform:uppercase}
-.shelfhead h1{font:800 clamp(30px,5.4vw,52px)/1.08 "Gabarito",sans-serif;color:var(--ink);margin:10px 0 0}
-.shelfgroup{margin-bottom:34px}
+.shelfhead h1{font:800 clamp(30px,5.4vw,52px)/1.08 "Gabarito",sans-serif;color:var(--ink);margin:10px 0 6px}
+.shelfhead p{font:400 15.5px/1.5 "Hanken Grotesk",sans-serif;color:rgba(35,26,16,.6);margin:0}
+.shelfgroup{margin-bottom:38px}
 .shelflabel{display:flex;align-items:center;gap:10px;font:700 12px/1 "Spline Sans Mono",monospace;letter-spacing:.18em;text-transform:uppercase;color:rgba(35,26,16,.55);margin:0 4px 4px}
 .shelflabel b{color:var(--brand)}
 .shelf{position:relative;display:flex;align-items:flex-end;justify-content:center;gap:clamp(18px,6vw,60px);padding:0 16px 18px;min-height:170px}
 .shelf::after{content:"";position:absolute;left:0;right:0;bottom:0;height:16px;border-radius:8px;background:linear-gradient(#fff,#F3E3C6);box-shadow:0 10px 22px rgba(140,100,40,.22),inset 0 -3px 0 rgba(140,100,40,.14)}
-.shelf button{background:none;border:none;cursor:pointer;padding:0;position:relative;display:flex;flex-direction:column;align-items:center;gap:8px;transition:transform .2s}
+.shelf button{background:none;border:none;cursor:pointer;padding:0;position:relative;display:flex;flex-direction:column;align-items:center;gap:8px;-webkit-tap-highlight-color:transparent}
 .shelf button img{height:clamp(104px,16vw,148px);object-fit:contain;filter:drop-shadow(0 12px 16px rgba(140,100,40,.3));transition:transform .2s}
+.shelf button:hover img{transform:translateY(-8px)}
 .shelf button span{font:800 14px/1 "Gabarito",sans-serif;color:var(--ink);margin-bottom:14px}
-.shelf button.on img{transform:translateY(-10px) scale(1.06)}
-.shelf button.on::after{content:"";position:absolute;top:-14px;left:50%;transform:translateX(-50%);width:9px;height:9px;border-radius:50%;background:var(--brand)}
-.detail{position:sticky;bottom:14px;z-index:40;max-width:640px;margin:26px auto 0;background:#fff;border-radius:24px;box-shadow:0 18px 44px rgba(35,26,16,.18);padding:18px 22px;display:flex;align-items:center;gap:16px}
-.detail img{height:76px;object-fit:contain}
-.detail .dt{flex:1;min-width:0}
-.detail .dt b{font:800 20px/1.1 "Gabarito",sans-serif;color:var(--ink);display:block}
-.detail .dt em{font-style:normal;font:700 10.5px/1 "Spline Sans Mono",monospace;letter-spacing:.14em;text-transform:uppercase;color:var(--brand)}
-.detail .dt p{font:400 14.5px/1.45 "Hanken Grotesk",sans-serif;color:rgba(35,26,16,.75);margin:5px 0 0}
-.hearbtn{flex:0 0 auto;display:inline-flex;align-items:center;gap:8px;background:var(--brand);color:#fff;border:none;cursor:pointer;font:800 14px/1 "Gabarito",sans-serif;padding:13px 18px;border-radius:99px;box-shadow:0 8px 20px rgba(240,82,29,.4)}
-.toast{position:fixed;bottom:26px;left:50%;transform:translateX(-50%) translateY(80px);background:var(--ink);color:#FFF4E3;font:600 14px/1 "Hanken Grotesk",sans-serif;padding:13px 20px;border-radius:99px;box-shadow:0 12px 30px rgba(0,0,0,.35);transition:.3s;z-index:70;opacity:0}
+@media (max-width:640px){.shelf{justify-content:flex-start;overflow-x:auto;gap:26px;padding:0 14px 18px;-webkit-overflow-scrolling:touch}}
+
+/* ============ THE POP-UP ============ */
+.pop{position:fixed;inset:0;z-index:80;display:none;align-items:center;justify-content:center}
+.pop.open{display:flex}
+.pop .scrim{position:absolute;inset:0;background:rgba(23,19,14,.9);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.pop .glow{position:absolute;inset:0;background:radial-gradient(circle at 50% 42%,var(--pc,#F0521D) 0%,transparent 62%);opacity:.34;transition:.4s}
+.pcard{position:relative;z-index:2;width:min(94vw,520px);max-height:94svh;display:flex;flex-direction:column;align-items:center;text-align:center;padding:12px 18px 22px;overflow:hidden}
+.pclose{position:absolute;top:6px;right:6px;z-index:6;width:44px;height:44px;border-radius:50%;border:none;background:rgba(255,244,227,.14);color:#FFF4E3;font:600 19px/1 "Hanken Grotesk",sans-serif;cursor:pointer}
+.parrow{position:absolute;top:37%;z-index:6;width:46px;height:46px;border-radius:50%;border:none;background:rgba(255,244,227,.14);color:#FFF4E3;font:800 21px/1 "Gabarito",sans-serif;cursor:pointer}
+.parrow.prev{left:4px}.parrow.next{right:4px}
+.pstage{position:relative;width:100%;height:min(44svh,340px);display:flex;align-items:flex-end;justify-content:center;margin-top:26px}
+.pstage>img{position:relative;z-index:3;max-height:96%;max-width:64%;object-fit:contain;filter:drop-shadow(0 22px 40px rgba(0,0,0,.55))}
+.pop.open .pstage>img{animation:ppop .5s cubic-bezier(.3,1.6,.4,1)}
+@keyframes ppop{0%{transform:scale(.55) translateY(36px);opacity:0}100%{transform:scale(1) translateY(0);opacity:1}}
+/* the power fx chips */
+.pfx{position:absolute;z-index:2;display:flex;align-items:center;justify-content:center;animation:pfloat 3.2s ease-in-out infinite;opacity:0;animation-fill-mode:both}
+.pop.open .pfx{animation:pfxin .5s ease forwards,pfloat 3.2s ease-in-out infinite .5s}
+@keyframes pfxin{0%{opacity:0;transform:scale(.4)}100%{opacity:1;transform:scale(1)}}
+@keyframes pfloat{0%,100%{translate:0 0}50%{translate:0 -14px}}
+.pfx.em{font-size:34px;filter:drop-shadow(0 6px 10px rgba(0,0,0,.4))}
+.pfx.bub{background:#FFF4E3;color:var(--ink);font:800 20px/1 "Gabarito",sans-serif;padding:12px 15px;border-radius:18px 18px 18px 4px;box-shadow:0 8px 18px rgba(0,0,0,.35)}
+.pfx.tile{background:#fff;color:var(--ink);font:900 22px/1 "Gabarito",sans-serif;width:46px;height:46px;border-radius:12px;box-shadow:0 8px 16px rgba(0,0,0,.4),inset 0 -4px 0 rgba(35,26,16,.16)}
+.pfx.q{background:var(--sun);color:var(--ink);font:900 26px/1 "Gabarito",sans-serif;width:48px;height:48px;border-radius:50%;box-shadow:0 8px 18px rgba(0,0,0,.4)}
+.pmeta{color:#FFF4E3;margin-top:6px}
+.pmeta .chip{display:inline-block;font:700 10.5px/1 "Spline Sans Mono",monospace;letter-spacing:.16em;text-transform:uppercase;background:rgba(255,244,227,.12);border:1px solid rgba(255,244,227,.3);padding:8px 13px;border-radius:99px;color:var(--sun)}
+.pmeta h2{font:900 clamp(38px,9vw,54px)/1 "Gabarito",sans-serif;margin:12px 0 2px}
+.pmeta .role{font:700 12.5px/1.3 "Spline Sans Mono",monospace;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,244,227,.55)}
+.pmeta p{font:400 16px/1.5 "Hanken Grotesk",sans-serif;color:rgba(255,244,227,.9);margin:10px auto 16px;max-width:34ch}
+/* player */
+.player{display:inline-flex;align-items:center;gap:12px;background:var(--brand);border:none;cursor:pointer;color:#fff;font:800 16px/1 "Gabarito",sans-serif;padding:15px 24px;border-radius:99px;box-shadow:0 12px 28px rgba(240,82,29,.5)}
+.player .peq{display:none;align-items:flex-end;gap:3px;height:16px}
+.player .peq i{width:4px;background:#fff;border-radius:2px;animation:peqa 0.9s ease-in-out infinite}
+.player .peq i:nth-child(1){height:60%}.player .peq i:nth-child(2){height:100%;animation-delay:.15s}.player .peq i:nth-child(3){height:45%;animation-delay:.3s}.player .peq i:nth-child(4){height:80%;animation-delay:.45s}
+@keyframes peqa{0%,100%{transform:scaleY(.5)}50%{transform:scaleY(1)}}
+.player.playing .ptri{display:none}
+.player.playing .peq{display:inline-flex}
+.toast{position:fixed;bottom:26px;left:50%;transform:translateX(-50%) translateY(80px);background:#FFF4E3;color:var(--ink);font:600 14px/1 "Hanken Grotesk",sans-serif;padding:13px 20px;border-radius:99px;box-shadow:0 12px 30px rgba(0,0,0,.35);transition:.3s;z-index:90;opacity:0}
 .toast.show{transform:translateX(-50%) translateY(0);opacity:1}
-@media (max-width:640px){
-  .shelf{justify-content:flex-start;overflow-x:auto;gap:26px;padding:0 14px 18px;-webkit-overflow-scrolling:touch}
-  .detail{margin-inline:4px;padding:14px 16px}
-  .detail .dt p{font-size:13.5px}
-}
+@media (prefers-reduced-motion:reduce){.pop.open .pstage>img,.pop.open .pfx,.player .peq i{animation:none}.pop.open .pfx{opacity:1}}
 </style>
 </head>
 <body>
@@ -51,11 +78,12 @@ body{background:var(--tint)}
   <div class="shelfhead">
     <span class="kick">Meet the characters</span>
     <h1>Seven voices. One little device.</h1>
+    <p>Tap anyone to meet them.</p>
   </div>
 
   <div class="shelfgroup">
     <div class="shelflabel"><b>01</b> Built into every Cheeko</div>
-    <div class="shelf" data-shelf>
+    <div class="shelf">
       <button data-k="cheeko"><img src="assets/img/live/char-cheeko.png" alt="Cheeko the fox" /><span>Cheeko</span></button>
       <button data-k="quizzy"><img src="assets/img/live/char-quizzy.png" alt="Quizzy Bee" /><span>Quizzy Bee</span></button>
     </div>
@@ -63,7 +91,7 @@ body{background:var(--tint)}
 
   <div class="shelfgroup">
     <div class="shelflabel"><b>02</b> On cards in your box</div>
-    <div class="shelf" data-shelf>
+    <div class="shelf">
       <button data-k="nani"><img src="assets/img/live/char-nani.png" alt="Nani the storyteller" /><span>Nani</span></button>
       <button data-k="mitthu"><img src="assets/img/live/char-mitthu.png" alt="Mitthu the spelling parrot" /><span>Mitthu</span></button>
     </div>
@@ -71,49 +99,130 @@ body{background:var(--tint)}
 
   <div class="shelfgroup">
     <div class="shelflabel"><b>03</b> In the card shop</div>
-    <div class="shelf" data-shelf>
+    <div class="shelf">
       <button data-k="chanda"><img src="assets/img/live/char-chanda.png" alt="Chanda the bedtime panda" /><span>Chanda</span></button>
       <button data-k="masti"><img src="assets/img/live/char-masti.png" alt="Masti the mischief monkey" /><span>Masti</span></button>
       <button data-k="tara"><img src="assets/img/live/char-tara.png" alt="Tara the space star" /><span>Tara</span></button>
     </div>
   </div>
+</div>
 
-  <div class="detail">
-    <img id="dimg" src="assets/img/live/char-cheeko.png" alt="" />
-    <div class="dt">
-      <em id="dchip">In every Cheeko</em>
-      <b id="dname">Cheeko</b>
-      <p id="dline">Press the button, ask anything. He answers in your family's language.</p>
+<!-- character pop-up -->
+<div class="pop" id="pop" role="dialog" aria-modal="true">
+  <div class="scrim" id="scrim"></div>
+  <div class="glow" id="glow"></div>
+  <div class="pcard">
+    <button class="pclose" id="pclose" aria-label="Close">✕</button>
+    <button class="parrow prev" id="pprev" aria-label="Previous character">‹</button>
+    <button class="parrow next" id="pnext" aria-label="Next character">›</button>
+    <div class="pstage" id="pstage"><img id="pimg" src="" alt="" /></div>
+    <div class="pmeta">
+      <span class="chip" id="pchip"></span>
+      <h2 id="pname"></h2>
+      <div class="role" id="prole"></div>
+      <p id="pline"></p>
+      <button class="player" id="player"><span class="ptri">▶</span><span class="peq"><i></i><i></i><i></i><i></i></span><span id="plabel">Hear me</span></button>
     </div>
-    <button class="hearbtn" id="hear">▶ Hear</button>
   </div>
 </div>
 <div class="toast" id="toast">Real voices land before launch</div>
+
 <script>
-var DATA={
- cheeko:{n:"Cheeko",c:"In every Cheeko",l:"Press the button, ask anything. He answers in your family's language."},
- quizzy:{n:"Quizzy Bee",c:"In every Cheeko",l:"Ten quick questions a day. No scores, no pressure."},
- nani:{n:"Nani",c:"In your box",l:"Tells stories your child can interrupt, question and steer."},
- mitthu:{n:"Mitthu",c:"In your box",l:"Says a word. Your child spells it back."},
- chanda:{n:"Chanda",c:"In the card shop",l:"Slow stories and soft songs to end the day."},
- masti:{n:"Masti",c:"In the card shop",l:"Jokes, games and giggly challenges."},
- tara:{n:"Tara",c:"In the card shop",l:"Space, stars and the biggest why questions."}
-};
-var cur="cheeko";
+/* each character = identity + their POWER shown as floating fx around them */
+var CH=[
+ {k:"cheeko",n:"Cheeko",r:"The fox · ask anything",c:"In every Cheeko",pc:"#F0521D",
+  l:"Press the button and ask. He answers in your family's language.",
+  fx:[{t:"bub",v:"?",x:12,y:14,d:0},{t:"bub",v:"क",x:76,y:8,d:.4},{t:"bub",v:"A",x:84,y:44,d:.8},{t:"bub",v:"!",x:5,y:52,d:1.2}]},
+ {k:"quizzy",n:"Quizzy Bee",r:"The quiz bee · general knowledge",c:"In every Cheeko",pc:"#FFC81A",
+  l:"Ten quick questions a day. No scores, no pressure.",
+  fx:[{t:"q",v:"?",x:10,y:10,d:0},{t:"q",v:"?",x:80,y:20,d:.5},{t:"em",v:"💡",x:70,y:0,d:.9},{t:"q",v:"?",x:16,y:52,d:1.3}]},
+ {k:"nani",n:"Nani",r:"The storyteller",c:"In your box",pc:"#6C3DFF",
+  l:"Stories your child can interrupt, question and steer.",
+  fx:[{t:"em",v:"📖",x:12,y:12,d:0},{t:"em",v:"✨",x:80,y:6,d:.4},{t:"em",v:"🌟",x:86,y:46,d:.8},{t:"em",v:"✨",x:6,y:50,d:1.2}]},
+ {k:"mitthu",n:"Mitthu",r:"The spelling parrot",c:"In your box",pc:"#2FA84F",
+  l:"Says a word. Your child spells it back.",
+  fx:[{t:"tile",v:"A",x:10,y:14,d:0},{t:"tile",v:"B",x:80,y:6,d:.35},{t:"tile",v:"C",x:86,y:44,d:.7},{t:"tile",v:"Z",x:6,y:52,d:1.05}]},
+ {k:"chanda",n:"Chanda",r:"The bedtime panda",c:"In the card shop",pc:"#3E63C4",
+  l:"Slow stories and soft songs to end the day.",
+  fx:[{t:"em",v:"🌙",x:12,y:8,d:0},{t:"em",v:"💤",x:78,y:14,d:.4},{t:"em",v:"⭐",x:86,y:48,d:.8},{t:"em",v:"💤",x:6,y:48,d:1.2}]},
+ {k:"masti",n:"Masti",r:"The mischief monkey",c:"In the card shop",pc:"#FF8A00",
+  l:"Jokes, games and giggly challenges.",
+  fx:[{t:"em",v:"🎉",x:10,y:10,d:0},{t:"em",v:"😂",x:80,y:8,d:.4},{t:"em",v:"🎵",x:86,y:46,d:.8},{t:"em",v:"🍌",x:6,y:50,d:1.2}]},
+ {k:"tara",n:"Tara",r:"The space star",c:"In the card shop",pc:"#7B5CFF",
+  l:"Space, stars and the biggest why questions.",
+  fx:[{t:"em",v:"🪐",x:10,y:10,d:0},{t:"em",v:"🚀",x:80,y:6,d:.4},{t:"em",v:"⭐",x:86,y:46,d:.8},{t:"em",v:"☄️",x:6,y:50,d:1.2}]}
+];
+var pop=document.getElementById("pop"),cur=0,audio=null;
+var player=document.getElementById("player"),plabel=document.getElementById("plabel");
+
+function stopAudio(){
+  if(audio){audio.pause();audio=null;}
+  player.classList.remove("playing");plabel.textContent="Hear me";
+}
+function show(i){
+  cur=(i+CH.length)%CH.length;
+  var ch=CH[cur];
+  stopAudio();
+  document.getElementById("glow").style.setProperty("--pc",ch.pc);
+  var stage=document.getElementById("pstage");
+  stage.querySelectorAll(".pfx").forEach(function(e){e.remove();});
+  var img=document.getElementById("pimg");
+  img.src="assets/img/live/char-"+ch.k+".png";img.alt=ch.n;
+  ch.fx.forEach(function(f){
+    var s=document.createElement("span");
+    s.className="pfx "+f.t;s.textContent=f.v;
+    s.style.left=f.x+"%";s.style.top=f.y+"%";s.style.animationDelay=f.d+"s, "+(f.d+.5)+"s";
+    stage.appendChild(s);
+  });
+  document.getElementById("pchip").textContent=ch.c;
+  document.getElementById("pname").textContent=ch.n;
+  document.getElementById("prole").textContent=ch.r;
+  document.getElementById("pline").textContent=ch.l;
+  /* retrigger entrance */
+  pop.classList.remove("open");void pop.offsetWidth;pop.classList.add("open");
+  document.body.classList.add("locked");
+  tryPlay();
+}
+function tryPlay(){
+  var ch=CH[cur];
+  audio=new Audio("assets/audio/voice-"+ch.k+".mp3");
+  audio.play().then(function(){
+    player.classList.add("playing");plabel.textContent="Playing";
+    audio.onended=stopAudio;
+  }).catch(function(){audio=null;});
+}
+function closePop(){
+  stopAudio();
+  pop.classList.remove("open");
+  document.body.classList.remove("locked");
+}
 document.querySelectorAll("[data-k]").forEach(function(b){
   b.addEventListener("click",function(){
-    cur=b.getAttribute("data-k");var d=DATA[cur];
-    document.getElementById("dimg").src="assets/img/live/char-"+cur+".png";
-    document.getElementById("dname").textContent=d.n;
-    document.getElementById("dchip").textContent=d.c;
-    document.getElementById("dline").textContent=d.l;
-    document.querySelectorAll("[data-k]").forEach(function(x){x.classList.toggle("on",x===b);});
+    var k=b.getAttribute("data-k");
+    show(CH.findIndex(function(c){return c.k===k;}));
   });
 });
-document.querySelector('[data-k="cheeko"]').classList.add("on");
-document.getElementById("hear").addEventListener("click",function(){
-  var a=new Audio("assets/audio/voice-"+cur+".mp3");
-  a.play().catch(function(){var t=document.getElementById("toast");t.classList.add("show");setTimeout(function(){t.classList.remove("show");},2200);});
+document.getElementById("pclose").addEventListener("click",closePop);
+document.getElementById("scrim").addEventListener("click",closePop);
+document.getElementById("pprev").addEventListener("click",function(){show(cur-1);});
+document.getElementById("pnext").addEventListener("click",function(){show(cur+1);});
+document.addEventListener("keydown",function(e){
+  if(!pop.classList.contains("open"))return;
+  if(e.key==="Escape")closePop();
+  if(e.key==="ArrowRight")show(cur+1);
+  if(e.key==="ArrowLeft")show(cur-1);
+});
+player.addEventListener("click",function(){
+  if(player.classList.contains("playing")){stopAudio();return;}
+  audio=new Audio("assets/audio/voice-"+CH[cur].k+".mp3");
+  audio.play().then(function(){
+    player.classList.add("playing");plabel.textContent="Playing";
+    audio.onended=stopAudio;
+  }).catch(function(){
+    audio=null;
+    var t=document.getElementById("toast");t.classList.add("show");
+    setTimeout(function(){t.classList.remove("show");},2200);
+  });
 });
 </script>
 </body>
