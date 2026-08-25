@@ -86,6 +86,42 @@
     w.addEventListener("click", function () { w.classList.toggle("flipped"); });
   });
 
+  /* Auto-advance swipe rows on mobile (honest screens, card deck) */
+  var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (!reduceMotion) {
+    var autoRows = [
+      { sel: ".screenrow", every: 2600 },
+      { sel: ".deckrail", every: 2300 }
+    ];
+    autoRows.forEach(function (cfg) {
+      document.querySelectorAll(cfg.sel).forEach(function (row) {
+        var held = false, holdT = null, hover = false;
+        function hold() {
+          held = true;
+          clearTimeout(holdT);
+          holdT = setTimeout(function () { held = false; }, 6000);
+        }
+        ["pointerdown", "touchstart", "wheel"].forEach(function (e) {
+          row.addEventListener(e, hold, { passive: true });
+        });
+        row.addEventListener("mouseenter", function () { hover = true; });
+        row.addEventListener("mouseleave", function () { hover = false; });
+        setInterval(function () {
+          if (held || hover || document.hidden) return;
+          if (row.scrollWidth <= row.clientWidth + 8) return;
+          var r = row.getBoundingClientRect();
+          if (r.bottom < 0 || r.top > window.innerHeight) return;
+          var first = row.firstElementChild;
+          var gap = parseFloat(getComputedStyle(row).columnGap) || 14;
+          var step = first ? first.getBoundingClientRect().width + gap : row.clientWidth * 0.7;
+          var max = row.scrollWidth - row.clientWidth;
+          if (row.scrollLeft >= max - 8) row.scrollTo({ left: 0, behavior: "smooth" });
+          else row.scrollBy({ left: step, behavior: "smooth" });
+        }, cfg.every);
+      });
+    });
+  }
+
   /* Footer year */
   var yr = document.getElementById("yr");
   if (yr) yr.textContent = new Date().getFullYear();
