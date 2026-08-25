@@ -122,6 +122,116 @@
     });
   }
 
+  /* Character shelf pop-up */
+  var popEl = document.getElementById("pop");
+  if (popEl) {
+    var PCH = [
+      {k:"cheeko",n:"Cheeko",r:"The fox · ask anything",c:"In every Cheeko",pc:"#F0521D",
+       l:"Press the button and ask. He answers in your family's language.",
+       sk:["Speaking","Curiosity"],
+       fx:[{t:"bub",v:"?",x:12,y:14,d:0},{t:"bub",v:"\u0915",x:76,y:8,d:.4},{t:"bub",v:"A",x:84,y:44,d:.8},{t:"bub",v:"!",x:5,y:52,d:1.2}]},
+      {k:"quizzy",n:"Quizzy Bee",r:"The quiz bee · general knowledge",c:"In every Cheeko",pc:"#FFC81A",
+       l:"Ten quick questions a day. No scores, no pressure.",
+       sk:["General knowledge","Memory"],
+       fx:[{t:"q",v:"?",x:10,y:10,d:0},{t:"q",v:"?",x:80,y:20,d:.5},{t:"em",v:"\uD83D\uDCA1",x:70,y:0,d:.9},{t:"q",v:"?",x:16,y:52,d:1.3}]},
+      {k:"nani",n:"Nani",r:"The storyteller",c:"In your box",pc:"#6C3DFF",
+       l:"Stories your child can interrupt, question and steer.",
+       sk:["Listening","Imagination"],
+       fx:[{t:"em",v:"\uD83D\uDCD6",x:12,y:12,d:0},{t:"em",v:"\u2728",x:80,y:6,d:.4},{t:"em",v:"\uD83C\uDF1F",x:86,y:46,d:.8},{t:"em",v:"\u2728",x:6,y:50,d:1.2}]},
+      {k:"mitthu",n:"Mitthu",r:"The spelling parrot",c:"In your box",pc:"#2FA84F",
+       l:"Says a word. Your child spells it back.",
+       sk:["Spelling","Vocabulary"],
+       fx:[{t:"tile",v:"A",x:10,y:14,d:0},{t:"tile",v:"B",x:80,y:6,d:.35},{t:"tile",v:"C",x:86,y:44,d:.7},{t:"tile",v:"Z",x:6,y:52,d:1.05}]},
+      {k:"chanda",n:"Chanda",r:"The bedtime panda",c:"In the card shop",pc:"#3E63C4",
+       l:"Slow stories and soft songs to end the day.",
+       sk:["Calm","Sleep routine"],
+       fx:[{t:"em",v:"\uD83C\uDF19",x:12,y:8,d:0},{t:"em",v:"\uD83D\uDCA4",x:78,y:14,d:.4},{t:"em",v:"\u2B50",x:86,y:48,d:.8},{t:"em",v:"\uD83D\uDCA4",x:6,y:48,d:1.2}]},
+      {k:"masti",n:"Masti",r:"The mischief monkey",c:"In the card shop",pc:"#FF8A00",
+       l:"Jokes, games and giggly challenges.",
+       sk:["Confidence","Play"],
+       fx:[{t:"em",v:"\uD83C\uDF89",x:10,y:10,d:0},{t:"em",v:"\uD83D\uDE02",x:80,y:8,d:.4},{t:"em",v:"\uD83C\uDFB5",x:86,y:46,d:.8},{t:"em",v:"\uD83C\uDF4C",x:6,y:50,d:1.2}]},
+      {k:"tara",n:"Tara",r:"The space star",c:"In the card shop",pc:"#7B5CFF",
+       l:"Space, stars and the biggest why questions.",
+       sk:["Curiosity","Science"],
+       fx:[{t:"em",v:"\uD83E\uDE90",x:10,y:10,d:0},{t:"em",v:"\uD83D\uDE80",x:80,y:6,d:.4},{t:"em",v:"\u2B50",x:86,y:46,d:.8},{t:"em",v:"\u2604\uFE0F",x:6,y:50,d:1.2}]}
+    ];
+    var pcur = 0, paudio = null;
+    var pplayer = document.getElementById("pplayer");
+    var plabel = document.getElementById("plabel");
+    var ptoast = document.createElement("div");
+    ptoast.className = "ptoast";
+    ptoast.textContent = "Real voices land before launch";
+    document.body.appendChild(ptoast);
+    function pStop() {
+      if (paudio) { paudio.pause(); paudio = null; }
+      pplayer.classList.remove("playing"); plabel.textContent = "Hear me";
+    }
+    function pShow(i) {
+      pcur = (i + PCH.length) % PCH.length;
+      var ch = PCH[pcur];
+      pStop();
+      document.getElementById("pglow").style.setProperty("--pc", ch.pc);
+      var stage = document.getElementById("pstage");
+      stage.querySelectorAll(".pfx").forEach(function (e) { e.remove(); });
+      var img = document.getElementById("pimg");
+      img.src = "assets/img/live/char-" + ch.k + ".png"; img.alt = ch.n;
+      ch.fx.forEach(function (f) {
+        var s = document.createElement("span");
+        s.className = "pfx " + f.t; s.textContent = f.v;
+        s.style.left = f.x + "%"; s.style.top = f.y + "%";
+        s.style.animationDelay = f.d + "s, " + (f.d + .5) + "s";
+        stage.appendChild(s);
+      });
+      document.getElementById("pchip").textContent = ch.c;
+      document.getElementById("pname").textContent = ch.n;
+      document.getElementById("prole").textContent = ch.r;
+      document.getElementById("pline").textContent = ch.l;
+      var sk = document.getElementById("pskills");
+      sk.innerHTML = "<b>Builds</b>";
+      ch.sk.forEach(function (s2) { var el = document.createElement("i"); el.textContent = s2; sk.appendChild(el); });
+      popEl.classList.remove("open"); void popEl.offsetWidth; popEl.classList.add("open");
+      document.body.classList.add("plocked");
+      paudio = new Audio("assets/audio/voice-" + ch.k + ".mp3");
+      paudio.play().then(function () {
+        pplayer.classList.add("playing"); plabel.textContent = "Playing";
+        paudio.onended = pStop;
+      }).catch(function () { paudio = null; });
+    }
+    function pClose() {
+      pStop();
+      popEl.classList.remove("open");
+      document.body.classList.remove("plocked");
+    }
+    document.querySelectorAll("[data-char]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        var k = b.getAttribute("data-char");
+        pShow(PCH.findIndex(function (c) { return c.k === k; }));
+      });
+    });
+    document.getElementById("pclose").addEventListener("click", pClose);
+    document.getElementById("pscrim").addEventListener("click", pClose);
+    document.getElementById("pprev").addEventListener("click", function () { pShow(pcur - 1); });
+    document.getElementById("pnext").addEventListener("click", function () { pShow(pcur + 1); });
+    document.addEventListener("keydown", function (e) {
+      if (!popEl.classList.contains("open")) return;
+      if (e.key === "Escape") pClose();
+      if (e.key === "ArrowRight") pShow(pcur + 1);
+      if (e.key === "ArrowLeft") pShow(pcur - 1);
+    });
+    pplayer.addEventListener("click", function () {
+      if (pplayer.classList.contains("playing")) { pStop(); return; }
+      paudio = new Audio("assets/audio/voice-" + PCH[pcur].k + ".mp3");
+      paudio.play().then(function () {
+        pplayer.classList.add("playing"); plabel.textContent = "Playing";
+        paudio.onended = pStop;
+      }).catch(function () {
+        paudio = null;
+        ptoast.classList.add("show");
+        setTimeout(function () { ptoast.classList.remove("show"); }, 2200);
+      });
+    });
+  }
+
   /* Footer year */
   var yr = document.getElementById("yr");
   if (yr) yr.textContent = new Date().getFullYear();
