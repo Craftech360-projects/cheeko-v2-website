@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Hero with Kids | Option B: Living Wall</title>
+<meta name="robots" content="noindex" />
+<link rel="icon" type="image/png" href="assets/img/logo.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gabarito:wght@600;700;800;900&family=Hanken+Grotesk:wght@400;600;800&family=Spline+Sans+Mono:wght@500;700&display=swap" />
+<link rel="stylesheet" href="assets/css/premium.css?v=25" />
+<style>
+.badge{position:fixed;top:14px;left:14px;z-index:60;background:var(--brand);color:#fff;font:700 12px/1 "Spline Sans Mono",monospace;letter-spacing:.14em;padding:9px 14px;border-radius:99px;box-shadow:0 6px 18px rgba(240,82,29,.4)}
+.backlink{position:fixed;top:14px;right:14px;z-index:60;background:#fff;color:var(--ink);font:600 13px/1 "Hanken Grotesk",sans-serif;padding:9px 14px;border-radius:99px;text-decoration:none;box-shadow:0 4px 14px rgba(35,26,16,.15)}
+.wallwrap{position:relative;width:100%;display:flex;flex-direction:column;align-items:center}
+.wall{position:absolute;top:6%;left:50%;transform:translateX(-50%);width:100vw;overflow:hidden;z-index:1;-webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)}
+.walltrack{display:flex;gap:18px;width:max-content;animation:wallmove 46s linear infinite}
+.wall:hover .walltrack{animation-play-state:paused}
+.wallimg{width:190px;aspect-ratio:1;border-radius:20px;overflow:hidden;border:4px solid #fff;box-shadow:0 12px 26px rgba(35,26,16,.16);flex:0 0 auto}
+.wallimg img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.92) brightness(1.02)}
+@keyframes wallmove{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.wallwrap .hero-photo{position:relative;z-index:3;margin-top:120px}
+.wallwrap .hero-photo .photo-card{box-shadow:0 30px 60px rgba(35,26,16,.32)}
+@media (max-width:860px){
+  .wallimg{width:118px;border-width:3px}
+  .wallwrap .hero-photo{margin-top:72px;max-width:330px}
+}
+@media (prefers-reduced-motion:reduce){.walltrack{animation:none}}
+</style>
+</head>
+<body>
+<span class="badge">OPTION B · LIVING WALL</span>
+<a class="backlink" href="index.html">Back to site</a>
+<header class="hero" id="top">
+  <div class="wrap" style="padding:76px 24px 68px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:20px;position:relative;">
+    <span class="eyebrow">India's AI learning device for ages 3–10</span>
+    <h1 class="disp" style="max-width:16ch;">Less screen, more <span style="color:var(--brand);">childhood.</span></h1>
+    <div class="wallwrap rv">
+      <div class="wall" aria-hidden="true">
+        <div class="walltrack">
+          <span class="wallimg"><img src="assets/img/live/kid-joy.jpg" alt="" /></span>
+          <span class="wallimg"><img src="assets/img/live/kid-slot.jpg" alt="" /></span>
+          <span class="wallimg"><img src="assets/img/live/kid-toddler.jpg" alt="" /></span>
+          <span class="wallimg"><img src="assets/img/live/kid-mom.jpg" alt="" /></span>
+          <span class="wallimg"><img src="assets/img/live/kid-rhymes-screen.jpg" alt="" /></span>
+          <span class="wallimg"><img src="assets/img/live/kid-beanbag.jpg" alt="" /></span>
+          <span class="wallimg"><img src="assets/img/live/kid-dance.jpg" alt="" /></span>
+          <span class="wallimg"><img src="assets/img/live/kid-joy.jpg" alt="" /></span>
+          <span class="wallimg"><img src="assets/img/live/kid-slot.jpg" alt="" /></span>
+          <span class="wallimg"><img src="assets/img/live/kid-toddler.jpg" alt="" /></span>
+          <span class="wallimg"><img src="assets/img/live/kid-mom.jpg" alt="" /></span>
+          <span class="wallimg"><img src="assets/img/live/kid-rhymes-screen.jpg" alt="" /></span>
+          <span class="wallimg"><img src="assets/img/live/kid-beanbag.jpg" alt="" /></span>
+          <span class="wallimg"><img src="assets/img/live/kid-dance.jpg" alt="" /></span>
+        </div>
+      </div>
+      <div class="hero-photo" style="max-width:400px;width:100%;">
+        <div class="photo-card"><img src="assets/img/live/hero-talk.jpg" alt="The yellow Cheeko device standing upright, its screen showing Cheeko the fox ready to talk" fetchpriority="high" /></div>
+        <span class="hero-note">"One more story, please!"</span>
+      </div>
+    </div>
+    <p class="sub" style="max-width:54ch;">Tap a card and stories play. Press the button and Cheeko talks back. Imagine pictures, play games and listen to rhymes in your family's language.</p>
+    <div class="price-row" style="justify-content:center;"><span class="price">₹5,999</span><span class="strike">₹8,999</span><span class="tagpill">Pay once</span></div>
+    <a class="btn buy-link" href="https://shop.cheekoai.in/products/cheeko-pro-preorder-sale" style="padding:16px 40px;font-size:17px;">Get Cheeko</a>
+  </div>
+</header>
+</body>
+</html>
