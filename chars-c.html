@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Meet the Characters | Option C: Hello Cards</title>
+<meta name="robots" content="noindex" />
+<link rel="icon" type="image/png" href="assets/img/logo.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gabarito:wght@600;700;800;900&family=Hanken+Grotesk:wght@400;600;800&family=Spline+Sans+Mono:wght@500;700&display=swap" />
+<link rel="stylesheet" href="assets/css/premium.css?v=24" />
+<style>
+.badge{position:fixed;top:14px;left:14px;z-index:60;background:var(--brand);color:#fff;font:700 12px/1 "Spline Sans Mono",monospace;letter-spacing:.14em;padding:9px 14px;border-radius:99px;box-shadow:0 6px 18px rgba(240,82,29,.4)}
+.backlink{position:fixed;top:14px;right:14px;z-index:60;background:#fff;color:var(--ink);font:600 13px/1 "Hanken Grotesk",sans-serif;padding:9px 14px;border-radius:99px;text-decoration:none;box-shadow:0 4px 14px rgba(35,26,16,.15)}
+body{background:linear-gradient(180deg,#FFF4E3,#FFE9C9)}
+.cwrap{max-width:1040px;margin:0 auto;padding:96px 20px 70px}
+.chead{text-align:center;margin-bottom:22px}
+.chead .kick{font:700 12px/1 "Spline Sans Mono",monospace;letter-spacing:.22em;color:var(--brand);text-transform:uppercase}
+.chead h1{font:800 clamp(30px,5.4vw,52px)/1.08 "Gabarito",sans-serif;color:var(--ink);margin:10px 0 8px}
+.chead p{font:400 16px/1.5 "Hanken Grotesk",sans-serif;color:rgba(35,26,16,.65);margin:0}
+.filters{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:20px 0 26px}
+.filters button{font:700 12.5px/1 "Spline Sans Mono",monospace;letter-spacing:.08em;text-transform:uppercase;background:#fff;color:var(--ink);border:2px solid rgba(35,26,16,.12);padding:11px 16px;border-radius:99px;cursor:pointer;transition:.2s}
+.filters button.on{background:var(--ink);color:#FFF4E3;border-color:var(--ink)}
+.crail{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x proximity;padding:16px 6px 26px;-webkit-overflow-scrolling:touch}
+.ccard{flex:0 0 218px;scroll-snap-align:center;perspective:1100px;cursor:pointer;height:312px}
+.ccard.hidden{display:none}
+.ccin{position:relative;width:100%;height:100%;transform-style:preserve-3d;transition:transform .55s cubic-bezier(.3,1.4,.4,1)}
+.ccard.flipped .ccin{transform:rotateY(180deg)}
+.ccface{position:absolute;inset:0;backface-visibility:hidden;border-radius:22px;overflow:hidden}
+.ccfront{background:linear-gradient(165deg,#fff 55%,#FFE7BF);border:3px solid #fff;box-shadow:0 16px 36px rgba(140,100,40,.24);display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding:16px}
+.ccfront .no{position:absolute;top:12px;left:14px;font:700 10.5px/1.4 "Spline Sans Mono",monospace;letter-spacing:.12em;color:rgba(35,26,16,.45);text-transform:uppercase}
+.ccfront .cat{position:absolute;top:12px;right:12px;width:10px;height:10px;border-radius:50%}
+.ccfront img{height:186px;object-fit:contain;filter:drop-shadow(0 12px 18px rgba(140,100,40,.3))}
+.ccfront b{font:800 22px/1 "Gabarito",sans-serif;color:var(--ink);margin-top:12px}
+.ccfront small{font:700 10.5px/1 "Spline Sans Mono",monospace;letter-spacing:.14em;text-transform:uppercase;color:var(--brand);margin-top:6px}
+.ccback{background:var(--ink);color:#FFF4E3;transform:rotateY(180deg);display:flex;flex-direction:column;justify-content:space-between;padding:20px;border:3px solid #fff;box-shadow:0 16px 36px rgba(140,100,40,.24)}
+.ccback .chip{align-self:flex-start;font:700 10px/1 "Spline Sans Mono",monospace;letter-spacing:.14em;text-transform:uppercase;background:rgba(255,200,26,.16);color:var(--sun);border:1px solid rgba(255,200,26,.4);padding:7px 11px;border-radius:99px}
+.ccback b{font:800 24px/1.05 "Gabarito",sans-serif}
+.ccback p{font:400 14.5px/1.5 "Hanken Grotesk",sans-serif;color:rgba(255,244,227,.85);margin:8px 0 0}
+.hearbtn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--brand);color:#fff;border:none;cursor:pointer;font:800 14px/1 "Gabarito",sans-serif;padding:12px 18px;border-radius:99px;box-shadow:0 8px 20px rgba(240,82,29,.45)}
+.hint{text-align:center;font:600 13px/1 "Hanken Grotesk",sans-serif;color:rgba(35,26,16,.5)}
+.toast{position:fixed;bottom:26px;left:50%;transform:translateX(-50%) translateY(80px);background:var(--ink);color:#FFF4E3;font:600 14px/1 "Hanken Grotesk",sans-serif;padding:13px 20px;border-radius:99px;box-shadow:0 12px 30px rgba(0,0,0,.35);transition:.3s;z-index:70;opacity:0}
+.toast.show{transform:translateX(-50%) translateY(0);opacity:1}
+@media (max-width:640px){.ccard{flex:0 0 66%;height:330px}.ccfront img{height:196px}}
+@media (prefers-reduced-motion:reduce){.ccin{transition:none}}
+</style>
+</head>
+<body>
+<span class="badge">OPTION C · HELLO CARDS</span>
+<a class="backlink" href="index.html">Back to site</a>
+<div class="cwrap">
+  <div class="chead">
+    <span class="kick">Meet the characters</span>
+    <h1>Every voice is a card.</h1>
+    <p>Tap a card to turn it over.</p>
+  </div>
+  <div class="filters" id="filters">
+    <button data-f="all" class="on">All 7</button>
+    <button data-f="device">In every Cheeko</button>
+    <button data-f="box">In your box</button>
+    <button data-f="shop">Card shop</button>
+  </div>
+  <div class="crail" id="crail"></div>
+  <div class="hint">Swipe for more. Tap ▶ to hear them.</div>
+</div>
+<div class="toast" id="toast">Real voices land before launch</div>
+<script>
+var CH=[
+ {k:"cheeko",n:"Cheeko",r:"The fox",f:"device",c:"In every Cheeko",dot:"#F0521D",l:"Press the button, ask anything. He answers in your family's language."},
+ {k:"quizzy",n:"Quizzy Bee",r:"The quiz bee",f:"device",c:"In every Cheeko",dot:"#F0521D",l:"Ten quick questions a day. No scores, no pressure."},
+ {k:"nani",n:"Nani",r:"The storyteller",f:"box",c:"In your box",dot:"#FFC81A",l:"Tells stories your child can interrupt, question and steer."},
+ {k:"mitthu",n:"Mitthu",r:"The spelling parrot",f:"box",c:"In your box",dot:"#FFC81A",l:"Says a word. Your child spells it back."},
+ {k:"chanda",n:"Chanda",r:"The bedtime panda",f:"shop",c:"In the card shop",dot:"#6C3DFF",l:"Slow stories and soft songs to end the day."},
+ {k:"masti",n:"Masti",r:"The mischief monkey",f:"shop",c:"In the card shop",dot:"#6C3DFF",l:"Jokes, games and giggly challenges."},
+ {k:"tara",n:"Tara",r:"The space star",f:"shop",c:"In the card shop",dot:"#6C3DFF",l:"Space, stars and the biggest why questions."}
+];
+var rail=document.getElementById("crail");
+CH.forEach(function(ch,i){
+  var d=document.createElement("div");
+  d.className="ccard";d.setAttribute("data-f",ch.f);
+  d.innerHTML='<div class="ccin"><div class="ccface ccfront"><span class="no">Hello Card<br>N&ordm; 0'+(i+1)+'/07</span><span class="cat" style="background:'+ch.dot+'"></span><img src="assets/img/live/char-'+ch.k+'.png" alt="'+ch.n+'"><b>'+ch.n+'</b><small>'+ch.r+'</small></div><div class="ccface ccback"><span class="chip">'+ch.c+'</span><div><b>'+ch.n+'</b><p>'+ch.l+'</p></div><button class="hearbtn" data-voice="'+ch.k+'">▶ Hear me</button></div></div>';
+  d.addEventListener("click",function(e){if(e.target.closest(".hearbtn"))return;d.classList.toggle("flipped");});
+  rail.appendChild(d);
+});
+document.querySelectorAll(".hearbtn").forEach(function(b){
+  b.addEventListener("click",function(){
+    var a=new Audio("assets/audio/voice-"+b.getAttribute("data-voice")+".mp3");
+    a.play().catch(function(){var t=document.getElementById("toast");t.classList.add("show");setTimeout(function(){t.classList.remove("show");},2200);});
+  });
+});
+document.querySelectorAll("#filters button").forEach(function(fb){
+  fb.addEventListener("click",function(){
+    document.querySelectorAll("#filters button").forEach(function(x){x.classList.toggle("on",x===fb);});
+    var f=fb.getAttribute("data-f");
+    document.querySelectorAll(".ccard").forEach(function(c){
+      c.classList.toggle("hidden",f!=="all"&&c.getAttribute("data-f")!==f);
+      c.classList.remove("flipped");
+    });
+  });
+});
+/* gentle auto-drift until first touch */
+if(!window.matchMedia("(prefers-reduced-motion: reduce)").matches){
+  var touched=false;
+  ["pointerdown","wheel","touchstart"].forEach(function(e){rail.addEventListener(e,function(){touched=true;},{passive:true});});
+  setInterval(function(){
+    if(touched||document.hidden)return;
+    if(rail.scrollWidth<=rail.clientWidth+8)return;
+    var max=rail.scrollWidth-rail.clientWidth;
+    if(rail.scrollLeft>=max-8)rail.scrollTo({left:0,behavior:"smooth"});
+    else rail.scrollBy({left:236,behavior:"smooth"});
+  },2600);
+}
+</script>
+</body>
+</html>

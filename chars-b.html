@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Meet the Characters | Option B: The Shelf</title>
+<meta name="robots" content="noindex" />
+<link rel="icon" type="image/png" href="assets/img/logo.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gabarito:wght@600;700;800;900&family=Hanken+Grotesk:wght@400;600;800&family=Spline+Sans+Mono:wght@500;700&display=swap" />
+<link rel="stylesheet" href="assets/css/premium.css?v=24" />
+<style>
+.badge{position:fixed;top:14px;left:14px;z-index:60;background:var(--brand);color:#fff;font:700 12px/1 "Spline Sans Mono",monospace;letter-spacing:.14em;padding:9px 14px;border-radius:99px;box-shadow:0 6px 18px rgba(240,82,29,.4)}
+.backlink{position:fixed;top:14px;right:14px;z-index:60;background:#fff;color:var(--ink);font:600 13px/1 "Hanken Grotesk",sans-serif;padding:9px 14px;border-radius:99px;text-decoration:none;box-shadow:0 4px 14px rgba(35,26,16,.15)}
+body{background:var(--tint)}
+.shelfwrap{max-width:900px;margin:0 auto;padding:96px 20px 60px}
+.shelfhead{text-align:center;margin-bottom:34px}
+.shelfhead .kick{font:700 12px/1 "Spline Sans Mono",monospace;letter-spacing:.22em;color:var(--brand);text-transform:uppercase}
+.shelfhead h1{font:800 clamp(30px,5.4vw,52px)/1.08 "Gabarito",sans-serif;color:var(--ink);margin:10px 0 0}
+.shelfgroup{margin-bottom:34px}
+.shelflabel{display:flex;align-items:center;gap:10px;font:700 12px/1 "Spline Sans Mono",monospace;letter-spacing:.18em;text-transform:uppercase;color:rgba(35,26,16,.55);margin:0 4px 4px}
+.shelflabel b{color:var(--brand)}
+.shelf{position:relative;display:flex;align-items:flex-end;justify-content:center;gap:clamp(18px,6vw,60px);padding:0 16px 18px;min-height:170px}
+.shelf::after{content:"";position:absolute;left:0;right:0;bottom:0;height:16px;border-radius:8px;background:linear-gradient(#fff,#F3E3C6);box-shadow:0 10px 22px rgba(140,100,40,.22),inset 0 -3px 0 rgba(140,100,40,.14)}
+.shelf button{background:none;border:none;cursor:pointer;padding:0;position:relative;display:flex;flex-direction:column;align-items:center;gap:8px;transition:transform .2s}
+.shelf button img{height:clamp(104px,16vw,148px);object-fit:contain;filter:drop-shadow(0 12px 16px rgba(140,100,40,.3));transition:transform .2s}
+.shelf button span{font:800 14px/1 "Gabarito",sans-serif;color:var(--ink);margin-bottom:14px}
+.shelf button.on img{transform:translateY(-10px) scale(1.06)}
+.shelf button.on::after{content:"";position:absolute;top:-14px;left:50%;transform:translateX(-50%);width:9px;height:9px;border-radius:50%;background:var(--brand)}
+.detail{position:sticky;bottom:14px;z-index:40;max-width:640px;margin:26px auto 0;background:#fff;border-radius:24px;box-shadow:0 18px 44px rgba(35,26,16,.18);padding:18px 22px;display:flex;align-items:center;gap:16px}
+.detail img{height:76px;object-fit:contain}
+.detail .dt{flex:1;min-width:0}
+.detail .dt b{font:800 20px/1.1 "Gabarito",sans-serif;color:var(--ink);display:block}
+.detail .dt em{font-style:normal;font:700 10.5px/1 "Spline Sans Mono",monospace;letter-spacing:.14em;text-transform:uppercase;color:var(--brand)}
+.detail .dt p{font:400 14.5px/1.45 "Hanken Grotesk",sans-serif;color:rgba(35,26,16,.75);margin:5px 0 0}
+.hearbtn{flex:0 0 auto;display:inline-flex;align-items:center;gap:8px;background:var(--brand);color:#fff;border:none;cursor:pointer;font:800 14px/1 "Gabarito",sans-serif;padding:13px 18px;border-radius:99px;box-shadow:0 8px 20px rgba(240,82,29,.4)}
+.toast{position:fixed;bottom:26px;left:50%;transform:translateX(-50%) translateY(80px);background:var(--ink);color:#FFF4E3;font:600 14px/1 "Hanken Grotesk",sans-serif;padding:13px 20px;border-radius:99px;box-shadow:0 12px 30px rgba(0,0,0,.35);transition:.3s;z-index:70;opacity:0}
+.toast.show{transform:translateX(-50%) translateY(0);opacity:1}
+@media (max-width:640px){
+  .shelf{justify-content:flex-start;overflow-x:auto;gap:26px;padding:0 14px 18px;-webkit-overflow-scrolling:touch}
+  .detail{margin-inline:4px;padding:14px 16px}
+  .detail .dt p{font-size:13.5px}
+}
+</style>
+</head>
+<body>
+<span class="badge">OPTION B · THE SHELF</span>
+<a class="backlink" href="index.html">Back to site</a>
+<div class="shelfwrap">
+  <div class="shelfhead">
+    <span class="kick">Meet the characters</span>
+    <h1>Seven voices. One little device.</h1>
+  </div>
+
+  <div class="shelfgroup">
+    <div class="shelflabel"><b>01</b> Built into every Cheeko</div>
+    <div class="shelf" data-shelf>
+      <button data-k="cheeko"><img src="assets/img/live/char-cheeko.png" alt="Cheeko the fox" /><span>Cheeko</span></button>
+      <button data-k="quizzy"><img src="assets/img/live/char-quizzy.png" alt="Quizzy Bee" /><span>Quizzy Bee</span></button>
+    </div>
+  </div>
+
+  <div class="shelfgroup">
+    <div class="shelflabel"><b>02</b> On cards in your box</div>
+    <div class="shelf" data-shelf>
+      <button data-k="nani"><img src="assets/img/live/char-nani.png" alt="Nani the storyteller" /><span>Nani</span></button>
+      <button data-k="mitthu"><img src="assets/img/live/char-mitthu.png" alt="Mitthu the spelling parrot" /><span>Mitthu</span></button>
+    </div>
+  </div>
+
+  <div class="shelfgroup">
+    <div class="shelflabel"><b>03</b> In the card shop</div>
+    <div class="shelf" data-shelf>
+      <button data-k="chanda"><img src="assets/img/live/char-chanda.png" alt="Chanda the bedtime panda" /><span>Chanda</span></button>
+      <button data-k="masti"><img src="assets/img/live/char-masti.png" alt="Masti the mischief monkey" /><span>Masti</span></button>
+      <button data-k="tara"><img src="assets/img/live/char-tara.png" alt="Tara the space star" /><span>Tara</span></button>
+    </div>
+  </div>
+
+  <div class="detail">
+    <img id="dimg" src="assets/img/live/char-cheeko.png" alt="" />
+    <div class="dt">
+      <em id="dchip">In every Cheeko</em>
+      <b id="dname">Cheeko</b>
+      <p id="dline">Press the button, ask anything. He answers in your family's language.</p>
+    </div>
+    <button class="hearbtn" id="hear">▶ Hear</button>
+  </div>
+</div>
+<div class="toast" id="toast">Real voices land before launch</div>
+<script>
+var DATA={
+ cheeko:{n:"Cheeko",c:"In every Cheeko",l:"Press the button, ask anything. He answers in your family's language."},
+ quizzy:{n:"Quizzy Bee",c:"In every Cheeko",l:"Ten quick questions a day. No scores, no pressure."},
+ nani:{n:"Nani",c:"In your box",l:"Tells stories your child can interrupt, question and steer."},
+ mitthu:{n:"Mitthu",c:"In your box",l:"Says a word. Your child spells it back."},
+ chanda:{n:"Chanda",c:"In the card shop",l:"Slow stories and soft songs to end the day."},
+ masti:{n:"Masti",c:"In the card shop",l:"Jokes, games and giggly challenges."},
+ tara:{n:"Tara",c:"In the card shop",l:"Space, stars and the biggest why questions."}
+};
+var cur="cheeko";
+document.querySelectorAll("[data-k]").forEach(function(b){
+  b.addEventListener("click",function(){
+    cur=b.getAttribute("data-k");var d=DATA[cur];
+    document.getElementById("dimg").src="assets/img/live/char-"+cur+".png";
+    document.getElementById("dname").textContent=d.n;
+    document.getElementById("dchip").textContent=d.c;
+    document.getElementById("dline").textContent=d.l;
+    document.querySelectorAll("[data-k]").forEach(function(x){x.classList.toggle("on",x===b);});
+  });
+});
+document.querySelector('[data-k="cheeko"]').classList.add("on");
+document.getElementById("hear").addEventListener("click",function(){
+  var a=new Audio("assets/audio/voice-"+cur+".mp3");
+  a.play().catch(function(){var t=document.getElementById("toast");t.classList.add("show");setTimeout(function(){t.classList.remove("show");},2200);});
+});
+</script>
+</body>
+</html>
