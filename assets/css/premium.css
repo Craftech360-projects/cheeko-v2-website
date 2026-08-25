@@ -430,6 +430,47 @@ a.schip:hover{transform:translateY(-2px);border-color:var(--brand)}
 .beat-end b{color:#8F8371;font-family:var(--disp);font-weight:800;font-size:clamp(15px,1.6vw,20px)}
 @media (max-width:920px){.beatrow{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:8px}.beat{flex:0 0 62%;scroll-snap-align:center}}
 
+
+/* ---------- the 10-card flip deck ---------- */
+.deckrail{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:16px}
+.fcardw{perspective:900px;aspect-ratio:3/4.1;animation:cardbob 4.5s ease-in-out infinite}
+.fcardw:nth-child(2n){animation-delay:.7s}.fcardw:nth-child(3n){animation-delay:1.3s}.fcardw:nth-child(5n){animation-delay:2s}
+@keyframes cardbob{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+.flip{position:relative;width:100%;height:100%;transform-style:preserve-3d;transition:transform .5s cubic-bezier(.2,.7,.3,1);cursor:pointer}
+.fcardw:hover .flip,.fcardw.flipped .flip{transform:rotateY(180deg)}
+.fface{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:18px;overflow:hidden;box-shadow:var(--shadow-sm);display:flex;flex-direction:column}
+.fface.front{background:#FFFFFF;border:1px solid var(--line)}
+.fface.front .fart{flex:1;display:flex;align-items:flex-end;justify-content:center;overflow:hidden;padding-top:8px}
+.fface.front .fart img.sprite{height:88%;width:auto;object-fit:contain}
+.fface.front .fart img.artimg{width:100%;height:100%;object-fit:cover}
+.fface.front .fmeta{padding:10px 12px;background:#FFFFFF}
+.fface.front .fmeta .serial{font-size:9px}
+.fface.front .fmeta b{font-family:var(--disp);font-weight:800;font-size:13.5px;display:block;line-height:1.25}
+.fface.back{background:var(--ink);color:#FFF6E8;transform:rotateY(180deg);padding:16px 15px;justify-content:space-between}
+.fface.back b{font-family:var(--disp);font-weight:800;font-size:14px}
+.fface.back p{font-size:11.8px;line-height:1.5;font-weight:500;color:#D8CDB9;margin:6px 0 0}
+.fface.back .serial{color:var(--sun);font-size:9px}
+@media (max-width:920px){.deckrail{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:10px}.fcardw{flex:0 0 44%;scroll-snap-align:center}}
+@media (max-width:600px){.fcardw{flex:0 0 58%}}
+@media (prefers-reduced-motion:reduce){.fcardw{animation:none}}
+/* ---------- how-to-use animated stage ---------- */
+.howstage{position:relative;height:380px;max-width:860px;margin:0 auto}
+.hs-fan{position:absolute;left:4%;bottom:8%;width:200px;height:240px}
+.hs-fan img{position:absolute;bottom:0;width:120px;aspect-ratio:3/4.2;object-fit:cover;border-radius:12px;border:3px solid #FFFFFF;box-shadow:var(--shadow-sm)}
+.hs-fan img:nth-child(1){left:0;transform:rotate(-9deg)}
+.hs-fan img:nth-child(2){left:34px;transform:rotate(0deg);bottom:8px}
+.hs-fan img:nth-child(3){left:68px;transform:rotate(8deg)}
+.hs-dev{position:absolute;right:12%;bottom:0;height:78%;}
+.hs-dev img{height:100%;width:auto;filter:drop-shadow(0 16px 26px rgba(35,26,16,.2))}
+.hs-fly{position:absolute;width:104px;aspect-ratio:3/4.2;object-fit:cover;border-radius:11px;border:3px solid #FFFFFF;box-shadow:var(--shadow);left:12%;bottom:16%;z-index:1;animation:flycard 7s ease-in-out infinite}
+@keyframes flycard{0%,10%{left:12%;bottom:16%;transform:rotate(-6deg);opacity:1}38%{left:63%;bottom:74%;transform:rotate(3deg);opacity:1}52%,64%{left:63%;bottom:44%;transform:rotate(0);opacity:1}70%,88%{opacity:0}100%{opacity:0}}
+.hs-title{position:absolute;right:9%;bottom:84%;background:var(--ink);color:#FFF6E8;font-family:var(--disp);font-weight:800;font-size:15px;padding:9px 18px;border-radius:99px;box-shadow:var(--shadow-sm);opacity:0;animation:titlepop 7s ease-in-out infinite}
+.hs-title i{font-style:normal;color:var(--sun)}
+@keyframes titlepop{0%,58%{opacity:0;transform:translateY(8px) scale(.9)}66%,90%{opacity:1;transform:none}97%,100%{opacity:0}}
+.hs-caps{display:flex;justify-content:space-between;max-width:860px;margin:14px auto 0;font-family:var(--disp);font-weight:800;font-size:15px;color:#6B5F4E}
+@media (max-width:700px){.howstage{height:300px}.hs-fan{width:140px}.hs-fan img{width:86px}.hs-fly{width:76px}.hs-dev{height:66%}.hs-caps{font-size:12.5px;padding:0 6px}}
+@media (prefers-reduced-motion:reduce){.hs-fly{animation:none;opacity:0}.hs-title{animation:none;opacity:1}}
+
 /* ---------- device anatomy ---------- */
 .anat{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
 .anat .a{background:#FFFFFF;border:1px solid var(--line);border-radius:20px;overflow:hidden;box-shadow:var(--shadow-sm)}

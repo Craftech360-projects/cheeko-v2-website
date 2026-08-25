@@ -81,6 +81,11 @@
     });
   });
 
+  /* Card flip on tap */
+  document.querySelectorAll(".fcardw").forEach(function (w) {
+    w.addEventListener("click", function () { w.classList.toggle("flipped"); });
+  });
+
   /* Footer year */
   var yr = document.getElementById("yr");
   if (yr) yr.textContent = new Date().getFullYear();
