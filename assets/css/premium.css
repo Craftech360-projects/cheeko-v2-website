@@ -399,6 +399,37 @@ a.schip:hover{transform:translateY(-2px);border-color:var(--brand)}
 .devlist b{font-family:var(--disp);font-weight:800;font-size:15px;color:var(--ink);display:block}
 @media (max-width:680px){.devlist{grid-template-columns:1fr 1fr}}
 
+
+/* ---------- rebuilt device screens (real UI art) ---------- */
+.devscreen{background:#131009;border-radius:24px;aspect-ratio:296/240;position:relative;box-shadow:var(--shadow),inset 0 0 0 1.5px rgba(255,255,255,.07);overflow:hidden;padding:9% 9% 8%}
+.ds-head{display:flex;justify-content:space-between;align-items:center}
+.ds-logo{font-family:var(--mono);color:var(--sun);font-size:clamp(9px,1vw,12px);font-weight:700;letter-spacing:.14em}
+.ds-batt{display:flex;gap:6px;align-items:center;color:#EDE6D8;opacity:.85}
+.ds-body{position:absolute;left:8%;right:9%;bottom:6%;top:24%;display:flex;align-items:flex-end;justify-content:space-between;gap:4%}
+.ds-body img{height:96%;width:auto;max-width:55%;object-fit:contain}
+.ds-label{align-self:center;text-align:right;color:#FFFFFF;font-family:var(--disp);font-weight:800;font-size:clamp(17px,1.9vw,26px);letter-spacing:.02em}
+.ds-label i{display:block;font-style:normal;height:3.5px;background:var(--brand);border-radius:2px;margin-top:5px;margin-left:auto;width:70%}
+.ds-dots{position:absolute;right:9%;bottom:8%;display:flex;gap:4px}
+.ds-dots i{width:4.5px;height:4.5px;border-radius:99px;background:rgba(255,255,255,.28)}
+.ds-dots i:first-child{background:#FFFFFF}
+.screenrow{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+@media (max-width:920px){.screenrow{grid-template-columns:1fr;max-width:400px;margin:0 auto}}
+/* the-end animation */
+.ds-anim .ds-live,.ds-anim .ds-end{position:absolute;inset:0;padding:9% 9% 8%}
+.ds-anim .ds-live{animation:dslive 9s infinite}
+.ds-anim .ds-end{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;background:#0C0A06;opacity:0;animation:dsend 9s infinite}
+.ds-anim .ds-end b{color:#8F8371;font-family:var(--disp);font-weight:800;font-size:clamp(16px,1.8vw,22px)}
+@keyframes dslive{0%,60%{opacity:1}68%,100%{opacity:0}}
+@keyframes dsend{0%,62%{opacity:0}70%,94%{opacity:1}100%{opacity:0}}
+@media (prefers-reduced-motion:reduce){.ds-anim .ds-live{animation:none}.ds-anim .ds-end{animation:none}}
+/* four-beat story strip */
+.beatrow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+.beat{display:flex;flex-direction:column;gap:12px}
+.beat .bcap{font-family:var(--disp);font-weight:800;font-size:20px;text-align:center}
+.beat-end{background:#131009;border-radius:24px;aspect-ratio:296/240;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;box-shadow:var(--shadow)}
+.beat-end b{color:#8F8371;font-family:var(--disp);font-weight:800;font-size:clamp(15px,1.6vw,20px)}
+@media (max-width:920px){.beatrow{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:8px}.beat{flex:0 0 62%;scroll-snap-align:center}}
+
 /* ---------- device anatomy ---------- */
 .anat{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
 .anat .a{background:#FFFFFF;border:1px solid var(--line);border-radius:20px;overflow:hidden;box-shadow:var(--shadow-sm)}
