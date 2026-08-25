@@ -232,6 +232,20 @@
     });
   }
 
+  /* Cinema hero crossfade */
+  var cine = document.querySelector(".cine");
+  if (cine && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    var cslides = cine.querySelectorAll(".slide");
+    var cdots = cine.querySelectorAll(".cn-dots i");
+    var ci = 0;
+    setInterval(function () {
+      if (document.hidden) return;
+      ci = (ci + 1) % cslides.length;
+      cslides.forEach(function (s, j2) { s.classList.toggle("on", j2 === ci); });
+      cdots.forEach(function (d, j2) { d.classList.toggle("on", j2 === ci); });
+    }, 4200);
+  }
+
   /* Footer year */
   var yr = document.getElementById("yr");
   if (yr) yr.textContent = new Date().getFullYear();
