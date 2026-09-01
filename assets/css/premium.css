@@ -620,4 +620,4 @@ body.plocked{overflow:hidden}
 }
 @media (prefers-reduced-motion:reduce){.cine .slide{transition:none}.cine .slide img{transition:none;transform:none}}
 
-@media (max-width:920px){.glassgrid{grid-template-columns:repeat(6,1fr)}.glass{font-size:15px;border-radius:9px}}
+@media (max-width:920px){.glassgrid{grid-template-columns:repeat(3,1fr);gap:6px}.glass{aspect-ratio:auto;height:26px;font-size:13px;border-radius:8px}}
