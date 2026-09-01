@@ -299,7 +299,7 @@ a.schip:hover{transform:translateY(-2px);border-color:var(--brand)}
 .wobble i:nth-child(6){animation-delay:.45s}.wobble i:nth-child(7){animation-delay:.54s}
 .wobble i:nth-child(8){animation-delay:.63s}
 @keyframes wob{0%,100%{transform:translateY(0) rotate(0)}30%{transform:translateY(-6px) rotate(-5deg)}65%{transform:translateY(2px) rotate(3deg)}}
-.appeek{position:absolute;right:3%;bottom:-14%;width:32%;aspect-ratio:9/13;border-radius:16px 16px 0 0;overflow:hidden;box-shadow:0 -8px 26px rgba(0,0,0,.35);transform:rotate(-5deg);z-index:1}
+.appeek{position:absolute;right:3%;bottom:6%;border-radius:14px;width:32%;aspect-ratio:9/13;border-radius:16px 16px 0 0;overflow:hidden;box-shadow:0 -8px 26px rgba(0,0,0,.35);transform:rotate(-5deg);z-index:1}
 .appeek img{width:100%;height:100%;object-fit:cover;object-position:top}
 .bt.has-peek{padding-right:40%}
 @media (prefers-reduced-motion:reduce){.eq i,.wobble i{animation:none}}
@@ -412,7 +412,7 @@ a.schip:hover{transform:translateY(-2px);border-color:var(--brand)}
 .ds-dots{position:absolute;right:9%;bottom:8%;display:flex;gap:4px}
 .ds-dots i{width:4.5px;height:4.5px;border-radius:99px;background:rgba(255,255,255,.28)}
 .ds-dots i:first-child{background:#FFFFFF}
-.screenrow{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.screenrow{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:22px;padding-bottom:12px}.screenrow .devscreen{flex:0 0 31.5%;scroll-snap-align:center}
 @media (max-width:920px){.screenrow{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:14px;padding-bottom:10px;margin:0 -18px;padding-left:18px;padding-right:18px}.screenrow .devscreen{flex:0 0 68%;scroll-snap-align:center}}
 /* the-end animation */
 .ds-anim .ds-live,.ds-anim .ds-end{position:absolute;inset:0;padding:9% 9% 8%}
@@ -619,3 +619,5 @@ body.plocked{overflow:hidden}
   .prodchip{display:none}
 }
 @media (prefers-reduced-motion:reduce){.cine .slide{transition:none}.cine .slide img{transition:none;transform:none}}
+
+@media (max-width:920px){.glassgrid{grid-template-columns:repeat(6,1fr)}.glass{font-size:15px;border-radius:9px}}
