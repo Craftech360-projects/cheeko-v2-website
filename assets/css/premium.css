@@ -299,11 +299,11 @@ a.schip:hover{transform:translateY(-2px);border-color:var(--brand)}
 .wobble i:nth-child(6){animation-delay:.45s}.wobble i:nth-child(7){animation-delay:.54s}
 .wobble i:nth-child(8){animation-delay:.63s}
 @keyframes wob{0%,100%{transform:translateY(0) rotate(0)}30%{transform:translateY(-6px) rotate(-5deg)}65%{transform:translateY(2px) rotate(3deg)}}
-.appeek{position:absolute;right:3%;bottom:6%;border-radius:14px;width:32%;aspect-ratio:9/13;border-radius:16px 16px 0 0;overflow:hidden;box-shadow:0 -8px 26px rgba(0,0,0,.35);transform:rotate(-5deg);z-index:1}
+.appeek{position:absolute;right:4%;top:50%;transform:translateY(-50%) rotate(-4deg);height:86%;aspect-ratio:9/13;border-radius:12px;overflow:hidden;box-shadow:0 10px 26px rgba(0,0,0,.35);z-index:1}
 .appeek img{width:100%;height:100%;object-fit:cover;object-position:top}
 .bt.has-peek{padding-right:40%}
 @media (prefers-reduced-motion:reduce){.eq i,.wobble i{animation:none}}
-@media (max-width:600px){.appeek{width:36%}.bt.has-peek{padding-right:42%}}
+@media (max-width:600px){.appeek{height:82%}.bt.has-peek{padding-right:40%}}
 
 
 /* ---------- how-it-works templates ---------- */
