@@ -603,7 +603,7 @@ body.plocked{overflow:hidden}
 .th-cta .btn{padding:16px 34px;font-size:16.5px}
 .th-cta .btn.ghost{background:#FFFFFF;color:var(--ink);border:2px solid rgba(35,26,16,.14);box-shadow:none}
 .th-cta .btn.ghost:hover{border-color:var(--brand);color:var(--brand)}
-.th-photo{position:relative;align-self:stretch;min-height:clamp(420px,58vw,620px);border-radius:64px 0 0 64px;overflow:hidden;margin-right:calc(50% - 50vw)}
+.th-photo{position:relative;align-self:stretch;background:#F3E7D2;min-height:clamp(420px,58vw,620px);border-radius:64px 0 0 64px;overflow:hidden;margin-right:calc(50% - 50vw)}
 .th-photo .slide{position:absolute;inset:0;opacity:0;transition:opacity 1.2s ease}
 .th-photo .slide.on{opacity:1}
 .th-photo picture{position:absolute;inset:0;display:block}
