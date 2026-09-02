@@ -250,13 +250,21 @@
   var buybar = document.querySelector(".buybar");
   var heroEl = document.getElementById("top");
   if (buybar && heroEl) {
-    if ("IntersectionObserver" in window) {
-      new IntersectionObserver(function (entries) {
-        entries.forEach(function (e) { buybar.classList.toggle("show", !e.isIntersecting); });
-      }, { rootMargin: "-40px 0px 0px 0px" }).observe(heroEl);
-    } else {
-      buybar.classList.add("show");
+    var barTick = false;
+    function syncBar() {
+      barTick = false;
+      buybar.classList.toggle("show", heroEl.getBoundingClientRect().bottom <= 40);
     }
+    function onBarScroll() {
+      if (barTick) return;
+      barTick = true;
+      requestAnimationFrame(syncBar);
+    }
+    ["scroll", "resize"].forEach(function (e) {
+      window.addEventListener(e, onBarScroll, { passive: true });
+      document.body.addEventListener(e, onBarScroll, { passive: true });
+    });
+    syncBar();
   }
 
   /* Footer year */
