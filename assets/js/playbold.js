@@ -267,6 +267,20 @@
     syncBar();
   }
 
+  /* Honest screen: cycle the device screens */
+  var hsStage = document.querySelector(".hsstage");
+  if (hsStage && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    var hsScreens = hsStage.querySelectorAll(".devscreen");
+    var hsDots = hsStage.querySelectorAll(".hs-dots i");
+    var hsI = 0;
+    setInterval(function () {
+      if (document.hidden) return;
+      hsI = (hsI + 1) % hsScreens.length;
+      hsScreens.forEach(function (s, k) { s.classList.toggle("on", k === hsI); });
+      hsDots.forEach(function (d, k) { d.classList.toggle("on", k === hsI); });
+    }, 2600);
+  }
+
   /* Footer year */
   var yr = document.getElementById("yr");
   if (yr) yr.textContent = new Date().getFullYear();
