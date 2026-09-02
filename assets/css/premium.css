@@ -433,7 +433,7 @@ a.schip:hover{transform:translateY(-2px);border-color:var(--brand)}
 
 /* ---------- the 10-card flip deck ---------- */
 .deckrail{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:16px}
-.fcardw{perspective:900px;aspect-ratio:3/4.1;animation:cardbob 4.5s ease-in-out infinite}
+.fcardw{perspective:900px;aspect-ratio:1276/2008;animation:cardbob 4.5s ease-in-out infinite}
 .fcardw:nth-child(2n){animation-delay:.7s}.fcardw:nth-child(3n){animation-delay:1.3s}.fcardw:nth-child(5n){animation-delay:2s}
 @keyframes cardbob{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
 .flip{position:relative;width:100%;height:100%;transform-style:preserve-3d;transition:transform .5s cubic-bezier(.2,.7,.3,1);cursor:pointer}
@@ -643,3 +643,8 @@ body.plocked{overflow:hidden}
 @keyframes wishsweep{0%,8%{left:-40%}30%{left:110%}31%,100%{left:110%}}
 @media (max-width:600px){.wishscreen{height:88px}}
 @media (prefers-reduced-motion:reduce){.wishcycle b,.wishbrush,.wishsheen{animation:none}.wishcycle b:nth-child(n+2){display:none}.wishbrush{opacity:1}}
+
+/* ===== Real printed card faces ===== */
+.fface.front.real{padding:0;border:none;background:#FFFFFF}
+.fface.front.real .cardface{width:100%;height:100%;object-fit:cover;display:block}
+.cardno{position:absolute;left:8px;bottom:8px;font-family:var(--mono);font-weight:700;font-size:9px;letter-spacing:.1em;color:#FFF6E8;background:rgba(23,19,14,.62);backdrop-filter:blur(4px);padding:5px 8px;border-radius:99px}
