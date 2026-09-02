@@ -589,41 +589,39 @@ body.plocked{overflow:hidden}
 @media (max-width:640px){.shelf{justify-content:flex-start;overflow-x:auto;gap:26px;padding:0 14px 18px;-webkit-overflow-scrolling:touch}}
 @media (prefers-reduced-motion:reduce){.pop.open .pstage>img,.pop.open .pfx,.player .peq i{animation:none}.pop.open .pfx{opacity:1}}
 
-/* ===== Cinema hero ===== */
-.cine{position:relative;min-height:94svh;display:flex;align-items:center;overflow:hidden;background:#241407}
-.cine .slide{position:absolute;inset:0;opacity:0;transition:opacity 1.2s ease}
-.cine .slide picture{position:absolute;inset:0;display:block}
-.cine .slide img{width:100%;height:100%;object-fit:cover;object-position:center 40%;transform:scale(1.04);transition:transform 5.2s linear}
-.cine .slide.on{opacity:1}
-.cine .slide.on img{transform:scale(1.0)}
-.cine::after{content:"";position:absolute;inset:0;background:linear-gradient(97deg,rgba(24,12,4,.82) 0%,rgba(24,12,4,.6) 20%,rgba(24,12,4,0) 46%);z-index:1}
-.cn-in{position:relative;z-index:2;width:100%;max-width:1160px;margin:0 auto;padding:80px 28px}
-.cn-copy{max-width:440px;color:#FFF4E3}
-.cn-copy .eyebrow{background:rgba(255,244,227,.14);color:var(--sun);border:1px solid rgba(255,200,26,.35)}
-.cn-copy h1{font-size:clamp(38px,4.8vw,58px);line-height:1.02;margin:18px 0 14px}
-.cn-copy p{font-family:var(--body);font-size:clamp(15.5px,1.6vw,18px);line-height:1.55;color:rgba(255,244,227,.88);max-width:42ch;margin:0 0 20px}
-.cn-price{display:flex;align-items:center;gap:12px;margin-bottom:22px}
-.cn-price .price{color:#FFF4E3;font-size:30px}
-.cn-price .strike{color:rgba(255,244,227,.55)}
-.cn-dots{position:absolute;left:50%;transform:translateX(-50%);bottom:22px;z-index:3;display:flex;gap:8px}
-.cn-dots i{width:8px;height:8px;border-radius:50%;background:rgba(255,244,227,.35);transition:.3s}
-.cn-dots i.on{background:var(--sun);width:22px;border-radius:99px}
-.prodchip{position:absolute;right:28px;bottom:26px;z-index:3;display:flex;align-items:center;gap:12px;background:rgba(255,255,255,.94);backdrop-filter:blur(6px);border-radius:20px;padding:10px 18px 10px 10px;box-shadow:0 16px 36px rgba(0,0,0,.35)}
-.prodchip img{width:58px;height:58px;object-fit:cover;border-radius:14px}
-.prodchip b{font-family:var(--disp);font-weight:800;font-size:14.5px;color:var(--ink);display:block;line-height:1.15}
-.prodchip small{font-family:var(--mono);font-weight:700;font-size:10px;letter-spacing:.1em;color:var(--brand);text-transform:uppercase}
-@media (max-width:760px){
-  .cine{min-height:96svh;align-items:flex-end}
-  .cine .slide img{object-position:center 24%}
-  .cine::after{background:linear-gradient(180deg,rgba(24,12,4,.16) 30%,rgba(24,12,4,.84) 78%)}
-  .cn-in{padding:0 20px 128px}
-  .cn-copy h1{font-size:clamp(34px,10vw,44px)}
-  .cn-dots{bottom:88px}
-  .prodchip{display:none}
+/* ===== Hero: a calm panel beside a big photo ===== */
+.cine{position:relative;background:linear-gradient(180deg,#FFF6E6,#FDEFD8);overflow:hidden}
+.th-in{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.08fr);align-items:center;gap:clamp(24px,4vw,64px);padding-left:clamp(20px,4vw,48px)}
+.th-copy{padding:clamp(40px,5vw,72px) 0}
+.th-copy h1{font-size:clamp(38px,5vw,64px);line-height:1.02;margin:16px 0 14px;color:var(--ink)}
+.th-copy h1 span{color:var(--brand)}
+.th-copy p{font-family:var(--body);font-size:clamp(16px,1.5vw,18.5px);line-height:1.55;color:rgba(35,26,16,.72);max-width:40ch;margin:0 0 22px}
+.th-price{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:24px}
+.th-price .price{font-size:clamp(28px,3vw,36px)}
+.th-cta{display:flex;gap:12px;flex-wrap:wrap}
+.th-cta .btn{padding:16px 34px;font-size:16.5px}
+.th-cta .btn.ghost{background:#FFFFFF;color:var(--ink);border:2px solid rgba(35,26,16,.14);box-shadow:none}
+.th-cta .btn.ghost:hover{border-color:var(--brand);color:var(--brand)}
+.th-photo{position:relative;align-self:stretch;min-height:clamp(420px,58vw,620px);border-radius:64px 0 0 64px;overflow:hidden;margin-right:calc(50% - 50vw)}
+.th-photo .slide{position:absolute;inset:0;opacity:0;transition:opacity 1.2s ease}
+.th-photo .slide.on{opacity:1}
+.th-photo picture{position:absolute;inset:0;display:block}
+.th-photo img{width:100%;height:100%;object-fit:cover;object-position:center 38%;transform:scale(1.04);transition:transform 5.2s linear}
+.th-photo .slide.on img{transform:scale(1)}
+.cn-dots{position:absolute;left:50%;transform:translateX(-50%);bottom:20px;z-index:3;display:flex;gap:8px}
+.cn-dots i{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.55);box-shadow:0 1px 4px rgba(0,0,0,.3);transition:.3s}
+.cn-dots i.on{background:#FFFFFF;width:22px;border-radius:99px}
+@media (max-width:900px){
+  .th-in{grid-template-columns:1fr;gap:0;padding:0}
+  .th-photo{order:-1;margin:14px 14px 0;border-radius:26px;min-height:0;aspect-ratio:4/3.4}
+  .th-copy{padding:22px 20px 30px;text-align:center}
+  .th-copy p{margin-inline:auto}
+  .th-price{justify-content:center;margin-bottom:18px}
+  .th-cta{flex-direction:column;gap:10px}
+  .th-cta .btn{width:100%;justify-content:center;text-align:center}
+  .cn-dots{bottom:12px}
 }
-@media (prefers-reduced-motion:reduce){.cine .slide{transition:none}.cine .slide img{transition:none;transform:none}}
-
-@media (max-width:920px){.glassgrid{grid-template-columns:repeat(3,1fr);gap:6px}.glass{aspect-ratio:auto;height:26px;font-size:13px;border-radius:8px}}
+@media (prefers-reduced-motion:reduce){.th-photo .slide{transition:none}.th-photo img{transition:none;transform:none}}
 
 /* ===== Imagine tile: the wish, then the drawing ===== */
 .wishbox{margin-top:auto;display:flex;flex-direction:column;gap:10px}
