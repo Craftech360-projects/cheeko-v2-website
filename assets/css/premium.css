@@ -395,7 +395,6 @@ a.schip:hover{transform:translateY(-2px);border-color:var(--brand)}
 @media (max-width:900px){
   .devmap{max-width:100%;margin-inline:-6px}
   .devmap::before{inset:12% 24%}
-  .devlist{display:grid;margin-top:14px}
 }
 .devlist div{font-size:13.5px;color:#6B5F4E;font-weight:600}
 .devlist b{font-family:var(--disp);font-weight:800;font-size:15px;color:var(--ink);display:block}
