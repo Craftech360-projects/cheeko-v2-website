@@ -381,9 +381,10 @@ a.schip:hover{transform:translateY(-2px);border-color:var(--brand)}
 
 
 /* ---------- annotated device map ---------- */
-.devmap{position:relative;max-width:880px;margin:0 auto;aspect-ratio:9/8}
-.devmap::before{content:"";position:absolute;inset:6% 18%;background:radial-gradient(closest-side,#FBE9C8,rgba(251,233,200,0) 72%);z-index:0}
-.devmap .dev{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);height:94%;width:auto;z-index:1;filter:drop-shadow(0 22px 34px rgba(35,26,16,.18))}
+.devmap{position:relative;max-width:1000px;margin:0 auto;display:flex;justify-content:center}
+.devmap::before{content:"";position:absolute;inset:8% 24%;background:radial-gradient(closest-side,#FBE9C8,rgba(251,233,200,0) 72%);z-index:0}
+.devmap picture{position:relative;z-index:1;display:block;width:100%}
+.devmap .dev,.devmap picture img{width:100%;height:auto;display:block;filter:drop-shadow(0 18px 30px rgba(35,26,16,.14))}
 .dlabel{position:absolute;z-index:2;max-width:200px}
 .dlabel b{font-family:var(--disp);font-weight:800;font-size:clamp(15px,1.6vw,20px);display:block;line-height:1.2}
 .dlabel span{font-size:clamp(11.5px,1.1vw,14px);color:#8A7A5E;font-weight:600}
@@ -392,10 +393,8 @@ a.schip:hover{transform:translateY(-2px);border-color:var(--brand)}
 .darrow{position:absolute;z-index:2;pointer-events:none}
 .devlist{display:none;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px 22px;margin-top:26px;max-width:880px;margin-left:auto;margin-right:auto}
 @media (max-width:900px){
-  .dlabel,.darrow{display:none}
-  .devmap{aspect-ratio:auto}
-  .devmap .dev{position:static;transform:none;height:auto;max-height:460px;margin:0 auto;display:block}
-  .devmap::before{inset:10% 28%}
+  .devmap{max-width:420px}
+  .devmap::before{inset:10% 20%}
   .devlist{display:grid}
 }
 .devlist div{font-size:13.5px;color:#6B5F4E;font-weight:600}
