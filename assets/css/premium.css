@@ -621,3 +621,25 @@ body.plocked{overflow:hidden}
 @media (prefers-reduced-motion:reduce){.cine .slide{transition:none}.cine .slide img{transition:none;transform:none}}
 
 @media (max-width:920px){.glassgrid{grid-template-columns:repeat(3,1fr);gap:6px}.glass{aspect-ratio:auto;height:26px;font-size:13px;border-radius:8px}}
+
+/* ===== Imagine tile: the wish, then the drawing ===== */
+.wishbox{margin-top:auto;display:flex;flex-direction:column;gap:10px}
+.wishsays{display:flex;align-items:baseline;gap:2px;font-family:var(--disp);font-weight:800;font-size:clamp(15px,1.7vw,18px);color:#FFF6E8}
+.wishsays>i{font-style:normal;color:var(--sun);font-size:1.3em;line-height:0}
+.wishcycle{position:relative;display:inline-block;height:1.35em;overflow:hidden;flex:1}
+.wishcycle b{display:block;height:1.35em;line-height:1.35em;white-space:nowrap;animation:wishroll 9s ease-in-out infinite}
+.wishcycle b:nth-child(2){animation-delay:-3s}
+.wishcycle b:nth-child(3){animation-delay:-6s}
+.wishcycle b:nth-child(n+2){position:absolute;inset:0}
+@keyframes wishroll{0%,4%{opacity:0;transform:translateY(60%)}8%,30%{opacity:1;transform:translateY(0)}36%,100%{opacity:0;transform:translateY(-50%)}}
+.wishscreen{position:relative;height:104px;border-radius:14px;overflow:hidden;background:linear-gradient(135deg,#3A2E1E,#241C11);border:3px solid rgba(255,255,255,.22)}
+.wishbrush{position:absolute;inset:0;background:
+  radial-gradient(60px 40px at 28% 62%,rgba(255,200,26,.5),transparent 70%),
+  radial-gradient(70px 46px at 62% 40%,rgba(240,82,29,.45),transparent 72%),
+  radial-gradient(52px 36px at 82% 70%,rgba(108,61,255,.4),transparent 70%);
+  filter:blur(1px);animation:wishpaint 9s ease-in-out infinite}
+@keyframes wishpaint{0%,6%{opacity:0;transform:scale(.9)}22%,32%{opacity:1;transform:scale(1)}44%,100%{opacity:0;transform:scale(1.04)}}
+.wishsheen{position:absolute;top:0;bottom:0;width:38%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.16),transparent);animation:wishsweep 9s ease-in-out infinite}
+@keyframes wishsweep{0%,8%{left:-40%}30%{left:110%}31%,100%{left:110%}}
+@media (max-width:600px){.wishscreen{height:88px}}
+@media (prefers-reduced-motion:reduce){.wishcycle b,.wishbrush,.wishsheen{animation:none}.wishcycle b:nth-child(n+2){display:none}.wishbrush{opacity:1}}
