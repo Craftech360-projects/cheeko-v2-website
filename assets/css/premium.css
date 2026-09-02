@@ -675,3 +675,19 @@ body.plocked{overflow:hidden}
   .hslist{max-width:320px;margin:0 auto}
   .hslist li{font-size:18px}
 }
+
+/* ===== Trust strip + backers, compact ===== */
+.tstrip{display:flex;gap:8px;overflow-x:auto;padding:2px 0 8px;-webkit-overflow-scrolling:touch;scroll-snap-type:x proximity;justify-content:center;flex-wrap:wrap}
+.tstrip .pill{flex:0 0 auto;scroll-snap-align:start;background:#FFFFFF;border:1px solid var(--line);border-radius:99px;padding:10px 16px;font-family:var(--body);font-weight:700;font-size:13.5px;color:var(--mut);white-space:nowrap;box-shadow:0 2px 8px rgba(35,26,16,.05)}
+.tstrip .pill b{color:var(--ink);font-family:var(--disp);font-weight:800;font-size:15px}
+.backline{display:flex;align-items:center;justify-content:center;gap:clamp(12px,3vw,22px);flex-wrap:wrap;margin-top:14px;padding-top:14px;border-top:1px solid var(--line)}
+.backline img{height:17px;width:auto;opacity:.5;filter:grayscale(1)}
+.backline .plabel{font-family:var(--mono);font-weight:700;font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--mut)}
+@media (max-width:640px){
+  .tstrip{flex-wrap:nowrap;justify-content:flex-start;margin:0 -18px;padding-left:18px;padding-right:18px}
+  .tstrip .pill{font-size:12.5px;padding:9px 14px}
+  .tstrip .pill b{font-size:14px}
+  .backline{gap:12px}
+  .backline img{height:14px}
+  .backline .plabel{font-size:9px}
+}
