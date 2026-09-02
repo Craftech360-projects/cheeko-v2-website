@@ -614,7 +614,7 @@ body.plocked{overflow:hidden}
 .cn-dots i.on{background:#FFFFFF;width:22px;border-radius:99px}
 @media (max-width:900px){
   .th-in{grid-template-columns:1fr;gap:0;padding:0}
-  .th-photo{order:-1;margin:12px 12px 0;border-radius:24px;min-height:0;aspect-ratio:1/1}
+  .th-photo{order:-1;margin:12px auto 0;border-radius:24px;min-height:0;aspect-ratio:1/1;width:calc(100% - 24px);max-width:460px}
   .th-copy{padding:18px 20px 26px;text-align:center}
   .th-copy .eyebrow{font-size:10.5px}
   .th-copy h1{font-size:clamp(29px,8.2vw,36px);margin:10px 0 8px}
