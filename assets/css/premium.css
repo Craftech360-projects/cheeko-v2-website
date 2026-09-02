@@ -474,19 +474,21 @@ a.schip:hover{transform:translateY(-2px);border-color:var(--brand)}
 .hb-chip i{font-style:normal;color:var(--sun)}
 @keyframes hbchip{0%,100%{transform:translateX(-50%) scale(1)}50%{transform:translateX(-50%) scale(1.05)}}
 @media (max-width:920px){
-.howsteps{grid-template-columns:1fr;gap:40px}
-.hbeat .hviz{height:300px}
-.hb-fan{width:180px;height:220px}
-.hb-fan img{width:104px}
-.hb-fan img:nth-child(2){left:34px}
-.hb-fan img:nth-child(3){left:68px}
-.hb-dev{height:172px}
-.hb-drop{width:72px;bottom:196px;animation-name:hbdropm}
-.hb-arrow{bottom:158px;transform:translateX(58px);width:24px;height:24px}
-.hb-behind{width:64px;bottom:132px;transform:translateX(calc(-50% + 10px))}
-.hb-chip{bottom:240px;font-size:13px;padding:8px 15px}
+.howsteps{grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.hbeat .hviz{height:210px}
+.hbeat .hcap{font-size:11.5px;line-height:1.25}
+.hb-fan{width:104px;height:132px}
+.hb-fan img{width:60px;border-width:2px}
+.hb-fan img:nth-child(2){left:20px;bottom:6px}
+.hb-fan img:nth-child(3){left:40px}
+.hb-dev{height:116px}
+.hb-drop{width:44px;bottom:132px;border-width:2px;animation-name:hbdropm}
+.hb-arrow{bottom:112px;transform:translateX(30px);width:16px;height:16px}
+.hb-behind{width:40px;bottom:94px;border-width:2px;transform:translateX(calc(-50% + 5px))}
+.hb-chip{bottom:166px;font-size:9px;padding:5px 9px;white-space:normal;max-width:96%;text-align:center;line-height:1.2}
 }
-@keyframes hbdropm{0%,15%{transform:translateX(calc(-50% + 10px)) rotate(4deg) translateY(0)}55%,100%{transform:translateX(calc(-50% + 10px)) rotate(1deg) translateY(26px)}}
+@keyframes hbdropm{0%,15%{transform:translateX(calc(-50% + 5px)) rotate(4deg) translateY(0)}55%,100%{transform:translateX(calc(-50% + 5px)) rotate(1deg) translateY(18px)}}
+
 @media (prefers-reduced-motion:reduce){.hb-drop,.hb-chip{animation:none}}
 
 /* ---------- device anatomy ---------- */
