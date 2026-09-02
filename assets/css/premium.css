@@ -393,10 +393,9 @@ a.schip:hover{transform:translateY(-2px);border-color:var(--brand)}
 .darrow{position:absolute;z-index:2;pointer-events:none}
 .devlist{display:none;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px 22px;margin-top:26px;max-width:880px;margin-left:auto;margin-right:auto}
 @media (max-width:900px){
-  .devmap{max-width:420px}
-  .devmap::before{inset:10% 20%}
-  #device .devmap picture img{max-height:44svh;width:auto;max-width:100%;object-fit:contain;margin:0 auto}
-  .devlist{display:grid;margin-top:18px}
+  .devmap{max-width:100%;margin-inline:-6px}
+  .devmap::before{inset:12% 24%}
+  .devlist{display:grid;margin-top:14px}
 }
 .devlist div{font-size:13.5px;color:#6B5F4E;font-weight:600}
 .devlist b{font-family:var(--disp);font-weight:800;font-size:15px;color:var(--ink);display:block}
