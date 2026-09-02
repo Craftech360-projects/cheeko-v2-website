@@ -500,7 +500,7 @@ a.schip:hover{transform:translateY(-2px);border-color:var(--brand)}
 .anat .a .at p{font-size:13.5px;color:#6B5F4E;font-weight:500;line-height:1.5;margin:0}
 
 /* ---------- sticky mobile buy bar ---------- */
-.buybar{position:fixed;left:0;right:0;bottom:0;z-index:70;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border-top:1px solid var(--line);padding:10px 16px;display:none;align-items:center;justify-content:space-between;gap:12px;box-shadow:0 -8px 24px rgba(35,26,16,.08)}
+.buybar{position:fixed;left:0;right:0;bottom:0;z-index:70;transform:translateY(115%);transition:transform .28s ease;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border-top:1px solid var(--line);padding:10px 16px;display:none;align-items:center;justify-content:space-between;gap:12px;box-shadow:0 -8px 24px rgba(35,26,16,.08)}
 .buybar .bb-price{font-family:var(--disp);font-weight:800;font-size:19px}
 .buybar .bb-price small{display:block;font-size:11px;color:var(--mut);font-weight:600;font-family:var(--body)}
 .buybar .btn{padding:12px 22px;font-size:14.5px}
@@ -523,6 +523,7 @@ a.schip:hover{transform:translateY(-2px);border-color:var(--brand)}
   .nav-burger{display:block}
   .nav-cta{margin-left:auto}
   .buybar{display:flex}
+  .buybar.show{transform:none}
   footer{padding-bottom:96px}
 }
 @media (max-width:600px){
@@ -613,7 +614,7 @@ body.plocked{overflow:hidden}
 .cn-dots i.on{background:#FFFFFF;width:22px;border-radius:99px}
 @media (max-width:900px){
   .th-in{grid-template-columns:1fr;gap:0;padding:0}
-  .th-photo{order:-1;margin:12px 12px 0;border-radius:24px;min-height:0;aspect-ratio:4/3}
+  .th-photo{order:-1;margin:12px 12px 0;border-radius:24px;min-height:0;aspect-ratio:1/1}
   .th-copy{padding:18px 20px 26px;text-align:center}
   .th-copy .eyebrow{font-size:10.5px}
   .th-copy h1{font-size:clamp(29px,8.2vw,36px);margin:10px 0 8px}
@@ -653,3 +654,5 @@ body.plocked{overflow:hidden}
 .fface.front.real{padding:0;border:none;background:#FFFFFF}
 .fface.front.real .cardface{width:100%;height:100%;object-fit:cover;display:block}
 .cardno{position:absolute;left:8px;bottom:8px;font-family:var(--mono);font-weight:700;font-size:9px;letter-spacing:.1em;color:#FFF6E8;background:rgba(23,19,14,.62);backdrop-filter:blur(4px);padding:5px 8px;border-radius:99px}
+
+@media (prefers-reduced-motion:reduce){.buybar{transition:none}}

@@ -246,6 +246,19 @@
     }, 4200);
   }
 
+  /* Buy bar appears only after the hero has scrolled away */
+  var buybar = document.querySelector(".buybar");
+  var heroEl = document.getElementById("top");
+  if (buybar && heroEl) {
+    if ("IntersectionObserver" in window) {
+      new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) { buybar.classList.toggle("show", !e.isIntersecting); });
+      }, { rootMargin: "-40px 0px 0px 0px" }).observe(heroEl);
+    } else {
+      buybar.classList.add("show");
+    }
+  }
+
   /* Footer year */
   var yr = document.getElementById("yr");
   if (yr) yr.textContent = new Date().getFullYear();
