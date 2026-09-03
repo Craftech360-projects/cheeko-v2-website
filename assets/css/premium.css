@@ -631,8 +631,8 @@ body.plocked{overflow:hidden}
 .wishsays{font-family:var(--disp);font-weight:800;font-size:clamp(15px,1.7vw,18px);color:var(--sun);min-height:1.4em}
 .wishcycle{display:block;transition:opacity .35s ease}
 .wishcycle.fade{opacity:0}
-.wishscreen{position:relative;border-radius:14px;overflow:hidden;border:3px solid rgba(255,255,255,.22);background:#241C11;aspect-ratio:4/3;max-height:130px;align-self:flex-start}
-.wishscreen img{width:100%;height:100%;object-fit:cover;display:block;transition:opacity .35s ease}
+.wishscreen{position:relative;width:100%;border-radius:14px;overflow:hidden;border:3px solid rgba(255,255,255,.22);background:#241C11;aspect-ratio:4/3;max-height:180px}
+.wishscreen img{width:100%;height:100%;object-fit:contain;display:block;background:#241C11;transition:opacity .35s ease}
 .wishscreen img.fade{opacity:0}
 .imgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:6px 0 4px}
 .imgrid figure{margin:0}

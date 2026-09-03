@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Imagine section | 3 compact templates</title>
+<meta name="robots" content="noindex" />
+<link rel="icon" type="image/png" href="assets/img/logo.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gabarito:wght@600;700;800;900&family=Hanken+Grotesk:wght@400;600;800&family=Spline+Sans+Mono:wght@500;700&display=swap" />
+<link rel="stylesheet" href="assets/css/premium.css?v=52" />
+<style>
+body{background:var(--tint)}
+.lab{max-width:1100px;margin:0 auto;padding:26px 18px 6px}
+.lab h2{font-family:var(--disp);font-weight:900;font-size:21px;margin:0 0 2px;color:var(--ink)}
+.lab p{font-family:var(--body);font-size:13.5px;color:var(--mut);margin:0}
+.tag{display:inline-block;font-family:var(--mono);font-weight:700;font-size:10.5px;letter-spacing:.14em;color:#fff;background:var(--brand);padding:6px 11px;border-radius:99px;margin-bottom:10px}
+
+/* shared dark band */
+.band{background:var(--ink);color:#FFF6E8}
+.bin{max-width:1100px;margin:0 auto;padding:44px 22px}
+.kick{font-family:var(--mono);font-weight:700;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--sun)}
+.band h3{font-family:var(--disp);font-weight:900;font-size:clamp(26px,3.6vw,38px);line-height:1.05;margin:10px 0 8px;color:#FFF6E8}
+.band .sub2{font-family:var(--body);font-size:15px;color:#C9BCA4;margin:0;max-width:44ch}
+
+/* A · one stage */
+.a-wrap{display:grid;grid-template-columns:1fr auto;gap:34px;align-items:center}
+.a-stage{position:relative;width:300px;aspect-ratio:4/3;border-radius:16px;overflow:hidden;border:3px solid rgba(255,255,255,.2);background:#241C11}
+.a-stage img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .5s}
+.a-stage img.on{opacity:1}
+.a-said{font-family:var(--disp);font-weight:800;font-size:clamp(18px,2.4vw,24px);color:var(--sun);margin:14px 0 0;min-height:1.4em}
+.a-count{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;color:#8F8371;margin-top:10px}
+@media (max-width:760px){.a-wrap{grid-template-columns:1fr;gap:18px}.a-stage{width:100%;max-width:320px}}
+
+/* B · strip */
+.b-strip{margin-top:20px;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+.b-track{display:flex;gap:12px;width:max-content;animation:bslide 40s linear infinite}
+.b-track figure{margin:0;width:170px;flex:0 0 auto}
+.b-track img{width:170px;aspect-ratio:4/3;object-fit:cover;border-radius:12px;border:2px solid rgba(255,255,255,.16);display:block}
+.b-track figcaption{font-family:var(--body);font-weight:600;font-size:11px;color:#C9BCA4;margin-top:5px;line-height:1.25}
+@keyframes bslide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* C · the device doing it */
+.c-wrap{display:grid;grid-template-columns:1fr 300px;gap:34px;align-items:center}
+.c-steps{display:flex;flex-direction:column;gap:10px;margin-top:16px}
+.c-step{display:flex;align-items:center;gap:11px;font-family:var(--body);font-weight:700;font-size:14px;color:#C9BCA4}
+.c-step b{font-family:var(--disp);font-weight:800;color:#FFF6E8;font-size:15px}
+.c-step i{font-style:normal;width:22px;height:22px;border-radius:50%;background:rgba(255,200,26,.16);color:var(--sun);display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-weight:700;font-size:11px;flex-shrink:0}
+.c-dev{position:relative;background:#2B2117;border-radius:26px;padding:14px;border:1px solid rgba(255,255,255,.1)}
+.c-screen{position:relative;aspect-ratio:4/3;border-radius:12px;overflow:hidden;background:#161009}
+.c-screen img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .45s}
+.c-screen img.on{opacity:1}
+.c-bar{display:flex;align-items:center;justify-content:space-between;font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;color:var(--sun);margin-bottom:8px}
+.c-cap{font-family:var(--disp);font-weight:800;font-size:13px;color:#FFF6E8;text-align:center;margin-top:10px;min-height:1.3em}
+@media (max-width:760px){.c-wrap{grid-template-columns:1fr;gap:20px}.c-dev{max-width:320px}}
+</style>
+</head>
+<body>
+
+<div class="lab"><span class="tag">OPTION A</span><h2>One stage, one wish at a time</h2><p>The smallest version. A single frame cycles the real pictures while the words change with it. Two short lines of copy, nothing else.</p></div>
+<div class="band"><div class="bin">
+  <div class="a-wrap">
+    <div>
+      <span class="kick">Imagine</span>
+      <h3>Say it. See it.</h3>
+      <p class="sub2">Your child says a wish out loud. Cheeko draws it on the screen, in seconds.</p>
+      <p class="a-said" id="aSaid">“a tiger riding a bicycle”</p>
+      <p class="a-count">EVERY PICTURE HERE WAS DRAWN BY A CHEEKO</p>
+    </div>
+    <div class="a-stage" id="aStage">
+      <img class="on" src="assets/img/imagine/im-05.jpg" alt="A tiger riding a bicycle" />
+      <img src="assets/img/imagine/im-07.jpg" alt="An auto rickshaw flying to the moon" />
+      <img src="assets/img/imagine/im-17.jpg" alt="A robot cooking dosa" />
+      <img src="assets/img/imagine/im-13.jpg" alt="A castle in the clouds" />
+      <img src="assets/img/imagine/im-18.jpg" alt="A banana wearing shoes" />
+    </div>
+  </div>
+</div></div>
+
+<div class="lab"><span class="tag">OPTION B</span><h2>A strip that keeps moving</h2><p>Copy on top, then one endless row of real pictures with the words underneath. Shows the range of what kids ask for. Same height on phone and desktop.</p></div>
+<div class="band"><div class="bin">
+  <span class="kick">Imagine</span>
+  <h3>Say it. See it.</h3>
+  <p class="sub2">Ten children, ten wishes, ten pictures. All drawn by a Cheeko in seconds.</p>
+  <div class="b-strip"><div class="b-track" id="bTrack"></div></div>
+</div></div>
+
+<div class="lab"><span class="tag">OPTION C</span><h2>Watch the device do it</h2><p>Shows the actual flow in three beats beside a screen that paints a new picture. Explains how it works, not just what comes out.</p></div>
+<div class="band"><div class="bin">
+  <div class="c-wrap">
+    <div>
+      <span class="kick">Imagine</span>
+      <h3>Say it. See it.</h3>
+      <div class="c-steps">
+        <div class="c-step"><i>1</i><span><b>Press and say a wish.</b> Anything at all.</span></div>
+        <div class="c-step"><i>2</i><span><b>Cheeko paints it.</b> A few seconds, on the screen.</span></div>
+        <div class="c-step"><i>3</i><span><b>It is never the same twice.</b></span></div>
+      </div>
+    </div>
+    <div class="c-dev">
+      <div class="c-bar"><span>CHEEKO</span><span>IMAGINE</span></div>
+      <div class="c-screen" id="cScreen">
+        <img class="on" src="assets/img/imagine/im-10.jpg" alt="A giant mango with a door in it" />
+        <img src="assets/img/imagine/im-14.jpg" alt="A submarine full of fish having tea" />
+        <img src="assets/img/imagine/im-08.jpg" alt="A dinosaur wearing a birthday hat" />
+        <img src="assets/img/imagine/im-11.jpg" alt="A rocket going past a purple planet" />
+      </div>
+      <p class="c-cap" id="cCap">“a giant mango with a door in it”</p>
+    </div>
+  </div>
+</div></div>
+
+<div style="height:50px"></div>
+
+<script>
+var WISH = [
+  ["a tiger riding a bicycle","im-05"],["an auto rickshaw flying to the moon","im-07"],
+  ["a robot cooking dosa","im-17"],["a castle in the clouds","im-13"],["a banana wearing shoes","im-18"],
+  ["a giant mango with a door in it","im-10"],["a submarine full of fish having tea","im-14"],
+  ["a dinosaur wearing a birthday hat","im-08"],["a rocket going past a purple planet","im-11"],
+  ["a peacock dancing at a Diwali party","im-16"],["my school bag walking to school by itself","im-15"],
+  ["rain made of orange juice","im-12"]
+];
+/* A */
+(function(){
+  var imgs=document.querySelectorAll("#aStage img"), said=document.getElementById("aSaid"), i=0;
+  var words=["a tiger riding a bicycle","an auto rickshaw flying to the moon","a robot cooking dosa","a castle in the clouds","a banana wearing shoes"];
+  setInterval(function(){ i=(i+1)%imgs.length; imgs.forEach(function(m,k){m.classList.toggle("on",k===i)}); said.textContent="“"+words[i]+"”"; },2800);
+})();
+/* B */
+(function(){
+  var t=document.getElementById("bTrack");
+  var html = WISH.map(function(w){ return '<figure><img src="assets/img/imagine/'+w[1]+'.jpg" alt="'+w[0]+'"><figcaption>“'+w[0]+'”</figcaption></figure>'; }).join("");
+  t.innerHTML = html + html;
+})();
+/* C */
+(function(){
+  var imgs=document.querySelectorAll("#cScreen img"), cap=document.getElementById("cCap"), i=0;
+  var words=["a giant mango with a door in it","a submarine full of fish having tea","a dinosaur wearing a birthday hat","a rocket going past a purple planet"];
+  setInterval(function(){ i=(i+1)%imgs.length; imgs.forEach(function(m,k){m.classList.toggle("on",k===i)}); cap.textContent="“"+words[i]+"”"; },3000);
+})();
+</script>
+</body>
+</html>
