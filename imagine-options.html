@@ -54,6 +54,16 @@ body{background:var(--tint)}
 .c-bar{display:flex;align-items:center;justify-content:space-between;font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;color:var(--sun);margin-bottom:8px}
 .c-cap{font-family:var(--disp);font-weight:800;font-size:13px;color:#FFF6E8;text-align:center;margin-top:10px;min-height:1.3em}
 @media (max-width:760px){.c-wrap{grid-template-columns:1fr;gap:20px}.c-dev{max-width:320px}}
+
+/* compact video trigger */
+.vtrig{display:inline-flex;align-items:center;gap:11px;margin-top:16px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-radius:99px;padding:8px 16px 8px 8px;cursor:pointer;color:#FFF6E8;font-family:var(--body);font-weight:700;font-size:13.5px}
+.vtrig:hover{background:rgba(255,255,255,.14)}
+.vtrig img{width:44px;height:44px;object-fit:cover;border-radius:50%;flex-shrink:0}
+.vtrig small{display:block;font-family:var(--mono);font-weight:700;font-size:9.5px;letter-spacing:.1em;color:var(--sun)}
+.vbox{position:fixed;inset:0;z-index:90;display:none;align-items:center;justify-content:center;background:rgba(20,14,8,.92);backdrop-filter:blur(6px)}
+.vbox.open{display:flex}
+.vbox video{max-height:86svh;max-width:92vw;border-radius:18px;box-shadow:0 24px 60px rgba(0,0,0,.5)}
+.vbox button{position:absolute;top:18px;right:18px;width:44px;height:44px;border-radius:50%;border:none;background:rgba(255,244,227,.16);color:#FFF6E8;font-size:19px;cursor:pointer}
 </style>
 </head>
 <body>
@@ -67,6 +77,10 @@ body{background:var(--tint)}
       <p class="sub2">Your child says a wish out loud. Cheeko draws it on the screen, in seconds.</p>
       <p class="a-said" id="aSaid">“a tiger riding a bicycle”</p>
       <p class="a-count">EVERY PICTURE HERE WAS DRAWN BY A CHEEKO</p>
+      <button class="vtrig" data-play type="button">
+        <img src="assets/img/live/imagine-poster.jpg" alt="" />
+        <span><small>50 SECONDS · REAL DEVICE</small>Watch it draw</span>
+      </button>
     </div>
     <div class="a-stage" id="aStage">
       <img class="on" src="assets/img/imagine/im-05.jpg" alt="A tiger riding a bicycle" />
@@ -83,6 +97,10 @@ body{background:var(--tint)}
   <span class="kick">Imagine</span>
   <h3>Say it. See it.</h3>
   <p class="sub2">Ten children, ten wishes, ten pictures. All drawn by a Cheeko in seconds.</p>
+    <button class="vtrig" data-play type="button">
+        <img src="assets/img/live/imagine-poster.jpg" alt="" />
+        <span><small>50 SECONDS · REAL DEVICE</small>Watch it draw</span>
+      </button>
   <div class="b-strip"><div class="b-track" id="bTrack"></div></div>
 </div></div>
 
@@ -97,6 +115,10 @@ body{background:var(--tint)}
         <div class="c-step"><i>2</i><span><b>Cheeko paints it.</b> A few seconds, on the screen.</span></div>
         <div class="c-step"><i>3</i><span><b>It is never the same twice.</b></span></div>
       </div>
+      <button class="vtrig" data-play type="button">
+        <img src="assets/img/live/imagine-poster.jpg" alt="" />
+        <span><small>50 SECONDS · REAL DEVICE</small>Watch it draw</span>
+      </button>
     </div>
     <div class="c-dev">
       <div class="c-bar"><span>CHEEKO</span><span>IMAGINE</span></div>
@@ -139,6 +161,22 @@ var WISH = [
   var imgs=document.querySelectorAll("#cScreen img"), cap=document.getElementById("cCap"), i=0;
   var words=["a giant mango with a door in it","a submarine full of fish having tea","a dinosaur wearing a birthday hat","a rocket going past a purple planet"];
   setInterval(function(){ i=(i+1)%imgs.length; imgs.forEach(function(m,k){m.classList.toggle("on",k===i)}); cap.textContent="“"+words[i]+"”"; },3000);
+})();
+</script>
+<div class="vbox" id="vbox">
+  <button type="button" id="vclose" aria-label="Close">✕</button>
+  <video id="vplayer" src="assets/vid/imagine.mp4" poster="assets/img/live/imagine-poster.jpg" controls playsinline></video>
+</div>
+<script>
+(function(){
+  var box=document.getElementById("vbox"), vid=document.getElementById("vplayer");
+  document.querySelectorAll("[data-play]").forEach(function(b){
+    b.addEventListener("click",function(){ box.classList.add("open"); vid.currentTime=0; vid.play(); });
+  });
+  function close(){ box.classList.remove("open"); vid.pause(); }
+  document.getElementById("vclose").addEventListener("click",close);
+  box.addEventListener("click",function(e){ if(e.target===box) close(); });
+  document.addEventListener("keydown",function(e){ if(e.key==="Escape") close(); });
 })();
 </script>
 </body>
