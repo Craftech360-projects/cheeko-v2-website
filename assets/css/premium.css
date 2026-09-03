@@ -627,11 +627,13 @@ body.plocked{overflow:hidden}
 @media (prefers-reduced-motion:reduce){.th-photo .slide{transition:none}.th-photo img{transition:none;transform:none}}
 
 /* ===== Imagine: the wish, then the picture it drew ===== */
-.wishbox{margin-top:auto;display:flex;flex-direction:column;gap:10px}
-.wishsays{font-family:var(--disp);font-weight:800;font-size:clamp(15px,1.7vw,18px);color:var(--sun);min-height:1.4em}
+.imtile{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,44%);align-items:center;gap:clamp(14px,2vw,24px)}
+.imcopy{display:flex;flex-direction:column;min-width:0}
+.imcopy h3{margin:6px 0 6px}
+.wishsays{font-family:var(--disp);font-weight:800;font-size:clamp(14px,1.5vw,17px);color:var(--sun);min-height:2.6em;margin-top:8px}
 .wishcycle{display:block;transition:opacity .35s ease}
 .wishcycle.fade{opacity:0}
-.wishscreen{position:relative;width:100%;max-width:260px;border-radius:14px;overflow:hidden;border:3px solid rgba(255,255,255,.22);background:#241C11;aspect-ratio:4/3}
+.wishscreen{position:relative;width:100%;border-radius:14px;overflow:hidden;border:3px solid rgba(255,255,255,.22);background:#241C11;aspect-ratio:4/3;align-self:center}
 .wishscreen img{width:100%;height:100%;object-fit:cover;display:block;transition:opacity .35s ease}
 .wishscreen img.fade{opacity:0}
 
@@ -654,6 +656,7 @@ body.plocked{overflow:hidden}
 .vbox.open{display:flex}
 .vbox video{max-height:86svh;max-width:92vw;border-radius:18px;box-shadow:0 24px 60px rgba(0,0,0,.5)}
 .vbox > button{position:absolute;top:18px;right:18px;width:46px;height:46px;border-radius:50%;border:none;background:rgba(255,244,227,.16);color:#FFF6E8;font-size:19px;cursor:pointer}
+@media (max-width:700px){.imtile{grid-template-columns:1fr;gap:10px}.imcopy h3{font-size:22px}.wishsays{min-height:2.4em}}
 @media (max-width:860px){
   .imhead{grid-template-columns:1fr;gap:18px}
   .vthumb{width:100%;padding:9px 16px 9px 9px}
