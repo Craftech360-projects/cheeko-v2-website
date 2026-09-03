@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gabarito:wght@600;700;800;900&family=Hanken+Grotesk:wght@400;600;800&family=Spline+Sans+Mono:wght@500;700&display=swap" />
-<link rel="stylesheet" href="assets/css/premium.css?v=60" />
+<link rel="stylesheet" href="assets/css/premium.css?v=61" />
 <style>
 body{background:#F6F1E7}
 .opt{max-width:640px;margin:0 auto;padding:30px 18px 10px}
@@ -19,34 +19,6 @@ body{background:#F6F1E7}
 .sep{height:1px;background:rgba(35,26,16,.12);max-width:640px;margin:34px auto}
 .why{font-family:var(--body);font-size:12.5px;line-height:1.55;color:var(--mut);max-width:640px;margin:12px auto 0;padding:0 18px}
 .why b{color:var(--ink)}
-
-/* ---------- A · the receipt ---------- */
-.receipt{background:#FFFDF8;border-radius:5px;padding:26px 24px 22px;box-shadow:0 14px 34px rgba(35,26,16,.11);position:relative;font-family:var(--mono)}
-.receipt::before,.receipt::after{content:"";position:absolute;left:0;right:0;height:10px;background:repeating-linear-gradient(-45deg,#FFFDF8 0 9px,transparent 9px 18px)}
-.receipt::before{top:-9px}.receipt::after{bottom:-9px;transform:scaleY(-1)}
-.rc-top{text-align:center;padding-bottom:15px}
-.rc-top b{display:block;font-family:var(--disp);font-weight:900;font-size:21px;color:var(--ink);letter-spacing:-.01em;line-height:1.1}
-.rc-top span{font-size:9.5px;font-weight:700;letter-spacing:.2em;color:var(--mut)}
-.rc-cut{border-top:1.5px dashed rgba(35,26,16,.26);margin:0}
-.rc-head{font-size:9.5px;font-weight:700;letter-spacing:.16em;color:var(--mut);padding:14px 0 2px}
-.rc-head.trial{color:var(--brand)}
-.rc-line{display:flex;justify-content:space-between;align-items:baseline;gap:10px;font-size:13.5px;font-weight:500;color:var(--ink);padding:8px 0}
-.rc-line i{flex:1;border-bottom:1px dotted rgba(35,26,16,.2);margin:0 2px 3px;min-width:12px}
-.rc-line em{font-style:normal;font-weight:700;white-space:nowrap}
-.rc-line.zero em{color:var(--green)}
-.rc-line.trial em{color:var(--brand)}
-.rc-sub{font-family:var(--body);font-size:12px;color:var(--mut);margin:-6px 0 2px;padding-bottom:6px}
-.rc-total{display:flex;justify-content:space-between;align-items:baseline;padding:15px 0 6px}
-.rc-total b{font-family:var(--disp);font-weight:900;font-size:15px;letter-spacing:.05em;color:var(--ink)}
-.rc-total strong{font-family:var(--disp);font-weight:900;font-size:28px;color:var(--brand);line-height:1}
-.rc-paid{text-align:center;font-size:10px;font-weight:700;letter-spacing:.16em;color:var(--green);border:1.5px solid var(--green);border-radius:5px;padding:8px;margin:6px 0 16px;transform:rotate(-1deg)}
-.rc-note{background:rgba(240,82,29,.07);border-radius:10px;padding:12px 14px;margin:12px 0 0;font-family:var(--body);font-size:13px;line-height:1.55;color:var(--ink)}
-.rc-note b{font-weight:800}
-.rc-foot{margin:18px -24px -22px;padding:13px 24px;border-top:1.5px dashed rgba(35,26,16,.26);display:flex;align-items:center;justify-content:space-between;gap:10px;font-size:9px;font-weight:700;letter-spacing:.14em;color:var(--mut)}
-.rc-bars{display:flex;gap:1.5px;align-items:flex-end;height:20px;flex-shrink:0}
-.rc-bars i{display:block;width:1.5px;height:100%;background:var(--ink);opacity:.72}
-.rc-bars i:nth-child(3n){width:3px}.rc-bars i:nth-child(4n){height:66%}.rc-bars i:nth-child(5n){width:1px}
-@media (max-width:420px){.receipt{padding:22px 18px 18px}.rc-line{font-size:12.5px}.rc-foot{margin:16px -18px -18px;padding:12px 18px;font-size:8px}}
 
 /* ---------- B · one list, two tags ---------- */
 .tlist{background:#FFFFFF;border-radius:20px;overflow:hidden;box-shadow:0 12px 30px rgba(35,26,16,.08)}
