@@ -310,6 +310,28 @@
     }, 3200);
   }
 
+  /* Imagine film: thumbnail opens the video full size */
+  var vbox = document.getElementById("vbox");
+  if (vbox) {
+    var vplayer = document.getElementById("vplayer");
+    document.querySelectorAll("[data-play]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        vbox.classList.add("open");
+        document.body.classList.add("plocked");
+        vplayer.currentTime = 0;
+        vplayer.play();
+      });
+    });
+    function closeFilm() {
+      vbox.classList.remove("open");
+      document.body.classList.remove("plocked");
+      vplayer.pause();
+    }
+    document.getElementById("vclose").addEventListener("click", closeFilm);
+    vbox.addEventListener("click", function (e) { if (e.target === vbox) closeFilm(); });
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape" && vbox.classList.contains("open")) closeFilm(); });
+  }
+
   /* Footer year */
   var yr = document.getElementById("yr");
   if (yr) yr.textContent = new Date().getFullYear();
