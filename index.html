@@ -19,7 +19,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gabarito:wght@600;700;800;900&family=Hanken+Grotesk:wght@400;600;800&family=Spline+Sans+Mono:wght@500;700&display=swap" />
 <link rel="preload" as="image" href="assets/img/live/hero-2.jpg" />
 <link rel="preload" as="image" href="assets/img/live/hero-3.jpg" />
-<link rel="stylesheet" href="assets/css/premium.css?v=50" />
+<link rel="stylesheet" href="assets/css/premium.css?v=51" />
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -176,9 +176,10 @@
         <span class="btkick">Imagine</span>
         <h3 style="font-size:clamp(24px,2.6vw,34px);">Say a wish,<br>see it drawn</h3>
         <p style="max-width:30ch;">Said out loud, drawn on the spot.</p>
-        <span class="wishbox" aria-hidden="true">
-          <span class="wishsays"><span class="wishcycle"><b>“a red cat”</b><b>“a flying elephant”</b><b>“a rabbit eating noodles”</b></span></span>
-          <span class="wishscreen"><span class="wishbrush"></span><span class="wishsheen"></span></span>
+        <span class="wishbox">
+          <span class="wishsays"><span class="wishcycle" id="wishtext">“a red cat”</span></span>
+          <span class="wishscreen"><img id="wishpic" src="assets/img/imagine/im-01.jpg" width="320" height="240" alt="A picture Cheeko drew: a red cat" /></span>
+        </span>
         </span>
       </a>
       <div class="bt c-line rv">
@@ -406,10 +407,13 @@
           <span class="eyebrow" style="color:var(--sun);">Imagine, the picture maker</span>
           <h2 class="disp" style="color:#FFF6E8;">Say it. See it.</h2>
           <p class="sub" style="color:#C9BCA4;">Whatever your child dreams up, Cheeko draws it on the spot. No two wishes ever look the same.</p>
-          <div class="row">
-            <span class="chip" style="background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.28);color:#FFF6E8;">"a red cat"</span>
-            <span class="chip" style="background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.28);color:#FFF6E8;">"a flying elephant"</span>
-            <span class="chip" style="background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.28);color:#FFF6E8;">"a rabbit eating spaghetti noodles"</span>
+          <div class="imgrid">
+            <figure><img src="assets/img/imagine/im-05.jpg" width="320" height="240" alt="A tiger riding a bicycle, drawn by Cheeko" loading="lazy" /><figcaption>“a tiger riding a bicycle”</figcaption></figure>
+            <figure><img src="assets/img/imagine/im-07.jpg" width="320" height="240" alt="An auto rickshaw flying to the moon, drawn by Cheeko" loading="lazy" /><figcaption>“an auto rickshaw flying to the moon”</figcaption></figure>
+            <figure><img src="assets/img/imagine/im-17.jpg" width="320" height="240" alt="A robot cooking dosa, drawn by Cheeko" loading="lazy" /><figcaption>“a robot cooking dosa”</figcaption></figure>
+            <figure><img src="assets/img/imagine/im-14.jpg" width="320" height="240" alt="A submarine full of fish having tea, drawn by Cheeko" loading="lazy" /><figcaption>“a submarine full of fish having tea”</figcaption></figure>
+            <figure><img src="assets/img/imagine/im-10.jpg" width="320" height="240" alt="A giant mango with a door in it, drawn by Cheeko" loading="lazy" /><figcaption>“a giant mango with a door in it”</figcaption></figure>
+            <figure><img src="assets/img/imagine/im-18.jpg" width="320" height="240" alt="A banana wearing shoes, drawn by Cheeko" loading="lazy" /><figcaption>“a banana wearing shoes”</figcaption></figure>
           </div>
           <p class="serial" style="color:#8F8371;">TALK + IMAGINE: FREE FOR 3 MONTHS, THEN AN OPTIONAL PLAN · CARDS, STORIES &amp; GAMES FREE FOREVER</p>
         </div>
@@ -621,6 +625,6 @@
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js" defer></script>
-<script src="assets/js/playbold.js?v=7" defer></script>
+<script src="assets/js/playbold.js?v=8" defer></script>
 </body>
 </html>

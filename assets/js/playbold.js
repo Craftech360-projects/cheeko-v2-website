@@ -281,6 +281,35 @@
     }, 2600);
   }
 
+  /* Imagine tile: cycle the wish and the picture it actually drew */
+  var wishText = document.getElementById("wishtext");
+  var wishPic = document.getElementById("wishpic");
+  if (wishText && wishPic && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    var WISHES = [
+      ["a red cat", "im-01"],
+      ["a flying elephant", "im-02"],
+      ["a house made of chocolate", "im-06"],
+      ["a dinosaur wearing a birthday hat", "im-08"],
+      ["a castle in the clouds", "im-13"],
+      ["my school bag walking to school by itself", "im-15"],
+      ["a rocket going past a purple planet", "im-11"],
+      ["a banana wearing shoes", "im-18"]
+    ];
+    WISHES.forEach(function (w) { var p = new Image(); p.src = "assets/img/imagine/" + w[1] + ".jpg"; });
+    var wi = 0;
+    setInterval(function () {
+      if (document.hidden) return;
+      wi = (wi + 1) % WISHES.length;
+      wishText.classList.add("fade"); wishPic.classList.add("fade");
+      setTimeout(function () {
+        wishText.textContent = "\u201C" + WISHES[wi][0] + "\u201D";
+        wishPic.src = "assets/img/imagine/" + WISHES[wi][1] + ".jpg";
+        wishPic.alt = "A picture Cheeko drew: " + WISHES[wi][0];
+        wishText.classList.remove("fade"); wishPic.classList.remove("fade");
+      }, 360);
+    }, 3200);
+  }
+
   /* Footer year */
   var yr = document.getElementById("yr");
   if (yr) yr.textContent = new Date().getFullYear();
