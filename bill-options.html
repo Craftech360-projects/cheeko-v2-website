@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The honest bill | 3 templates</title>
+<meta name="robots" content="noindex" />
+<link rel="icon" type="image/png" href="assets/img/logo.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gabarito:wght@600;700;800;900&family=Hanken+Grotesk:wght@400;600;800&family=Spline+Sans+Mono:wght@500;700&display=swap" />
+<link rel="stylesheet" href="assets/css/premium.css?v=60" />
+<style>
+body{background:#F6F1E7}
+.opt{max-width:640px;margin:0 auto;padding:30px 18px 10px}
+.opt h2{font-family:var(--disp);font-weight:900;font-size:23px;margin:2px 0 2px;color:var(--ink)}
+.opt .note{font-family:var(--body);font-size:13.5px;line-height:1.5;color:var(--mut);margin:0 0 18px}
+.tag{display:inline-block;font-family:var(--mono);font-weight:700;font-size:10.5px;letter-spacing:.14em;color:#FFFFFF;background:var(--brand);padding:6px 11px;border-radius:99px}
+.sep{height:1px;background:rgba(35,26,16,.12);max-width:640px;margin:34px auto}
+.why{font-family:var(--body);font-size:12.5px;line-height:1.55;color:var(--mut);max-width:640px;margin:12px auto 0;padding:0 18px}
+.why b{color:var(--ink)}
+
+/* ---------- A · the receipt ---------- */
+.receipt{background:#FFFDF8;border-radius:6px;padding:26px 22px 24px;box-shadow:0 12px 30px rgba(35,26,16,.1);position:relative;font-family:var(--mono)}
+.receipt::before,.receipt::after{content:"";position:absolute;left:0;right:0;height:9px;background:repeating-linear-gradient(-45deg,#FFFDF8 0 8px,transparent 8px 16px)}
+.receipt::before{top:-8px}.receipt::after{bottom:-8px;transform:scaleY(-1)}
+.rc-top{text-align:center;padding-bottom:14px;border-bottom:1.5px dashed rgba(35,26,16,.28)}
+.rc-top b{display:block;font-family:var(--disp);font-weight:900;font-size:20px;color:var(--ink);letter-spacing:-.01em}
+.rc-top span{font-size:10px;font-weight:700;letter-spacing:.18em;color:var(--mut)}
+.rc-line{display:flex;justify-content:space-between;align-items:baseline;gap:12px;font-size:13.5px;font-weight:500;color:var(--ink);padding:9px 0}
+.rc-line i{flex:1;border-bottom:1px dotted rgba(35,26,16,.22);margin:0 2px 3px}
+.rc-line em{font-style:normal;font-weight:700;white-space:nowrap}
+.rc-line.zero em{color:var(--green)}
+.rc-rule{border-top:1.5px dashed rgba(35,26,16,.28);margin:8px 0 0}
+.rc-total{display:flex;justify-content:space-between;align-items:baseline;padding:14px 0 4px}
+.rc-total b{font-family:var(--disp);font-weight:900;font-size:15px;letter-spacing:.06em;color:var(--ink)}
+.rc-total strong{font-family:var(--disp);font-weight:900;font-size:27px;color:var(--brand)}
+.rc-paid{text-align:center;font-size:10.5px;font-weight:700;letter-spacing:.16em;color:var(--green);border:1.5px solid var(--green);border-radius:6px;padding:7px;margin:12px 0 0;transform:rotate(-1.2deg)}
+.rc-after{margin:20px 0 0;padding-top:16px;border-top:1.5px dashed rgba(35,26,16,.28);font-family:var(--body);font-size:13.5px;line-height:1.6;color:var(--mut)}
+.rc-after b{display:block;font-family:var(--disp);font-weight:800;font-size:14.5px;color:var(--ink);margin-bottom:4px}
+
+/* ---------- B · one list, two tags ---------- */
+.tlist{background:#FFFFFF;border-radius:20px;overflow:hidden;box-shadow:0 12px 30px rgba(35,26,16,.08)}
+.tl-row{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:14px 18px;border-bottom:1px solid rgba(35,26,16,.08)}
+.tl-row:last-child{border-bottom:none}
+.tl-row b{font-family:var(--body);font-weight:700;font-size:15px;color:var(--ink)}
+.tl-row small{display:block;font-family:var(--body);font-weight:400;font-size:12.5px;color:var(--mut);margin-top:1px}
+.chip{flex-shrink:0;font-family:var(--mono);font-weight:700;font-size:9.5px;letter-spacing:.1em;padding:6px 10px;border-radius:99px;white-space:nowrap}
+.chip.free{background:rgba(31,122,80,.1);color:var(--green)}
+.chip.trial{background:rgba(240,82,29,.1);color:var(--brand)}
+.tl-foot{background:var(--tint);padding:14px 18px;font-family:var(--body);font-size:13px;line-height:1.55;color:var(--mut)}
+.tl-foot b{color:var(--ink)}
+
+/* ---------- C · three answers ---------- */
+.answers{background:var(--ink);color:#FFF6E8;border-radius:24px;padding:26px 24px}
+.an-price{display:flex;align-items:baseline;gap:10px;padding-bottom:18px;border-bottom:1px solid rgba(255,246,232,.16)}
+.an-price strong{font-family:var(--disp);font-weight:900;font-size:44px;line-height:1;color:var(--sun)}
+.an-price span{font-family:var(--mono);font-weight:700;font-size:11px;letter-spacing:.16em;color:rgba(255,246,232,.7)}
+.an-q{padding:16px 0;border-bottom:1px solid rgba(255,246,232,.12)}
+.an-q:last-of-type{border-bottom:none;padding-bottom:4px}
+.an-q b{display:block;font-family:var(--mono);font-weight:700;font-size:10.5px;letter-spacing:.16em;color:var(--sun);margin-bottom:6px}
+.an-q p{margin:0;font-family:var(--body);font-size:15.5px;line-height:1.5;color:#FFF6E8}
+.an-q p i{font-style:normal;color:rgba(255,246,232,.62)}
+.an-foot{margin-top:18px;font-family:var(--body);font-size:13px;color:rgba(255,246,232,.6)}
+.an-foot a{color:var(--sun);font-weight:800}
+
+/* ---------- today ---------- */
+.today{max-width:640px;margin:0 auto;padding:0 18px 60px}
+.today h3{font-family:var(--mono);font-weight:700;font-size:11px;letter-spacing:.16em;color:var(--mut);text-transform:uppercase;margin-bottom:12px}
+</style>
+</head>
+<body>
+
+<div class="opt">
+  <span class="tag">OPTION A</span>
+  <h2>The receipt</h2>
+  <p class="note">The section is called "The honest bill", so make it an actual bill. Every free thing is shown as a real line item priced ₹0, which proves the claim instead of asserting it. A receipt is naturally one narrow column, so mobile is its best shape, not its worst.</p>
+  <div class="receipt">
+    <div class="rc-top"><b>Cheeko</b><span>ONE-TIME BILL</span></div>
+    <div class="rc-line"><span>Cheeko device</span><i></i><em>₹5,999</em></div>
+    <div class="rc-line zero"><span>10 story cards</span><i></i><em>₹0</em></div>
+    <div class="rc-line zero"><span>8 built-in games</span><i></i><em>₹0</em></div>
+    <div class="rc-line zero"><span>Rhymes &amp; stories</span><i></i><em>₹0</em></div>
+    <div class="rc-line zero"><span>Funny Voice &amp; radio</span><i></i><em>₹0</em></div>
+    <div class="rc-line zero"><span>Delivery in India</span><i></i><em>₹0</em></div>
+    <div class="rc-rule"></div>
+    <div class="rc-total"><b>TOTAL TODAY</b><strong>₹5,999</strong></div>
+    <div class="rc-paid">PAID ONCE &middot; NOTHING RENEWS</div>
+    <div class="rc-after"><b>Only two things could cost more, later.</b>Talk and Imagine are free for 3 months. After that they need an optional plan. The price is shown in the parent app first &mdash; nothing is charged on its own.</div>
+  </div>
+</div>
+
+<div class="sep"></div>
+
+<div class="opt">
+  <span class="tag">OPTION B</span>
+  <h2>One list, two tags</h2>
+  <p class="note">Two side-by-side cards make a parent compare plans, which is the wrong instinct for something you buy once. One list fixes that: every feature on one line, with a green or an amber tag. Same shape on phone and laptop, nothing to read twice.</p>
+  <div class="tlist">
+    <div class="tl-row"><div><b>Every card you own</b><small>The 10 in the box, and any you buy</small></div><span class="chip free">FREE FOREVER</span></div>
+    <div class="tl-row"><div><b>All 8 built-in games</b><small>They work with no internet</small></div><span class="chip free">FREE FOREVER</span></div>
+    <div class="tl-row"><div><b>Rhymes &amp; stories</b><small>In the language you choose</small></div><span class="chip free">FREE FOREVER</span></div>
+    <div class="tl-row"><div><b>Funny Voice &amp; radio</b><small>Kid-safe channels</small></div><span class="chip free">FREE FOREVER</span></div>
+    <div class="tl-row"><div><b>Talk: live AI answers</b><small>Cheeko answers back out loud</small></div><span class="chip trial">3 MONTHS FREE</span></div>
+    <div class="tl-row"><div><b>Imagine: the picture maker</b><small>Say a wish, see it drawn</small></div><span class="chip trial">3 MONTHS FREE</span></div>
+    <div class="tl-foot"><b>After 3 months</b>, Talk and Imagine need an optional plan. You will see the price in the parent app first. No surprises, no auto-charge.</div>
+  </div>
+</div>
+
+<div class="sep"></div>
+
+<div class="opt">
+  <span class="tag">OPTION C</span>
+  <h2>Three answers</h2>
+  <p class="note">A parent is really asking three questions. Answer exactly those, one sentence each, and stop. This is the shortest of the three &mdash; about a third of the words on the site today &mdash; and it reads the same on any screen.</p>
+  <div class="answers">
+    <div class="an-price"><strong>&#8377;5,999</strong><span>ONCE &middot; DEVICE + 10 CARDS</span></div>
+    <div class="an-q"><b>WHAT YOU PAY</b><p>₹5,999 today. <i>Delivery is free. There is no card fee and nothing renews.</i></p></div>
+    <div class="an-q"><b>WHAT YOU NEVER PAY FOR</b><p>Your cards, the 8 games, rhymes, stories, Funny Voice and radio. <i>Yours forever, and they work offline.</i></p></div>
+    <div class="an-q"><b>WHAT COULD COST MORE LATER</b><p>Only Talk and Imagine. <i>Free for 3 months, then an optional plan &mdash; the price is shown in the parent app first.</i></p></div>
+    <p class="an-foot">Where a plain audio player still beats us is on the <a href="compare.html">compare page &rarr;</a></p>
+  </div>
+</div>
+
+<p class="why"><b>What the research says.</b> Tonies sells a device you pay for once and says so in a single line rather than a table. Yoto has a real subscription, so it names the free parts as products &mdash; "Yoto Daily", "Yoto Radio" &mdash; instead of calling them a free tier. Neither uses a two-column plan grid, because that is a SaaS pricing pattern and it makes a buyer brace for a paywall. All three options above drop the grid.</p>
+
+<div class="sep"></div>
+
+<div class="today">
+  <h3>For comparison, what is on the site today</h3>
+  <div class="sec-head" style="margin-bottom:16px;">
+    <span class="eyebrow">Before you pay, not after</span>
+    <h2 class="disp">The honest bill.</h2>
+    <p class="sub" style="margin:10px 0 0;">Your ₹5,999 buys the device and all 10 cards, yours forever. Only Talk and Imagine have an optional plan later.</p>
+  </div>
+  <div class="grid2" style="align-items:stretch;margin-bottom:18px;">
+    <div class="card" style="border-top:5px solid var(--green);">
+      <span class="eyebrow" style="color:var(--green);">Free forever</span>
+      <div class="checklist" style="margin-top:14px;font-size:15px;">
+        <span>Every card you own</span><span>All 8 built-in games</span><span>Rhymes &amp; stories</span><span>Funny Voice</span>
+      </div>
+    </div>
+    <div class="card" style="border-top:5px solid var(--line);">
+      <span class="eyebrow" style="color:var(--mut);">Free for 3 months, then an optional plan</span>
+      <div class="checklist" style="margin-top:14px;font-size:15px;">
+        <span>Talk: live AI answers</span><span>Imagine, the picture maker</span>
+      </div>
+      <p class="serial" style="margin-top:12px;">Plan price shown in the parent app first · no surprises, no auto-charge</p>
+    </div>
+  </div>
+  <div class="card dark" style="text-align:center;">
+    <p style="margin:0;font-family:var(--disp);font-weight:800;font-size:clamp(17px,2vw,21px);line-height:1.5;">No video, no ads, no feed. Real answers in English and 10+ Indian languages. Cards and games that work offline.</p>
+  </div>
+</div>
+
+</body>
+</html>
