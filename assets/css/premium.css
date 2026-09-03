@@ -299,11 +299,11 @@ a.schip:hover{transform:translateY(-2px);border-color:var(--brand)}
 .wobble i:nth-child(6){animation-delay:.45s}.wobble i:nth-child(7){animation-delay:.54s}
 .wobble i:nth-child(8){animation-delay:.63s}
 @keyframes wob{0%,100%{transform:translateY(0) rotate(0)}30%{transform:translateY(-6px) rotate(-5deg)}65%{transform:translateY(2px) rotate(3deg)}}
-.appeek{position:absolute;right:5%;top:50%;transform:translateY(-50%) rotate(-3deg);width:34%;max-width:190px;aspect-ratio:4/3;border-radius:14px;overflow:hidden;box-shadow:0 10px 26px rgba(0,0,0,.35);z-index:1}
+.appeek{position:absolute;right:5%;top:50%;transform:translateY(-50%) rotate(-3deg);height:72%;width:auto;aspect-ratio:4/3;max-width:44%;border-radius:14px;overflow:hidden;box-shadow:0 10px 26px rgba(0,0,0,.35);z-index:1}
 .appeek img{width:100%;height:100%;object-fit:cover;object-position:center 58%}
 .bt.has-peek{padding-right:40%}
 @media (prefers-reduced-motion:reduce){.eq i,.wobble i{animation:none}}
-@media (max-width:600px){.appeek{width:38%}.bt.has-peek{padding-right:42%}}
+@media (max-width:600px){.appeek{height:66%}.bt.has-peek{padding-right:44%}}
 
 
 /* ---------- how-it-works templates ---------- */
