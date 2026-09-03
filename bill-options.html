@@ -21,23 +21,32 @@ body{background:#F6F1E7}
 .why b{color:var(--ink)}
 
 /* ---------- A · the receipt ---------- */
-.receipt{background:#FFFDF8;border-radius:6px;padding:26px 22px 24px;box-shadow:0 12px 30px rgba(35,26,16,.1);position:relative;font-family:var(--mono)}
-.receipt::before,.receipt::after{content:"";position:absolute;left:0;right:0;height:9px;background:repeating-linear-gradient(-45deg,#FFFDF8 0 8px,transparent 8px 16px)}
-.receipt::before{top:-8px}.receipt::after{bottom:-8px;transform:scaleY(-1)}
-.rc-top{text-align:center;padding-bottom:14px;border-bottom:1.5px dashed rgba(35,26,16,.28)}
-.rc-top b{display:block;font-family:var(--disp);font-weight:900;font-size:20px;color:var(--ink);letter-spacing:-.01em}
-.rc-top span{font-size:10px;font-weight:700;letter-spacing:.18em;color:var(--mut)}
-.rc-line{display:flex;justify-content:space-between;align-items:baseline;gap:12px;font-size:13.5px;font-weight:500;color:var(--ink);padding:9px 0}
-.rc-line i{flex:1;border-bottom:1px dotted rgba(35,26,16,.22);margin:0 2px 3px}
+.receipt{background:#FFFDF8;border-radius:5px;padding:26px 24px 22px;box-shadow:0 14px 34px rgba(35,26,16,.11);position:relative;font-family:var(--mono)}
+.receipt::before,.receipt::after{content:"";position:absolute;left:0;right:0;height:10px;background:repeating-linear-gradient(-45deg,#FFFDF8 0 9px,transparent 9px 18px)}
+.receipt::before{top:-9px}.receipt::after{bottom:-9px;transform:scaleY(-1)}
+.rc-top{text-align:center;padding-bottom:15px}
+.rc-top b{display:block;font-family:var(--disp);font-weight:900;font-size:21px;color:var(--ink);letter-spacing:-.01em;line-height:1.1}
+.rc-top span{font-size:9.5px;font-weight:700;letter-spacing:.2em;color:var(--mut)}
+.rc-cut{border-top:1.5px dashed rgba(35,26,16,.26);margin:0}
+.rc-head{font-size:9.5px;font-weight:700;letter-spacing:.16em;color:var(--mut);padding:14px 0 2px}
+.rc-head.trial{color:var(--brand)}
+.rc-line{display:flex;justify-content:space-between;align-items:baseline;gap:10px;font-size:13.5px;font-weight:500;color:var(--ink);padding:8px 0}
+.rc-line i{flex:1;border-bottom:1px dotted rgba(35,26,16,.2);margin:0 2px 3px;min-width:12px}
 .rc-line em{font-style:normal;font-weight:700;white-space:nowrap}
 .rc-line.zero em{color:var(--green)}
-.rc-rule{border-top:1.5px dashed rgba(35,26,16,.28);margin:8px 0 0}
-.rc-total{display:flex;justify-content:space-between;align-items:baseline;padding:14px 0 4px}
-.rc-total b{font-family:var(--disp);font-weight:900;font-size:15px;letter-spacing:.06em;color:var(--ink)}
-.rc-total strong{font-family:var(--disp);font-weight:900;font-size:27px;color:var(--brand)}
-.rc-paid{text-align:center;font-size:10.5px;font-weight:700;letter-spacing:.16em;color:var(--green);border:1.5px solid var(--green);border-radius:6px;padding:7px;margin:12px 0 0;transform:rotate(-1.2deg)}
-.rc-after{margin:20px 0 0;padding-top:16px;border-top:1.5px dashed rgba(35,26,16,.28);font-family:var(--body);font-size:13.5px;line-height:1.6;color:var(--mut)}
-.rc-after b{display:block;font-family:var(--disp);font-weight:800;font-size:14.5px;color:var(--ink);margin-bottom:4px}
+.rc-line.trial em{color:var(--brand)}
+.rc-line span small{display:block;font-family:var(--body);font-weight:400;font-size:11.5px;color:var(--mut);margin-top:2px;letter-spacing:0}
+.rc-total{display:flex;justify-content:space-between;align-items:baseline;padding:15px 0 6px}
+.rc-total b{font-family:var(--disp);font-weight:900;font-size:15px;letter-spacing:.05em;color:var(--ink)}
+.rc-total strong{font-family:var(--disp);font-weight:900;font-size:28px;color:var(--brand);line-height:1}
+.rc-paid{text-align:center;font-size:10px;font-weight:700;letter-spacing:.16em;color:var(--green);border:1.5px solid var(--green);border-radius:5px;padding:8px;margin:6px 0 16px;transform:rotate(-1deg)}
+.rc-note{background:rgba(240,82,29,.07);border-radius:10px;padding:12px 14px;margin:12px 0 0;font-family:var(--body);font-size:13px;line-height:1.55;color:var(--ink)}
+.rc-note b{font-weight:800}
+.rc-foot{margin:18px -24px -22px;padding:13px 24px;border-top:1.5px dashed rgba(35,26,16,.26);display:flex;align-items:center;justify-content:space-between;gap:10px;font-size:9px;font-weight:700;letter-spacing:.14em;color:var(--mut)}
+.rc-bars{display:flex;gap:1.5px;align-items:flex-end;height:20px;flex-shrink:0}
+.rc-bars i{display:block;width:1.5px;height:100%;background:var(--ink);opacity:.72}
+.rc-bars i:nth-child(3n){width:3px}.rc-bars i:nth-child(4n){height:66%}.rc-bars i:nth-child(5n){width:1px}
+@media (max-width:420px){.receipt{padding:22px 18px 18px}.rc-line{font-size:12.5px}.rc-foot{margin:16px -18px -18px;padding:12px 18px;font-size:8px}}
 
 /* ---------- B · one list, two tags ---------- */
 .tlist{background:#FFFFFF;border-radius:20px;overflow:hidden;box-shadow:0 12px 30px rgba(35,26,16,.08)}
@@ -74,20 +83,36 @@ body{background:#F6F1E7}
 <div class="opt">
   <span class="tag">OPTION A</span>
   <h2>The receipt</h2>
-  <p class="note">The section is called "The honest bill", so make it an actual bill. Every free thing is shown as a real line item priced ₹0, which proves the claim instead of asserting it. A receipt is naturally one narrow column, so mobile is its best shape, not its worst.</p>
+  <p class="note">The section is called "The honest bill", so make it an actual bill. Every free thing is a real line item priced ₹0, which proves the claim instead of asserting it &mdash; and Talk and Imagine sit on the bill too, as their own block, so the one thing that could cost more later is impossible to miss. A receipt is naturally one narrow column, so mobile is its best shape, not its worst.</p>
   <div class="receipt">
-    <div class="rc-top"><b>Cheeko</b><span>ONE-TIME BILL</span></div>
-    <div class="rc-line"><span>Cheeko device</span><i></i><em>₹5,999</em></div>
-    <div class="rc-line zero"><span>10 story cards</span><i></i><em>₹0</em></div>
-    <div class="rc-line zero"><span>8 built-in games</span><i></i><em>₹0</em></div>
-    <div class="rc-line zero"><span>Rhymes &amp; stories</span><i></i><em>₹0</em></div>
-    <div class="rc-line zero"><span>Funny Voice &amp; radio</span><i></i><em>₹0</em></div>
-    <div class="rc-line zero"><span>Delivery in India</span><i></i><em>₹0</em></div>
-    <div class="rc-rule"></div>
-    <div class="rc-total"><b>TOTAL TODAY</b><strong>₹5,999</strong></div>
+    <div class="rc-top"><b>Cheeko</b><span>ONE-TIME BILL &middot; NO SUBSCRIPTION</span></div>
+    <div class="rc-cut"></div>
+
+    <div class="rc-line"><span>Cheeko device</span><i></i><em>&#8377;5,999</em></div>
+
+    <div class="rc-head">INCLUDED &middot; YOURS FOREVER</div>
+    <div class="rc-line zero"><span>10 story cards</span><i></i><em>&#8377;0</em></div>
+    <div class="rc-line zero"><span>8 built-in games</span><i></i><em>&#8377;0</em></div>
+    <div class="rc-line zero"><span>Rhymes &amp; stories</span><i></i><em>&#8377;0</em></div>
+    <div class="rc-line zero"><span>Funny Voice &amp; radio</span><i></i><em>&#8377;0</em></div>
+    <div class="rc-line zero"><span>Delivery in India</span><i></i><em>&#8377;0</em></div>
+
+    <div class="rc-cut"></div>
+    <div class="rc-total"><b>TOTAL TODAY</b><strong>&#8377;5,999</strong></div>
     <div class="rc-paid">PAID ONCE &middot; NOTHING RENEWS</div>
-    <div class="rc-after"><b>Only two things could cost more, later.</b>Talk and Imagine are free for 3 months. After that they need an optional plan. The price is shown in the parent app first &mdash; nothing is charged on its own.</div>
+
+    <div class="rc-cut"></div>
+    <div class="rc-head trial">THE ONLY TWO THINGS THAT COULD COST MORE, LATER</div>
+    <div class="rc-line trial"><span>Talk<small>Cheeko answers back, out loud</small></span><i></i><em>&#8377;0 for 3 months</em></div>
+    <div class="rc-line trial"><span>Imagine<small>Say a wish, see it drawn</small></span><i></i><em>&#8377;0 for 3 months</em></div>
+    <p class="rc-note">After 3 months, these two need an optional plan. <b>You will see the price in the parent app before anything happens</b> &mdash; nothing is ever charged on its own, and everything above keeps working either way.</p>
+
+    <div class="rc-foot">
+      <span class="rc-bars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+      <span>NO ADS &middot; NO FEED &middot; NO AUTO-CHARGE</span>
+    </div>
   </div>
+</div>
 </div>
 
 <div class="sep"></div>
