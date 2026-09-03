@@ -730,9 +730,15 @@ body.plocked{overflow:hidden}
 
 /* ===== Characters: show they can be tapped ===== */
 .shelf button{position:relative}
-.tapdot{position:absolute;top:4px;right:-2px;width:24px;height:24px;border-radius:50%;background:var(--brand);color:#FFFFFF;font-family:var(--disp);font-weight:800;font-size:16px;line-height:24px;text-align:center;box-shadow:0 4px 12px rgba(240,82,29,.45);z-index:3}
-.shelf button:first-child .tapdot{animation:tappulse 2.4s ease-in-out infinite}
-@keyframes tappulse{0%,100%{transform:scale(1);box-shadow:0 4px 12px rgba(240,82,29,.45)}50%{transform:scale(1.12);box-shadow:0 6px 20px rgba(240,82,29,.7)}}
-.shelf button:hover .tapdot{transform:scale(1.12)}
-@media (max-width:640px){.tapdot{width:20px;height:20px;font-size:14px;line-height:20px}}
-@media (prefers-reduced-motion:reduce){.shelf button:first-child .tapdot{animation:none}}
+.tapdot{position:absolute;top:2px;right:-4px;width:26px;height:26px;border-radius:50%;background:#FFFFFF;box-shadow:0 3px 10px rgba(35,26,16,.2);z-index:3;display:grid;place-items:center;font-size:0;transition:transform .2s}
+.tapdot::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--brand)}
+.tapdot::after{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid var(--brand);opacity:0;animation:tapring 2.6s ease-out infinite}
+@keyframes tapring{0%{transform:scale(.5);opacity:.9}65%{transform:scale(1.5);opacity:0}100%{transform:scale(1.5);opacity:0}}
+.shelf button:nth-child(2) .tapdot::after{animation-delay:.22s}
+.shelf button:nth-child(3) .tapdot::after{animation-delay:.44s}
+.shelf button:nth-child(4) .tapdot::after{animation-delay:.66s}
+.shelf button:nth-child(5) .tapdot::after{animation-delay:.88s}
+.shelf button:hover .tapdot{transform:scale(1.15)}
+.shelf button:active .tapdot{transform:scale(.92)}
+@media (max-width:640px){.tapdot{width:22px;height:22px}.tapdot::before{width:8px;height:8px}}
+@media (prefers-reduced-motion:reduce){.tapdot::after{animation:none;opacity:.45}}
