@@ -35,7 +35,7 @@ body{background:#F6F1E7}
 .rc-line em{font-style:normal;font-weight:700;white-space:nowrap}
 .rc-line.zero em{color:var(--green)}
 .rc-line.trial em{color:var(--brand)}
-.rc-line span small{display:block;font-family:var(--body);font-weight:400;font-size:11.5px;color:var(--mut);margin-top:2px;letter-spacing:0}
+.rc-sub{font-family:var(--body);font-size:12px;color:var(--mut);margin:-6px 0 2px;padding-bottom:6px}
 .rc-total{display:flex;justify-content:space-between;align-items:baseline;padding:15px 0 6px}
 .rc-total b{font-family:var(--disp);font-weight:900;font-size:15px;letter-spacing:.05em;color:var(--ink)}
 .rc-total strong{font-family:var(--disp);font-weight:900;font-size:28px;color:var(--brand);line-height:1}
@@ -99,12 +99,14 @@ body{background:#F6F1E7}
 
     <div class="rc-cut"></div>
     <div class="rc-total"><b>TOTAL TODAY</b><strong>&#8377;5,999</strong></div>
-    <div class="rc-paid">PAID ONCE &middot; NOTHING RENEWS</div>
+    <div class="rc-paid">PAID ONCE &middot; THIS LIST NEVER RENEWS</div>
 
     <div class="rc-cut"></div>
-    <div class="rc-head trial">THE ONLY TWO THINGS THAT COULD COST MORE, LATER</div>
-    <div class="rc-line trial"><span>Talk<small>Cheeko answers back, out loud</small></span><i></i><em>&#8377;0 for 3 months</em></div>
-    <div class="rc-line trial"><span>Imagine<small>Say a wish, see it drawn</small></span><i></i><em>&#8377;0 for 3 months</em></div>
+    <div class="rc-head trial">ONLY THESE TWO COULD COST MORE LATER</div>
+    <div class="rc-line trial"><span>Talk</span><i></i><em>&#8377;0 for 3 months</em></div>
+    <div class="rc-sub">Cheeko answers back, out loud</div>
+    <div class="rc-line trial"><span>Imagine</span><i></i><em>&#8377;0 for 3 months</em></div>
+    <div class="rc-sub">Say a wish, see it drawn</div>
     <p class="rc-note">After 3 months, these two need an optional plan. <b>You will see the price in the parent app before anything happens</b> &mdash; nothing is ever charged on its own, and everything above keeps working either way.</p>
 
     <div class="rc-foot">
