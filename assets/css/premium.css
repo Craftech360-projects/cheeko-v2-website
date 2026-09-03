@@ -656,7 +656,7 @@ body.plocked{overflow:hidden}
 .vbox.open{display:flex}
 .vbox video{max-height:86svh;max-width:92vw;border-radius:18px;box-shadow:0 24px 60px rgba(0,0,0,.5)}
 .vbox > button{position:absolute;top:18px;right:18px;width:46px;height:46px;border-radius:50%;border:none;background:rgba(255,244,227,.16);color:#FFF6E8;font-size:19px;cursor:pointer}
-@media (max-width:700px){.imtile{grid-template-columns:1fr;gap:10px}.imcopy h3{font-size:22px}.wishsays{min-height:2.4em}}
+@media (max-width:700px){.imtile{grid-template-columns:minmax(0,1fr) minmax(0,42%);gap:12px}.imcopy h3{font-size:19px;margin:4px 0}.imcopy p{font-size:12.5px;line-height:1.35}.wishsays{font-size:12.5px;min-height:3.4em;margin-top:6px}}
 @media (max-width:860px){
   .imhead{grid-template-columns:1fr;gap:18px}
   .vthumb{width:100%;padding:9px 16px 9px 9px}
