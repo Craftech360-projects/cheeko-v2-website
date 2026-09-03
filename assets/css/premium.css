@@ -299,11 +299,11 @@ a.schip:hover{transform:translateY(-2px);border-color:var(--brand)}
 .wobble i:nth-child(6){animation-delay:.45s}.wobble i:nth-child(7){animation-delay:.54s}
 .wobble i:nth-child(8){animation-delay:.63s}
 @keyframes wob{0%,100%{transform:translateY(0) rotate(0)}30%{transform:translateY(-6px) rotate(-5deg)}65%{transform:translateY(2px) rotate(3deg)}}
-.appeek{position:absolute;right:4%;top:50%;transform:translateY(-50%) rotate(-4deg);height:86%;aspect-ratio:9/13;border-radius:12px;overflow:hidden;box-shadow:0 10px 26px rgba(0,0,0,.35);z-index:1}
-.appeek img{width:100%;height:100%;object-fit:cover;object-position:top}
+.appeek{position:absolute;right:5%;top:50%;transform:translateY(-50%) rotate(-3deg);width:34%;max-width:190px;aspect-ratio:4/3;border-radius:14px;overflow:hidden;box-shadow:0 10px 26px rgba(0,0,0,.35);z-index:1}
+.appeek img{width:100%;height:100%;object-fit:cover;object-position:center 58%}
 .bt.has-peek{padding-right:40%}
 @media (prefers-reduced-motion:reduce){.eq i,.wobble i{animation:none}}
-@media (max-width:600px){.appeek{height:82%}.bt.has-peek{padding-right:40%}}
+@media (max-width:600px){.appeek{width:38%}.bt.has-peek{padding-right:42%}}
 
 
 /* ---------- how-it-works templates ---------- */
@@ -627,13 +627,13 @@ body.plocked{overflow:hidden}
 @media (prefers-reduced-motion:reduce){.th-photo .slide{transition:none}.th-photo img{transition:none;transform:none}}
 
 /* ===== Imagine: the wish, then the picture it drew ===== */
-.imtile{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,44%);align-items:center;gap:clamp(14px,2vw,24px)}
+.imtile{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:clamp(14px,2vw,26px);padding-block:18px}
 .imcopy{display:flex;flex-direction:column;min-width:0}
 .imcopy h3{margin:6px 0 6px}
 .wishsays{font-family:var(--disp);font-weight:800;font-size:clamp(14px,1.5vw,17px);color:var(--sun);min-height:2.6em;margin-top:8px}
 .wishcycle{display:block;transition:opacity .35s ease}
 .wishcycle.fade{opacity:0}
-.wishscreen{position:relative;width:100%;border-radius:14px;overflow:hidden;border:3px solid rgba(255,255,255,.22);background:#241C11;aspect-ratio:4/3;align-self:center}
+.wishscreen{position:relative;height:clamp(120px,17vw,196px);width:auto;aspect-ratio:4/3;border-radius:14px;overflow:hidden;border:3px solid rgba(255,255,255,.22);background:#241C11;align-self:center;flex-shrink:0}
 .wishscreen img{width:100%;height:100%;object-fit:cover;display:block;transition:opacity .35s ease}
 .wishscreen img.fade{opacity:0}
 
@@ -656,7 +656,7 @@ body.plocked{overflow:hidden}
 .vbox.open{display:flex}
 .vbox video{max-height:86svh;max-width:92vw;border-radius:18px;box-shadow:0 24px 60px rgba(0,0,0,.5)}
 .vbox > button{position:absolute;top:18px;right:18px;width:46px;height:46px;border-radius:50%;border:none;background:rgba(255,244,227,.16);color:#FFF6E8;font-size:19px;cursor:pointer}
-@media (max-width:700px){.imtile{grid-template-columns:minmax(0,1fr) minmax(0,42%);gap:12px}.imcopy h3{font-size:19px;margin:4px 0}.imcopy p{font-size:12.5px;line-height:1.35}.wishsays{font-size:12.5px;min-height:3.4em;margin-top:6px}}
+@media (max-width:700px){.imtile{grid-template-columns:minmax(0,1fr) auto;gap:12px;padding-block:14px}.wishscreen{height:96px}.imcopy h3{font-size:19px;margin:4px 0}.imcopy p{font-size:12.5px;line-height:1.35}.wishsays{font-size:12.5px;min-height:3.4em;margin-top:6px}}
 @media (max-width:860px){
   .imhead{grid-template-columns:1fr;gap:18px}
   .vthumb{width:100%;padding:9px 16px 9px 9px}
@@ -709,3 +709,30 @@ body.plocked{overflow:hidden}
   .hsend{font-size:19px}
   .hsend small{font-size:13.5px}
 }
+
+/* ===== No card? panel with a route to the card store ===== */
+.nocard{display:flex;align-items:center;justify-content:space-between;gap:22px;flex-wrap:wrap;background:var(--tint);border:1px solid var(--line);border-radius:22px;padding:18px 22px;margin-top:22px}
+.nc-left{display:flex;align-items:center;gap:14px;min-width:260px;flex:1}
+.nc-left b{font-family:var(--disp);font-weight:800;font-size:18px;color:var(--ink);display:block}
+.nc-left p{font-family:var(--body);font-size:14.5px;color:var(--mut);margin:2px 0 0;max-width:42ch}
+.nc-right{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.nc-more{font-family:var(--body);font-weight:700;font-size:13.5px;color:var(--mut);white-space:nowrap}
+.nc-right .btn{padding:13px 22px;font-size:15px;white-space:nowrap}
+@media (max-width:760px){
+  .nocard{flex-direction:column;align-items:flex-start;gap:14px;padding:16px 18px}
+  .nc-left{min-width:0}
+  .nc-left b{font-size:16.5px}
+  .nc-left p{font-size:13.5px}
+  .nc-right{width:100%;flex-direction:column;align-items:stretch;gap:9px}
+  .nc-more{white-space:normal;font-size:13px}
+  .nc-right .btn{width:100%;justify-content:center;text-align:center}
+}
+
+/* ===== Characters: show they can be tapped ===== */
+.shelf button{position:relative}
+.tapdot{position:absolute;top:4px;right:-2px;width:24px;height:24px;border-radius:50%;background:var(--brand);color:#FFFFFF;font-family:var(--disp);font-weight:800;font-size:16px;line-height:24px;text-align:center;box-shadow:0 4px 12px rgba(240,82,29,.45);z-index:3}
+.shelf button:first-child .tapdot{animation:tappulse 2.4s ease-in-out infinite}
+@keyframes tappulse{0%,100%{transform:scale(1);box-shadow:0 4px 12px rgba(240,82,29,.45)}50%{transform:scale(1.12);box-shadow:0 6px 20px rgba(240,82,29,.7)}}
+.shelf button:hover .tapdot{transform:scale(1.12)}
+@media (max-width:640px){.tapdot{width:20px;height:20px;font-size:14px;line-height:20px}}
+@media (prefers-reduced-motion:reduce){.shelf button:first-child .tapdot{animation:none}}
