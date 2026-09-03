@@ -590,8 +590,8 @@ body.plocked{overflow:hidden}
 
 /* ===== Hero: a calm panel beside a big photo ===== */
 .cine{position:relative;background:linear-gradient(180deg,#FFF6E6,#FDEFD8);overflow:hidden}
-.th-in{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.08fr);align-items:center;gap:clamp(24px,4vw,64px);padding-left:clamp(20px,4vw,48px)}
-.th-copy{padding:clamp(40px,5vw,72px) 0}
+.th-in{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.92fr);align-items:center;gap:clamp(28px,5vw,68px);padding:0 clamp(20px,4vw,48px)}
+.th-copy{padding:clamp(44px,5vw,76px) 0}
 .th-copy h1{font-size:clamp(38px,5vw,64px);line-height:1.02;margin:16px 0 14px;color:var(--ink)}
 .th-copy h1 span{color:var(--brand)}
 .th-copy p{font-family:var(--body);font-size:clamp(16px,1.5vw,18.5px);line-height:1.55;color:rgba(35,26,16,.72);max-width:40ch;margin:0 0 22px}
@@ -601,11 +601,11 @@ body.plocked{overflow:hidden}
 .th-cta .btn{padding:16px 34px;font-size:16.5px}
 .th-cta .btn.ghost{background:#FFFFFF;color:var(--ink);border:2px solid rgba(35,26,16,.14);box-shadow:none}
 .th-cta .btn.ghost:hover{border-color:var(--brand);color:var(--brand)}
-.th-photo{position:relative;align-self:stretch;background:#F3E7D2;min-height:clamp(420px,58vw,620px);border-radius:64px 0 0 64px;overflow:hidden;margin-right:calc(50% - 50vw)}
+.th-photo{position:relative;background:#F3E7D2;aspect-ratio:1/1;width:100%;max-width:500px;justify-self:end;border-radius:36px;overflow:hidden;box-shadow:0 22px 50px rgba(35,26,16,.14)}
 .th-photo .slide{position:absolute;inset:0;opacity:0;transition:opacity 1.2s ease}
 .th-photo .slide.on{opacity:1}
 .th-photo picture{position:absolute;inset:0;display:block}
-.th-photo img{width:100%;height:100%;object-fit:cover;object-position:center 32%;transform:scale(1.04);transition:transform 5.2s linear}
+.th-photo img{width:100%;height:100%;object-fit:cover;object-position:center 40%;transform:scale(1.04);transition:transform 5.2s linear}
 .th-photo .slide.on img{transform:scale(1)}
 .cn-dots{position:absolute;left:50%;transform:translateX(-50%);bottom:20px;z-index:3;display:flex;gap:8px}
 .cn-dots i{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.55);box-shadow:0 1px 4px rgba(0,0,0,.3);transition:.3s}
