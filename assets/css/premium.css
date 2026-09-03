@@ -430,8 +430,11 @@ a.schip:hover{transform:translateY(-2px);border-color:var(--brand)}
 
 
 /* ---------- the 10-card flip deck ---------- */
-.deckrail{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:16px}
-.fcardw{perspective:900px;aspect-ratio:1276/2008;animation:cardbob 4.5s ease-in-out infinite}
+.decktrain{position:relative;overflow:hidden;padding:6px 0;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 5%,#000 95%,transparent 100%);mask-image:linear-gradient(90deg,transparent 0,#000 5%,#000 95%,transparent 100%)}
+.deckrail{display:flex;gap:16px;width:max-content;animation:decktrain 78s linear infinite;will-change:transform}
+.decktrain:hover .deckrail,.decktrain.hold .deckrail{animation-play-state:paused}
+@keyframes decktrain{from{transform:translateX(0)}to{transform:translateX(calc(-50% - 8px))}}
+.fcardw{flex:0 0 clamp(146px,14.5vw,206px);perspective:900px;aspect-ratio:1276/2008;animation:cardbob 4.5s ease-in-out infinite}
 .fcardw:nth-child(2n){animation-delay:.7s}.fcardw:nth-child(3n){animation-delay:1.3s}.fcardw:nth-child(5n){animation-delay:2s}
 @keyframes cardbob{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
 .flip{position:relative;width:100%;height:100%;transform-style:preserve-3d;transition:transform .5s cubic-bezier(.2,.7,.3,1);cursor:pointer}
@@ -448,9 +451,9 @@ a.schip:hover{transform:translateY(-2px);border-color:var(--brand)}
 .fface.back b{font-family:var(--disp);font-weight:800;font-size:14px}
 .fface.back p{font-size:11.8px;line-height:1.5;font-weight:500;color:#D8CDB9;margin:6px 0 0}
 .fface.back .serial{color:var(--sun);font-size:9px}
-@media (max-width:920px){.deckrail{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:10px}.fcardw{flex:0 0 44%;scroll-snap-align:center}}
-@media (max-width:600px){.fcardw{flex:0 0 58%}}
-@media (prefers-reduced-motion:reduce){.fcardw{animation:none}}
+@media (max-width:920px){.fcardw{flex:0 0 152px}.deckrail{gap:14px;animation-duration:62s}@keyframes decktrain{from{transform:translateX(0)}to{transform:translateX(calc(-50% - 7px))}}}
+@media (max-width:600px){.fcardw{flex:0 0 138px}}
+@media (prefers-reduced-motion:reduce){.fcardw{animation:none}.deckrail{animation:none;width:auto;overflow-x:auto;padding-bottom:10px}.decktrain{overflow:visible;-webkit-mask-image:none;mask-image:none}}
 /* ---------- how-to-use: three beats ---------- */
 .howsteps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:26px;max-width:1040px;margin:0 auto}
 .hbeat{display:flex;flex-direction:column;align-items:center;gap:16px}
@@ -632,7 +635,7 @@ body.plocked{overflow:hidden}
 .wishsays{font-family:var(--disp);font-weight:800;font-size:clamp(14px,1.5vw,17px);color:var(--sun);min-height:2.6em;margin-top:8px}
 .wishcycle{display:block;transition:opacity .35s ease}
 .wishcycle.fade{opacity:0}
-.wishscreen{position:relative;height:clamp(120px,17vw,196px);width:auto;aspect-ratio:4/3;border-radius:14px;overflow:hidden;border:3px solid rgba(255,255,255,.22);background:#241C11;align-self:center;flex-shrink:0}
+.wishscreen{position:relative;height:clamp(120px,17vw,216px);width:auto;aspect-ratio:4/3;border-radius:14px;overflow:hidden;border:3px solid rgba(255,255,255,.22);background:#241C11;align-self:center;flex-shrink:0}
 .wishscreen img{width:100%;height:100%;object-fit:cover;display:block;transition:opacity .35s ease}
 .wishscreen img.fade{opacity:0}
 
@@ -655,7 +658,8 @@ body.plocked{overflow:hidden}
 .vbox.open{display:flex}
 .vbox video{max-height:86svh;max-width:92vw;border-radius:18px;box-shadow:0 24px 60px rgba(0,0,0,.5)}
 .vbox > button{position:absolute;top:18px;right:18px;width:46px;height:46px;border-radius:50%;border:none;background:rgba(255,244,227,.16);color:#FFF6E8;font-size:19px;cursor:pointer}
-@media (max-width:700px){.imtile{grid-template-columns:minmax(0,1fr) auto;gap:12px;padding-block:14px}.wishscreen{height:96px}.imcopy h3{font-size:19px;margin:4px 0}.imcopy p{font-size:12.5px;line-height:1.35}.wishsays{font-size:12.5px;min-height:3.4em;margin-top:6px}}
+@media (max-width:920px){.bento .imtile{grid-row:span 1!important}.imtile{padding:13px 18px;gap:14px}.imcopy p{display:none}.wishscreen{height:106px}.imcopy h3{margin:3px 0}.wishsays{min-height:2.8em;margin-top:5px}}
+@media (max-width:700px){.imtile{grid-template-columns:minmax(0,1fr) auto;gap:11px;padding:12px 16px}.wishscreen{height:94px}.imcopy h3{font-size:18px;margin:3px 0}.wishsays{font-size:12px;min-height:2.8em;margin-top:4px}}
 @media (max-width:860px){
   .imhead{grid-template-columns:1fr;gap:18px}
   .vthumb{width:100%;padding:9px 16px 9px 9px}

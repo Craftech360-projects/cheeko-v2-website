@@ -82,16 +82,19 @@
   });
 
   /* Card flip on tap */
+  var deckTrain = document.querySelector(".decktrain");
   document.querySelectorAll(".fcardw").forEach(function (w) {
-    w.addEventListener("click", function () { w.classList.toggle("flipped"); });
+    w.addEventListener("click", function () {
+      w.classList.toggle("flipped");
+      if (deckTrain) deckTrain.classList.toggle("hold", !!document.querySelector(".fcardw.flipped"));
+    });
   });
 
   /* Auto-advance swipe rows on mobile (honest screens, card deck) */
   var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   if (!reduceMotion) {
     var autoRows = [
-      { sel: ".screenrow", every: 2600 },
-      { sel: ".deckrail", every: 2300 }
+      { sel: ".screenrow", every: 2600 }
     ];
     autoRows.forEach(function (cfg) {
       document.querySelectorAll(cfg.sel).forEach(function (row) {
